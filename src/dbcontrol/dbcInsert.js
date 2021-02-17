@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import DaelimProductDTO from './daelim_product_dto';
-import { response } from 'express';
+
 
 
 class DbcSelect extends React.Component{
@@ -26,11 +25,8 @@ class DbcSelect extends React.Component{
 
     setData = async() => {
         const data = this.state.params;
-        console.log(data);
-        
-            axios.post('api/productsins',data );
-            // console.log(response.body);
-        
+        const response=axios.post('api/productsins',data );
+        this.props.getData()
       }
 
 

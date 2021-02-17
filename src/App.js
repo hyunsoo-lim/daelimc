@@ -1,12 +1,12 @@
 
 import React from 'react';
-// import axios from 'axios';
-
 import './App.css';
-import {BrowserRouter as BrowserRouter,Route} from 'react-router-dom';
-// import DaelimHeadNavigation from './daelim/DaelimHeadNavigation';
+import {BrowserRouter as BrowserRouter, Route} from 'react-router-dom';
+
 import DaelimMain from './daelim/DaelimMain';
 import Insert from './dbcontrol/insert';
+import DaelimPlan from './daelimplan/daelimplan';
+
 
 function App() {
   return (    
@@ -21,7 +21,7 @@ function App() {
                   {/* <DaelimMain/> */}
             
               <Route exact path="/"  component={DaelimMain} />
-              <Route path="/ins"  component={Insert} />
+              <Route path="/plan"  component={DaelimPlan} />
             
                 </BrowserRouter>
         </body>
@@ -30,38 +30,3 @@ function App() {
 }
 
 export default App;
-
-// class App extends React.Component {
-
-//   constructor(props) {
-//       super(props);
-//       this.state = {
-//           username:null
-//       };
-//   }
-
-//   componentDidMount() {
-//     axios.get("api")
-//      .then(response => {      // .then : 응답(상태코드200~300미만)성공시
-//       console.log(response);
-
-//      this.setState({username:response.data.username})
-//      })
-//      .catch(error => {
-//       console.log(error);
-//     });
-//   }
-
-// render() {
-//   const {username} = this.state;
-//   return (
-//       <div className="App">
-//         <header className="App-header">
-//           {username ? `Hello ${username}` : 'Hello World'}
-//         </header>
-//       </div>
-//      );
-//   }
-// }
-
-// export default App;
