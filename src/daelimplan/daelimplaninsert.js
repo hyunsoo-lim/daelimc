@@ -72,6 +72,7 @@ class DaelimPlanInsert extends React.Component{
            
            <button onClick={this.setData}> 입력 </button>
 
+
            <MyEditor textHandler={this.textHandler}/>
         </div>
          )
