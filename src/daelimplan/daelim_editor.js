@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-    
-    import { EditorState } from 'draft-js';
-    import { convertFromRaw, convertToRaw } from 'draft-js';
+    import { EditorState, convertToRaw } from 'draft-js';
     import { Editor } from 'react-draft-wysiwyg';
     import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
     import styled from 'styled-components';
@@ -42,10 +40,13 @@ import React, { Component } from 'react';
       // console.log(contentState);
 
       var text = this.state.editorState.getCurrentContent().getBlocksAsArray();
-   var finalText;
-   text.map((item) => {
-   finalText = item.getText() + finalText});
-   console.log(finalText)
+      var finalText;
+     text.map((item) => {
+     finalText = item.getText() + finalText});
+     console.log(finalText)
+     // the raw state, stringified
+      const rawDraftContentState = convertToRaw(this.state.editorState.getCurrentContent());
+     this.props.textHandler(rawDraftContentState);
       };
     
       
@@ -53,9 +54,16 @@ import React, { Component } from 'react';
       uploadImageCallBack = (file) => {
         return new Promise((resolve, reject) => {
            const data = new FormData();
-           data.append("img", file)
-           axios.post('api/imageupload', data).then(responseImage => {
-                resolve({ data: { link: responseImage.filename } });
+          //  const imageObject = {
+          //  file: file,
+           const localSrc= URL.createObjectURL(file)
+          // }
+          //  data.append("img", imageObject)
+          data.append("img",file);
+           axios.post('../api/imageupload', data).then(responseImage => {
+                resolve({ data: { link: "../../img/uploads/"+responseImage.data.filename } });
+                console.log("upload");
+                console.log(responseImage);
            })
         });
     }
@@ -94,7 +102,7 @@ import React, { Component } from 'react';
         const { editorState } = this.state;
         return (
           <MyBlock>
-              <Editor name="text1" onChange ={this.props.textHandler}
+              <Editor name="text1"
                 // 에디터와 툴바 모두에 적용되는 클래스
                 wrapperClassName="wrapper-class"
                 // 에디터 주변에 적용된 클래스

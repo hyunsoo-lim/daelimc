@@ -22,13 +22,16 @@ class DaelimPlanInsert extends React.Component{
         console.log(this.state.params.type);
 
     }
-    textHandler=(e)=>{
+    textHandler=(value)=>{
         // const nextState=this.state.params;
         // nextState["text1"]=e.target.editorState;
         // this.setState({params:nextState});
         // console.log(nextState)
         // console.log(this.state.params.type);
-
+        let nextState=this.state.params;
+        nextState["text1"]=JSON.stringify(value);
+        this.setState({params:nextState});
+        console.log(this.state.params.text1);
     }
 
     setData = async() => {
@@ -60,8 +63,8 @@ class DaelimPlanInsert extends React.Component{
            {/* <input type="text" name="type2" onChange={this.handleClick}/> */}
            <p>모델명</p>
            <input type="text" name="name" onChange={this.handleClick}/>
-           <p>내용1</p>
-           <input type="text" name="text1" onChange={this.handleClick}/>
+           {/* <p>내용1</p>
+           <input type="text" name="text1" onChange={this.handleClick}/> */}
            <p>내용2</p>
            <input type="text" name="text2" onChange={this.handleClick}/>
            <p>메인 이미지</p>

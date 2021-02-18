@@ -80,7 +80,7 @@ app.post('/api/productsdel',urlencodedParser,(req,res) => {
 const upload = multer({
   storage: multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'uploads/');
+      cb(null, 'public/uploads/');
     },
     filename: function (req, file, cb) {
       cb(null, file.originalname);
@@ -93,3 +93,5 @@ app.post('/api/imageupload', upload.single('img'), (req, res) => {
   console.log(req.file);
   res.send(req.file); 
 });
+
+app.use('/img',express.static('public'));
