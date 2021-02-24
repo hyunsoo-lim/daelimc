@@ -35,6 +35,7 @@ body,html{
 	/* opacity:0; */
 }
 
+
 .navbar{
 	position:relative;
 	width:1200px;
@@ -171,3 +172,89 @@ body,html{
 	cursor:pointer;
 	display:none;
 } */
+
+/* daelim_plan_insert */
+.daelim_ins_wrapper{
+	width: 100px;
+	float: left;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.daelim_plan_container_left{
+	width: 30%;
+	float: left;
+}
+.daelim_plan_container_right{
+	margin-top: 20px;
+	width: 70%;
+	float: left;
+}
+
+.daelim_ins_wrapper2{
+	clear: both;
+	margin-left: 20px;
+}
+
+.daelim_ins_wrapper3{
+	clear: both;
+	margin-top: 20px;
+}
+
+.daelim_ins_from{
+	width: 100px;
+	position: relative;
+	border: 1px solid #e6e6e6;
+	border-radius: 6px;
+	padding: 5px 10px 5px 5px;
+	margin-bottom: 30px;
+}
+.daelim_ins_from2{
+	width: 200px;
+	height: 30px;
+	position: relative;
+	border: 1px solid #e6e6e6;
+	border-radius: 6px;
+	padding: 5px 10px 5px 5px;
+	margin-bottom: 30px;
+}
+
+.daelim_ins_from3{
+	width: 200px;
+	height: 30px;
+	position: relative;
+	border: 1px solid #e6e6e6;
+	border-radius: 6px;
+	padding: 5px 10px 5px 5px;
+	margin-bottom: 30px;
+	margin-left: 20px;
+}
+
+
+.daelim_plan_insert_text{
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+
+.daelim_plan_wrapper{
+	margin: 0 auto;
+	width: 80%;
+}
+
+#daelim_ins_fileupload_wrapper{
+	clear: both;
+	padding-top: 10px;
+	border: 1px solid #e6e6e6;
+	border-radius: 6px;
+}
+
+#daelim_ins_wrapper3_text{
+	float: left;
+
+}
+
+#daelim_ins_wrapper3_btn{
+	float: left;
+	margin-left: 10px;
+	margin-top: -4px;
+}

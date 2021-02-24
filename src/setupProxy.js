@@ -14,4 +14,11 @@ module.exports = function(app){
         changeOrigin: true
     })
 )
+
+app.use(
+    createProxyMiddleware('/download', {
+        target: 'http://localhost:3001/',
+        changeOrigin: true
+    })
+)
 };

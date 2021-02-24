@@ -7,9 +7,9 @@ import React, { Component } from 'react';
     
     const MyBlock = styled.div`
     .wrapper-class{
-        width: 80%;
-        margin: 0 auto;
+        width: 100%;
         margin-bottom: 4rem;
+        border 1px solid #D5D5D5;
         }
     .editor {
       height: 500px !important;
