@@ -52,11 +52,25 @@ app.post('/api/productssearch',urlencodedParser,(req,res) => {
 //insert
 app.post('/api/productsins',urlencodedParser,(req,res) => {
     var json=req.body;
-    var params=[json.type,json.type2,json.name,json.text1,json.text2,json.src]
-    db.query("insert into daelim_product values(0,?,?,?,?,?,?)",params,function(err,rows,fields) {
+    var params=[json.type,json.type2,json.name,json.text1,json.text2,json.src,json.download]
+    db.query("insert into daelim_product values(0,?,?,?,?,?,?,?)",params,function(err,rows,fields) {
         if(err){
           console.log(err);
         }else{
+
+          if(!fs.existsSync("public/uploads/"+json.name)){
+            fs.mkdirSync("public/uploads/"+json.name)
+          }
+          var jsonparse=JSON.parse(json.download);
+          for(var i=0; i<jsonparse.data.length; i++){
+            console.log(i);
+            fs.rename(`public/uploads/${jsonparse.data[i]}`,`public/uploads/${json.name}/${jsonparse.data[i]}`,()=>{ 
+         
+            //파일 이름 바꾸기 fs.writeFile('./data/'+title,'파일수정할내용','utf8',function(err){ 
+              // 파일 내용 수정 if (err ===undefined || err == null){ response.writeHead(302, {Location: `/?id=${title}`}); 
+              //요청한 주소로 리다이렉션 response.end(); } }); 
+            });
+          }
           res.send("ok");
           console.log("ok");
         }})
@@ -95,6 +109,12 @@ const upload = multer({
 app.post('/api/imageupload', upload.single('img'), (req, res) => {
   console.log(req.file);
   res.send(req.file); 
+});
+
+app.post('/api/imageuploadmulti', upload.array('files'), (req, res) => {
+  console.log(req.files);
+  console.log(req.body);
+  res.send(req.files); 
 });
 
 app.use('/img',express.static('public'));
