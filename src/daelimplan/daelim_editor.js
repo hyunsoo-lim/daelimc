@@ -58,10 +58,10 @@ import React, { Component } from 'react';
           //  file: file,
            const localSrc= URL.createObjectURL(file)
           // }
-          //  data.append("img", imageObject)
+          data.append("name", this.props.name);
           data.append("img",file);
            axios.post('../api/imageupload', data).then(responseImage => {
-                resolve({ data: { link: "../../img/uploads/"+responseImage.data.filename } });
+                resolve({ data: { link: "../../img/uploads/"+this.props.name+"/"+responseImage.data.filename } });
                 console.log("upload");
                 console.log(responseImage);
            })

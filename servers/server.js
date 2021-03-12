@@ -108,7 +108,19 @@ const upload = multer({
 
 app.post('/api/imageupload', upload.single('img'), (req, res) => {
   console.log(req.file);
-  res.send(req.file); 
+  console.log(req.body.name);
+
+  if(!fs.existsSync("public/uploads/"+req.body.name)){
+    fs.mkdirSync("public/uploads/"+req.body.name)
+  }
+ 
+    fs.rename(`public/uploads/${req.file.filename}`,`public/uploads/${req.body.name}/${req.file.filename}`,()=>{ 
+ 
+    //파일 이름 바꾸기 fs.writeFile('./data/'+title,'파일수정할내용','utf8',function(err){ 
+      // 파일 내용 수정 if (err ===undefined || err == null){ response.writeHead(302, {Location: `/?id=${title}`}); 
+      //요청한 주소로 리다이렉션 response.end(); } }); 
+      res.send(req.file); 
+    });
 });
 
 app.post('/api/imageuploadmulti', upload.array('files'), (req, res) => {

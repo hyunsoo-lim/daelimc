@@ -141,7 +141,7 @@ class DaelimPlanInsert extends React.Component{
 
             <div class="daelim_plan_container_right">
                 <div class="daelim_plan_insert_text">내용</div>
-                <MyEditor textHandler={this.textHandler}/>
+                <MyEditor textHandler={this.textHandler} name={this.state.params.name}/>
             </div>
 
            
