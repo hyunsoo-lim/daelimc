@@ -1,7 +1,7 @@
 import React from 'react';
 import './daelimp.css';
 import DaelimProductDTO from './daelim_product_dto';
-
+import ReactPaginate from "react-paginate";
 
 
 class DaelimPlanSearch extends React.Component{
@@ -12,9 +12,14 @@ class DaelimPlanSearch extends React.Component{
 
 
     componentDidMount(){
-
+        console.log("search didmount");
+        console.log(this.props.count);
        
     }
+
+
+    
+    
 
     render(){
         const product = this.props.searchdata;
@@ -39,7 +44,23 @@ class DaelimPlanSearch extends React.Component{
                         })}
                     
                 </section>
+                <div>
+                    <ReactPaginate 
+                        pageCount={this.props.count/10}
+                        pageRangeDisplayed={10}
+                        marginPagesDisplayed={0}
+                        breakLabel={""}
+                        previousLabel={"이전"}
+                        nextLabel={"다음"}
+                        onPageChange={this.props.changePage}
+                        containerClassName={"pagination-ul"}
+                        activeClassName={"currentpage"}
+                        previousClassName={"pageLabel-btn"}
+                        nextClassName={"pageLabel-btn"}
+                       />  
+                </div>
             </div>
+            
          )
     }
 }

@@ -31,13 +31,22 @@ app.get('/api/products',async (req, res) => {
     })
 });
 
+
+//count 전체
+app.get('/api/productscount',async (req, res) => {
+    db.query("SELECT COUNT(*) as cnt FROM daelim_product", (err, data) => {
+        if(!err) res.send(data);
+        else res.send(err);
+    })
+});
+
 //search
 app.post('/api/productssearch',urlencodedParser,(req,res) => {
     var json=req.body;
     console.log("productssearch");
     var params=json;
     console.log(params);
-    var sql = "select * from daelim_product where name LIKE " +db.escape('%'+params+'%');
+    var sql = "select * from daelim_product where name LIKE " +db.escape('%'+params.search+'%')  +"LIMIT " +(params.currentpage*10)+ ",10";
 
    
     db.query(sql,[params],function(err,rows,fields) {
@@ -62,14 +71,16 @@ app.post('/api/productsins',urlencodedParser,(req,res) => {
             fs.mkdirSync("public/uploads/"+json.name)
           }
           var jsonparse=JSON.parse(json.download);
+          if(jsonparse!=null){
           for(var i=0; i<jsonparse.data.length; i++){
-            console.log(i);
-            fs.rename(`public/uploads/${jsonparse.data[i]}`,`public/uploads/${json.name}/${jsonparse.data[i]}`,()=>{ 
+              console.log(i);
+              fs.rename(`public/uploads/${jsonparse.data[i]}`,`public/uploads/${json.name}/${jsonparse.data[i]}`,()=>{ 
          
-            //파일 이름 바꾸기 fs.writeFile('./data/'+title,'파일수정할내용','utf8',function(err){ 
+              //파일 이름 바꾸기 fs.writeFile('./data/'+title,'파일수정할내용','utf8',function(err){ 
               // 파일 내용 수정 if (err ===undefined || err == null){ response.writeHead(302, {Location: `/?id=${title}`}); 
               //요청한 주소로 리다이렉션 response.end(); } }); 
-            });
+              });
+            }
           }
           res.send("ok");
           console.log("ok");
@@ -77,7 +88,7 @@ app.post('/api/productsins',urlencodedParser,(req,res) => {
 });
 
 
-//insert
+//delete
 app.post('/api/productsdel',urlencodedParser,(req,res) => {
     
   var params=req.body;

@@ -16,12 +16,12 @@ class DaelimPlan extends React.Component{
 
     constructor(props){
         super(props)
-        this.state= {product:[],checkedNum:[],onedata:0,search:[""]}
+        this.state= {product:[],checkedNum:[],count:0,currentPage:0,search:[""]}
         this.checkedItemHandler=this.checkedItemHandler.bind(this);
-        this.getData = this.getData.bind(this)
-        this.deleteData = this.deleteData.bind(this)
-        // this.checkAllOff=this.checkAllOff.bind(this)
-        this.handleDataClick=this.handleDataClick.bind(this);
+        this.getData = this.getData.bind(this);
+        this.getDataCount = this.getDataCount.bind(this);
+        this.deleteData = this.deleteData.bind(this);
+        this.changePage = this.changePage.bind(this);
         this.searchHandler=this.searchHandler.bind(this);
     }
 
@@ -29,18 +29,11 @@ class DaelimPlan extends React.Component{
     componentDidMount(){
 
         console.log("didmount");
+        this.getDataCount();
         this.getData();
     }
 
-    handleDataClick(linum) {
-        console.log("check");
-        console.log(linum);
-        // console.log(this.state.product[linum]);
-        // const product_onedata= this.state.product[linum];
-        // console.log(product_onedata);
-        this.setState({onedata : linum});
-        // console.log(this.state.onedata);
-    }
+    
 
 
     checkedItemHandler = (e) =>{
@@ -49,9 +42,7 @@ class DaelimPlan extends React.Component{
         console.log(Number(e.target.value))
         if(e.target.checked){
              nextState[Number(e.target.value)].checked=true;
-            // nextState.push(Number(e.target.value));
         }else if(!e.target.checked){
-            // nextState.splice(nextState.indexOf(Number(e.target.value)),1);
             nextState[Number(e.target.value)].checked=false;
         }
         this.setState({product: nextState})
@@ -64,13 +55,25 @@ class DaelimPlan extends React.Component{
         console.log(this.state.search);
     }
 
+    changePage=(e)=>{
+        console.log("changePage");
+        console.log(e.selected);
+        this.setState({currentPage:e.selected});
+        this.getData();
+    }
 
+    getDataCount = async() =>{
+        const response = await axios.get('../api/productscount');
+        console.log(response.data[0].cnt);
+        this.setState({count:response.data[0].cnt})
+    }
 
     getData (){
 
         setTimeout(async() => {
             // const response = await axios.get('../api/products');
-            const data= this.state.search;
+            // const data= this.state.search;
+            const data= {search:this.state.search, currentpage:this.state.currentPage}
             console.log("getData");
             console.log(data);
             const response = await axios.post('../api/productssearch',data);
@@ -171,13 +174,15 @@ class DaelimPlan extends React.Component{
                 {/* {console.log(this.state.product)} */}
                     <Switch>
                         <Route exact path="/plan/search"  
-                            render={() => <DaelimPlanSearch searchdata={this.state.product} checkhandler={this.checkedItemHandler} searchHandler={this.searchHandler} getData={this.getData}/>} 
+                            render={() => <DaelimPlanSearch searchdata={this.state.product} checkhandler={this.checkedItemHandler} 
+                                                            searchHandler={this.searchHandler} getData={this.getData} changePage={this.changePage} count={this.state.count}/>} 
                         />
                         <Route path="/plan/detail" component={DaelimPlanDetail}/>
                         <Route path="/plan/ins" 
                          render={() => <DaelimPlanInsert getData={this.getData}/>}/> 
-                        
                     </Switch>
+
+                  
            </BrowseRouter>
         </div>
          )

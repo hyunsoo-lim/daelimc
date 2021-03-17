@@ -8,7 +8,7 @@ class DaelimPlanInsert extends React.Component{
 
     constructor(props){
         super(props)
-        this.state= { params  : {}, uploadfile:[]}
+        this.state= { params  : {download: null}, uploadfile:[]}
         this.handleClick=this.handleClick.bind(this)
         this.handleClickFile=this.handleClickFile.bind(this)
         this.addUploadElement=this.addUploadElement.bind(this)

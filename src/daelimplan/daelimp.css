@@ -1,8 +1,14 @@
 
+a{
+	text-decoration: none;
+	outline: none;
+}
+
 body,html{
 	padding:0;margin:0;
 	background-color:#F4F4F4;
 }
+
 
 #logo_img{
 	width:100px;
@@ -90,7 +96,7 @@ body,html{
 #main_tip_search{
 	/* float:right; */
 	margin: 0 auto;
-	width:310px;
+	width:320px;
 	height:120px;
 	display:block;
 }
@@ -104,7 +110,7 @@ body,html{
 	float: left;
 	margin-top: 20px;
 	margin-left: 5px;
-	width: 40px;
+	width: 50px;
 	height:36px;
 }
 
@@ -138,6 +144,31 @@ body,html{
 	margin-left:5%;
 	margin-top:5%;
 	/* object-fit: cover; */
+}
+
+.pagination-ul{
+	margin-top: 20px;
+	height: 60px;
+	display: block;
+	text-align: center;
+	margin-right: 60px;
+}
+
+.pagination-ul li{
+	margin-left: 15px;
+	display: inline-block;
+        
+	font-weight: bold;
+	text-decoration: none;
+	padding: 5px 8px;
+	border: 1px solid #ccc;
+	color: #000;
+	background-color: #ffffff;
+}
+
+.pagination-ul li.currentpage{
+	background-color: #38cbae;
+	color:#38cbae;
 }
 
 #part-info{
@@ -174,6 +205,10 @@ body,html{
 } */
 
 /* daelim_plan_insert */
+
+
+
+
 .daelim_ins_wrapper{
 	width: 100px;
 	float: left;
@@ -257,4 +292,9 @@ body,html{
 	float: left;
 	margin-left: 10px;
 	margin-top: -4px;
+}
+
+.work{
+	overflow:hidden;
+		height:auto;
 }
