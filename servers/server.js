@@ -61,8 +61,8 @@ app.post('/api/productssearch',urlencodedParser,(req,res) => {
 //insert
 app.post('/api/productsins',urlencodedParser,(req,res) => {
     var json=req.body;
-    var params=[json.type,json.type2,json.name,json.text1,json.text2,json.src,json.download]
-    db.query("insert into daelim_product values(0,?,?,?,?,?,?,?)",params,function(err,rows,fields) {
+    var params=[json.type,json.type2,json.name,json.text1,json.text2,json.download]
+    db.query("insert into daelim_product values(0,?,?,?,?,?,?)",params,function(err,rows,fields) {
         if(err){
           console.log(err);
         }else{
@@ -140,7 +140,7 @@ app.post('/api/imageuploadmulti', upload.array('files'), (req, res) => {
   res.send(req.files); 
 });
 
-app.use('/img',express.static('public'));
+// app.use('/img',express.static('public'));
 
 
 

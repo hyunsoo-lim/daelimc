@@ -61,7 +61,7 @@ import React, { Component } from 'react';
           data.append("name", this.props.name);
           data.append("img",file);
            axios.post('../api/imageupload', data).then(responseImage => {
-                resolve({ data: { link: "../../img/uploads/"+this.props.name+"/"+responseImage.data.filename } });
+                resolve({ data: { link: "/uploads/"+this.props.name+"/"+responseImage.data.filename } });
                 console.log("upload");
                 console.log(responseImage);
            })

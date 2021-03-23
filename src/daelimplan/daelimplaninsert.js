@@ -135,7 +135,10 @@ class DaelimPlanInsert extends React.Component{
 
                 <div class="daelim_ins_wrapper2">
                 <div class="daelim_plan_insert_text">메인 이미지</div>
-                <input class="daelim_ins_from2" type="text" name="src" onChange={this.handleClick}/>
+                {/* <input class="daelim_ins_from2" type="text" name="src" onChange={this.handleClick}/> */}
+                <div id="daelim_ins_fileupload_wrapper">
+                     <input class="daelim_ins_from3"  type="file" name="files"  onChange={this.handleClickFile}/>
+                </div>
             </div>
             </div>
 

@@ -9,14 +9,14 @@ module.exports = function(app){
   )
 
   app.use(
-    createProxyMiddleware('/img', {
+    createProxyMiddleware('/img/*', {
         target: 'http://localhost:3001/',
         changeOrigin: true
     })
 )
 
 app.use(
-    createProxyMiddleware('/download', {
+    createProxyMiddleware('/download/*', {
         target: 'http://localhost:3001/',
         changeOrigin: true
     })

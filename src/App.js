@@ -6,6 +6,7 @@ import {BrowserRouter as BrowserRouter, Route} from 'react-router-dom';
 import DaelimMain from './daelim/DaelimMain';
 import Insert from './dbcontrol/insert';
 import DaelimPlan from './daelimplan/daelimplan';
+import DaelimcMainPage from './daelim/daelimcmainpage';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
                 <BrowserRouter>
                   {/* <DaelimMain/> */}
             
-              <Route exact path="/"  component={DaelimMain} />
+              <Route exact path="/"  component={DaelimcMainPage} />
               <Route path="/plan"  component={DaelimPlan} />
             
                 </BrowserRouter>

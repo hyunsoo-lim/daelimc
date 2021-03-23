@@ -96,7 +96,7 @@ class DaelimPlan extends React.Component{
 
 
       deleteData = async() => {
-            
+              console.log("delllll");
         let checkData = [];
         for(let i=0; i<this.state.product.length; i++){
             if(this.state.product[i].checked){
