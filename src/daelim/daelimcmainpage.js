@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from "styled-components"
-
+import {useSpring, animated} from 'react-spring'
+import MenuAnimation from './menuani';
 
 const NavbarMenu = styled.div
   `
@@ -20,9 +21,7 @@ background :#38cbae;
 
 const NavbarMenuUl = styled.ul
   `
-display: block;
-position : relative;
-float: left;
+
 `
 
 const NavbarMenuLi = styled.li
@@ -36,16 +35,6 @@ float: left;
 font-size: 14px;
 font-weight: 600;
 text-transform: uppercase;
-
-// &:hover>span{
-//  color :#5CD1E5;
-// }
-
-// &:hover ul{
-//   display: block;
-// }
-
-
 `
 
 const NavbarMenuUl2 = styled.ul
@@ -66,7 +55,7 @@ display:inline-block;
 margin : 0;
 padding : 0;
 text-align : left;
-width :140%;
+width :120%;
 `
 
 
@@ -77,9 +66,10 @@ class DaelimcMainPage extends React.Component {
     this.state = { activeItem: 'home', activeA: 'blue', isHovering : [false,false,false,false] }
     this.handleItemClick = this.handleItemClick.bind(this);
     this.handleMouseHover = this.handleMouseHover.bind(this);
+    this.handleMouseHover1 = this.handleMouseHover1.bind(this);
     this.handleMouseHover2 = this.handleMouseHover2.bind(this);
     this.handleMouseHover3 = this.handleMouseHover3.bind(this);
-    this.handleMouseHover4 = this.handleMouseHover4.bind(this);
+   
   }
 
 
@@ -88,25 +78,59 @@ class DaelimcMainPage extends React.Component {
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
   handleMouseHover =(e) =>{
-    console.log(e.target.value);
-    this.setState (this.toggleHoverState); }
-  handleMouseHover2 (){this.setState (this.toggleHoverState); }
-  handleMouseHover3 (){this.setState (this.toggleHoverState); }
-  handleMouseHover4 (){this.setState (this.toggleHoverState); }
-
-
-  toggleHoverState(state , e) {
-    console.log(state.isHovering)
-    // console.log(e.target.value)
-    return {
-      isHovering: !state.isHovering
-    };
+    const nextState = this.state.isHovering;
+    if(nextState[0])
+      nextState[0] = false 
+    else{
+      nextState[0] = true
+      nextState[1] = false 
+       }
+    this.setState ({isHovering: nextState}) 
   }
+  handleMouseHover1 =(e) =>{
+    const nextState = this.state.isHovering;
+    if(nextState[1])
+      nextState[1] = false 
+    else{
+      nextState[1] = true
+      nextState[0] = false 
+      nextState[2] = false 
+    }
+    this.setState ({isHovering: nextState}) 
+  }
+  handleMouseHover2 =(e) =>{
+    const nextState = this.state.isHovering;
+    if(nextState[2])
+      nextState[2] = false 
+    else{
+      nextState[2] = true
+      nextState[1] = false 
+      nextState[3] = false 
+   }
+    this.setState ({isHovering: nextState}) 
+  }
+  handleMouseHover3 =(e) =>{
+    const nextState = this.state.isHovering;
+    if(nextState[3])
+      nextState[3] = false 
+    else{
+      nextState[3] = true
+      nextState[2] = false 
+   }
+    this.setState ({isHovering: nextState}) 
+  }
+    
+    
+ 
+
+
+  
 
   componentDidMount() {
   }
 
   render() {
+   
     return (
 
       <NavbarMenu>
@@ -119,27 +143,25 @@ class DaelimcMainPage extends React.Component {
         {/* <!-- menu start --> */}
         <NavbarMenuSide>
           <NavbarMenuUl>
-            <NavbarMenuLi value='0' onMouseEnter={this.handleMouseHover} onmouseleave={this.handleMouseHover}> <span>Home</span>
-            {this.state.isHovering
-              && <NavbarMenuUl2>
-                   <NavbarMenuLi2><span>It Home Page</span></NavbarMenuLi2>
-                   <NavbarMenuLi2><span>It Dark Home Page</span></NavbarMenuLi2>
-                </NavbarMenuUl2>}
+            <NavbarMenuLi value='0' onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}> <span>Home</span>
+            {this.state.isHovering[0]
+              && <MenuAnimation/>}
+               
             </NavbarMenuLi>
 
             <NavbarMenuLi><span>About Us</span></NavbarMenuLi>
 
-            <NavbarMenuLi value='1' onMouseEnter={this.handleMouseHover2} onmouseleave={this.handleMouseHover2}> <span>Service</span>
-            {this.state.isHovering
+            <NavbarMenuLi value='1' onMouseEnter={this.handleMouseHover1} onMouseLeave={this.handleMouseHover1}> <span>Service</span>
+            {this.state.isHovering[1]
               &&<NavbarMenuUl2>
                 <NavbarMenuLi2><span>Services list</span></NavbarMenuLi2>
                 <NavbarMenuLi2><span>Services Detail</span></NavbarMenuLi2>
               </NavbarMenuUl2>}
             </NavbarMenuLi>
 
-            <NavbarMenuLi value='2' onMouseEnter={this.handleMouseHover3} onmouseleave={this.handleMouseHover3}> <span>Pages</span>
+            <NavbarMenuLi value='2' onMouseEnter={this.handleMouseHover2} onMouseLeave={this.handleMouseHover2}> <span>Pages</span>
              
-              {this.state.isHovering
+              {this.state.isHovering[2]
               &&<NavbarMenuUl2>
                 <NavbarMenuLi2><span>Career</span></NavbarMenuLi2>
                 <NavbarMenuLi2><span>Pricing</span></NavbarMenuLi2>
@@ -149,8 +171,8 @@ class DaelimcMainPage extends React.Component {
               </NavbarMenuUl2>}
             </NavbarMenuLi>
 
-            <NavbarMenuLi value='3' onMouseEnter={this.handleMouseHover4} onmouseleave={this.handleMouseHover4}> <span>Contact</span>
-            {this.state.isHovering
+            <NavbarMenuLi value='3' onMouseEnter={this.handleMouseHover3} onMouseOut={this.handleMouseHover3}> <span>Contact</span>
+            {this.state.isHovering[3]
               &&<NavbarMenuUl2>
                 <NavbarMenuLi2><span>Contact Page 1</span></NavbarMenuLi2>
                 <NavbarMenuLi2><span>Contact Page 2</span></NavbarMenuLi2>
