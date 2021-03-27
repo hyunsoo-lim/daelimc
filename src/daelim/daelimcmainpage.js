@@ -1,136 +1,194 @@
 import React from 'react';
-import './daelimc.css';
+import styled, { css } from "styled-components"
+
+
+const NavbarMenu = styled.div
+  `
+width: auto;
+background :#38cbae;
+height: 100px;
+`
+
+
+const NavbarMenuSide = styled.div
+  `
+float: right;
+width: auto;
+background :#38cbae;
+`
+
+
+const NavbarMenuUl = styled.ul
+  `
+display: block;
+position : relative;
+float: left;
+`
+
+const NavbarMenuLi = styled.li
+  `
+margin-top : 10px;
+padding-right: 50px;
+display: block;
+position : relative;
+float: left;
+
+font-size: 14px;
+font-weight: 600;
+text-transform: uppercase;
+
+// &:hover>span{
+//  color :#5CD1E5;
+// }
+
+// &:hover ul{
+//   display: block;
+// }
+
+
+`
+
+const NavbarMenuUl2 = styled.ul
+  `
+
+// display : none;
+position:absolute;
+margin : 0;
+padding : 0;
+transition: all .5s ease;
+`
+
+const NavbarMenuLi2 = styled.li
+  `
+background :#38cbae;
+border solid 1px;
+display:inline-block;
+margin : 0;
+padding : 0;
+text-align : left;
+width :140%;
+`
+
+
 class DaelimcMainPage extends React.Component {
 
   constructor(props) {
     super(props)
+    this.state = { activeItem: 'home', activeA: 'blue', isHovering : [false,false,false,false] }
+    this.handleItemClick = this.handleItemClick.bind(this);
+    this.handleMouseHover = this.handleMouseHover.bind(this);
+    this.handleMouseHover2 = this.handleMouseHover2.bind(this);
+    this.handleMouseHover3 = this.handleMouseHover3.bind(this);
+    this.handleMouseHover4 = this.handleMouseHover4.bind(this);
   }
 
 
+
+
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleMouseHover =(e) =>{
+    console.log(e.target.value);
+    this.setState (this.toggleHoverState); }
+  handleMouseHover2 (){this.setState (this.toggleHoverState); }
+  handleMouseHover3 (){this.setState (this.toggleHoverState); }
+  handleMouseHover4 (){this.setState (this.toggleHoverState); }
+
+
+  toggleHoverState(state , e) {
+    console.log(state.isHovering)
+    // console.log(e.target.value)
+    return {
+      isHovering: !state.isHovering
+    };
+  }
+
   componentDidMount() {
-  
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src =
-      "./menumaker.js";
-    document.body.appendChild(script);
   }
 
   render() {
-    return(
-    <div>
-      <header id="default_header" class="header_style_1">
-        {/* <!-- header top --> */}
-        <div class="header_top">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-8">
-                <div class="full">
-                  <div class="topbar-left">
-                    <ul class="list-inline">
-                      <li> <span class="topbar-label"><i class="fa  fa-home"></i></span> <span class="topbar-hightlight">540 Lorem Ipsum New York, AB 90218</span> </li>
-                      <li> <span class="topbar-label"><i class="fa fa-envelope-o"></i></span> <span class="topbar-hightlight"><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></span> </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 right_section_header_top">
-                <div class="float-left">
-                  <div class="social_icon">
-                    <ul class="list-inline">
-                      <li><a class="fa fa-facebook" href="https://www.facebook.com/" title="Facebook" target="_blank"></a></li>
-                      <li><a class="fa fa-google-plus" href="https://plus.google.com/" title="Google+" target="_blank"></a></li>
-                      <li><a class="fa fa-twitter" href="https://twitter.com" title="Twitter" target="_blank"></a></li>
-                      <li><a class="fa fa-linkedin" href="https://www.linkedin.com" title="LinkedIn" target="_blank"></a></li>
-                      <li><a class="fa fa-instagram" href="https://www.instagram.com" title="Instagram" target="_blank"></a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="float-right">
-                  <div class="make_appo"> <a class="btn white_btn" href="make_appointment.html">Make Appointment</a> </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* <!-- end header top --> */}
-        {/* <!-- header bottom --> */}
-        <div class="header_bottom">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-                {/* <!-- logo start --> */}
-                <div class="logo"> <a href="it_home.html"><img src="images/logos/it_logo.png" alt="logo" /></a> </div>
-                {/* <!-- logo end --> */}
-              </div>
-              <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-                {/* <!-- menu start --> */}
-                <div class="menu_side">
-                  <div id="navbar_menu">
-                    <ul class="first-ul">
-                      <li> <a class="active" href="it_home.html">Home</a>
-                        <ul>
-                          <li><a href="it_home.html">It Home Page</a></li>
-                          <li><a href="it_home_dark.html">It Dark Home Page</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="it_about.html">About Us</a></li>
-                      <li> <a href="it_service.html">Service</a>
-                        <ul>
-                          <li><a href="it_service_list.html">Services list</a></li>
-                          <li><a href="it_service_detail.html">Services Detail</a></li>
-                        </ul>
-                      </li>
-                      <li> <a href="it_blog.html">Blog</a>
-                        <ul>
-                          <li><a href="it_blog.html">Blog List</a></li>
-                          <li><a href="it_blog_grid.html">Blog Grid</a></li>
-                          <li><a href="it_blog_detail.html">Blog Detail</a></li>
-                        </ul>
-                      </li>
-                      <li> <a href="#">Pages</a>
-                        <ul>
-                          <li><a href="it_career.html">Career</a></li>
-                          <li><a href="it_price.html">Pricing</a></li>
-                          <li><a href="it_faq.html">Faq</a></li>
-                          <li><a href="it_privacy_policy.html">Privacy Policy</a></li>
-                          <li><a href="it_error.html">Error 404</a></li>
-                        </ul>
-                      </li>
-                      <li> <a href="it_shop.html">Shop</a>
-                        <ul>
-                          <li><a href="it_shop.html">Shop List</a></li>
-                          <li><a href="it_shop_detail.html">Shop Detail</a></li>
-                          <li><a href="it_cart.html">Shopping Cart</a></li>
-                          <li><a href="it_checkout.html">Checkout</a></li>
-                        </ul>
-                      </li>
-                      <li> <a href="it_contact.html">Contact</a>
-                        <ul>
-                          <li><a href="it_contact.html">Contact Page 1</a></li>
-                          <li><a href="it_contact_2.html">Contact Page 2</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="search_icon">
-                    <ul>
-                      <li><a href="#" data-toggle="modal" data-target="#search_bar"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-                {/* <!-- menu end --> */}
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* <!-- header bottom end --> */}
-      </header>
-      {/* <!-- end header --> */}
-      <script src="./menumaker.js"></script>
-    </div>
+    return (
+
+      <NavbarMenu>
+
+        {/* <!-- logo start --> */}
+        <div class="logo"> <a href="it_home.html"><img src="images/logos/it_logo.png" alt="logo" /></a> </div>
+        {/* <!-- logo end --> */}
+
+
+        {/* <!-- menu start --> */}
+        <NavbarMenuSide>
+          <NavbarMenuUl>
+            <NavbarMenuLi value='0' onMouseEnter={this.handleMouseHover} onmouseleave={this.handleMouseHover}> <span>Home</span>
+            {this.state.isHovering
+              && <NavbarMenuUl2>
+                   <NavbarMenuLi2><span>It Home Page</span></NavbarMenuLi2>
+                   <NavbarMenuLi2><span>It Dark Home Page</span></NavbarMenuLi2>
+                </NavbarMenuUl2>}
+            </NavbarMenuLi>
+
+            <NavbarMenuLi><span>About Us</span></NavbarMenuLi>
+
+            <NavbarMenuLi value='1' onMouseEnter={this.handleMouseHover2} onmouseleave={this.handleMouseHover2}> <span>Service</span>
+            {this.state.isHovering
+              &&<NavbarMenuUl2>
+                <NavbarMenuLi2><span>Services list</span></NavbarMenuLi2>
+                <NavbarMenuLi2><span>Services Detail</span></NavbarMenuLi2>
+              </NavbarMenuUl2>}
+            </NavbarMenuLi>
+
+            <NavbarMenuLi value='2' onMouseEnter={this.handleMouseHover3} onmouseleave={this.handleMouseHover3}> <span>Pages</span>
+             
+              {this.state.isHovering
+              &&<NavbarMenuUl2>
+                <NavbarMenuLi2><span>Career</span></NavbarMenuLi2>
+                <NavbarMenuLi2><span>Pricing</span></NavbarMenuLi2>
+                <NavbarMenuLi2><span>Faq</span></NavbarMenuLi2>
+                <NavbarMenuLi2><span>Privacy Policy</span></NavbarMenuLi2>
+                <NavbarMenuLi2><span>Error 404</span></NavbarMenuLi2>
+              </NavbarMenuUl2>}
+            </NavbarMenuLi>
+
+            <NavbarMenuLi value='3' onMouseEnter={this.handleMouseHover4} onmouseleave={this.handleMouseHover4}> <span>Contact</span>
+            {this.state.isHovering
+              &&<NavbarMenuUl2>
+                <NavbarMenuLi2><span>Contact Page 1</span></NavbarMenuLi2>
+                <NavbarMenuLi2><span>Contact Page 2</span></NavbarMenuLi2>
+              </NavbarMenuUl2>}
+            </NavbarMenuLi>
+          </NavbarMenuUl>
+
+        </NavbarMenuSide>
+      </NavbarMenu>
+
+
+
+
+      // <Segment inverted color='blue'>
+      //   <Menu inverted secondary pointing size='large'>
+      //     <Menu.Item
+      //       name='home'
+      //       active={this.state.activeItem === 'home'}
+      //       onClick={this.handleItemClick}
+      //       // color={this.state.activeA}
+
+      //     />
+      //     <Menu.Item
+      //       name='messages'
+      //       active={this.state.activeItem === 'messages'}
+      //       onClick={this.handleItemClick}
+      //       // color={this.state.activeA}
+      //     />
+      //     <Menu.Item
+      //       name='friends'
+      //       active={this.state.activeItem === 'friends'}
+      //       onClick={this.handleItemClick}
+      //       // color={this.state.activeA}
+      //     />
+      //   </Menu>
+      //  </Segment>
     )
   }
 }
 
-export default DaelimcMainPage ;
+export default DaelimcMainPage;
