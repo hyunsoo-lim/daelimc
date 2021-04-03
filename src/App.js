@@ -17,7 +17,6 @@ function App() {
         </head>
 
         <body>
-            <p class="title">Daelim Control</p>
                 <BrowserRouter>
                   {/* <DaelimMain/> */}
             

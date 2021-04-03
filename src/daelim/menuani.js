@@ -5,12 +5,13 @@ import styled, { css } from "styled-components"
 const NavbarMenuLi2 = styled.li
     `
 background :#38cbae;
-border solid 1px;
 display:inline-block;
 margin : 0;
 padding : 0;
 text-align : left;
 width :120%;
+width:'200px',
+height:'50px'
 `
 
 function MenuAnimation() {
@@ -20,7 +21,9 @@ function MenuAnimation() {
             from: { opacity: 0 },
             margin: 0,
             padding: 0,
-            position: 'absolute'
+            position: 'absolute',
+          
+            transition: '0.2s'
         })
 return (
     <animated.ul style={props}>
