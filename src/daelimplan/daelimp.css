@@ -13,7 +13,7 @@ body,html{
 #logo_img{
 	width:100px;
 	height:100px;
-	background: url(../img/avatar.png)
+	/* background: url(../img/avatar.png) */
 }
 
 #wrapper-header{
@@ -84,7 +84,7 @@ body,html{
 #fleche-nav-1,#fleche-nav-2,#fleche-nav-3{
 	float:left;
 	margin-top:26px;
-	background: url(../img/fleche-nav.svg) no-repeat ;
+	/* background: url(../img/fleche-nav.svg) no-repeat ; */
 	width:5px;
 	height:10px;
 	margin-left:5px;

@@ -1,5 +1,4 @@
 
-import './daelim.css';
 import {BrowserRouter as BrowseRouter,Switch,Route} from 'react-router-dom';
 //BrowserRouter 가 먼저 적혀있지 않으면 이상동작함;;;;;;;;
 import  Home from './page/page_home';

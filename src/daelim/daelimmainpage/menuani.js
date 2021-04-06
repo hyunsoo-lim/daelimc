@@ -1,3 +1,4 @@
+import React from 'react';
 import { useSpring, animated } from 'react-spring'
 import styled, { css } from "styled-components"
 
@@ -8,10 +9,12 @@ background :#38cbae;
 display:inline-block;
 margin : 0;
 padding : 0;
-text-align : left;
-width :120%;
-width:'200px',
-height:'50px'
+text-align : center;
+border solid 1px;
+width :100%;
+height:65px;
+font-size:16px;
+line-height: 65px;
 `
 
 function MenuAnimation() {
@@ -23,12 +26,13 @@ function MenuAnimation() {
             padding: 0,
             position: 'absolute',
           
-            transition: '0.2s'
+            transition: '0.1s'
         })
 return (
     <animated.ul style={props}>
-        <NavbarMenuLi2><span>It Home Page</span></NavbarMenuLi2>
-        <NavbarMenuLi2><span>It Dark Home Page</span></NavbarMenuLi2>
+        <NavbarMenuLi2><span>유압장비</span></NavbarMenuLi2>
+        <NavbarMenuLi2><span>발전기</span></NavbarMenuLi2>
+        <NavbarMenuLi2><span>기타장비</span></NavbarMenuLi2>
     </animated.ul>
 )
 }
