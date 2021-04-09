@@ -1,15 +1,15 @@
 import React from 'react';
 import styled, { css } from "styled-components"
 import MenuAnimation from './menuani'
-import { useSpring, animated } from 'react-spring'
 import MenuUnderAnimation from './menuunderani';
-
+import { BrowserRouter as BrowserRouter, Link } from 'react-router-dom';
 
 const NavbarMenu = styled.div
   `
 width: auto;
 background :#38cbae;
 height: 100px;
+margin: 2px;
 `
 
 const NavbarMenuSide = styled.div
@@ -22,7 +22,7 @@ background :#38cbae;
 `
 
 const NavbarMenuUl = styled.ul
-`
+  `
 margin:0;
 `
 const NavbarMenuLi = styled.li
@@ -71,7 +71,7 @@ margin-top : 10px;
 `
 
 const NavbarMenuText = styled.span
-`
+  `
 height:100px;
 line-height: 100px;
 `
@@ -96,36 +96,53 @@ class Menu extends React.Component {
     this.handleMouseHover = this.handleMouseHover.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.handleLiActive = this.handleLiActive.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
- 
+
+    handleClick(linum) {
+        
+        // setTimeout(() => {
+            // css의 적용이 느려 timeout을 준다
+            document.getElementsByClassName("active").item(0).style.display = 'none'
+            document.getElementsByClassName("active").item(1).style.display = 'none'
+            document.getElementsByClassName("active").item(2).style.display = 'none'
+            document.getElementsByClassName("active").item(3).style.display = 'none'
+            document.getElementsByClassName("active").item(linum).style.display = 'block'
+            
+        // }, 100);
+    }
+
+
   handleMouseHover = (e) => {
     const nextState = this.state.isHovering;
-      nextState[0] = false
-      nextState[1] = false
-      nextState[2] = false
-      nextState[3] = false
-      nextState[e.currentTarget.value] = true
-      e.currentTarget.style.background = '#39B4CC'
-      if(e.currentTarget.value===3){}
-      else{
-        document.getElementById("menu3").style.backgroundColor ='#38cbae';
-      }
-      
+    nextState[0] = false
+    nextState[1] = false
+    nextState[2] = false
+    nextState[3] = false
+    nextState[e.currentTarget.value] = true
+    e.currentTarget.style.background = '#39B4CC'
+    if (e.currentTarget.value === 3) { }
+    else {
+      document.getElementById("menu3").style.backgroundColor = '#38cbae';
+    }
+
     this.setState({ isHovering: nextState })
   }
 
-  handleMouseLeave =(e)=>{
+  handleMouseLeave = (e) => {
     e.currentTarget.style.background = '#38cbae';
+    console.log(e.currentTarget.value);
+    // document.getElementsByClassName("active").item(1).style.display = 'block'
   }
 
 
-  handleLiActive(){
-    
-    document.getElementsByClassName("active").item(0).style.display='block'
-    document.getElementsByClassName("aa").item(0).style.display='none'
-    document.getElementsByClassName("aa").item(1).style.display='none'
-    document.getElementsByClassName("aa").item(2).style.display='none'
+  handleLiActive() {
+
+    document.getElementsByClassName("active").item(0).style.display = 'block'
+    document.getElementsByClassName("active").item(1).style.display = 'none'
+    document.getElementsByClassName("active").item(2).style.display = 'none'
+    document.getElementsByClassName("active").item(3).style.display = 'none'
   }
 
   componentDidMount() {
@@ -143,40 +160,40 @@ class Menu extends React.Component {
             <NavbarMenuUl>
               <NavbarMenuLi value='0' onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseLeave}>
                 <div>
-                  <NavbarMenuText>Home</NavbarMenuText>
-                  <NavbarMenuUnderLine className='active'/>
+                  <Link to="/" onClick={() => this.handleClick(0)}><NavbarMenuText>홈</NavbarMenuText></Link>
+                  <NavbarMenuUnderLine className='active' />
                   {this.state.isHovering[0]
-                  &&<MenuUnderAnimation />}
+                    && <MenuUnderAnimation />}
                 </div>
               </NavbarMenuLi>
 
               <NavbarMenuLi value='1' onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseLeave}>
                 <div>
-                  <NavbarMenuText>About us</NavbarMenuText>
-                  <NavbarMenuUnderLine className='aa'/>
+                  <Link to="/about" onClick={() => this.handleClick(1)}><NavbarMenuText>회사소개</NavbarMenuText></Link>
+                  <NavbarMenuUnderLine className='active' />
                   {this.state.isHovering[1]
-                  &&<MenuUnderAnimation />}
+                    && <MenuUnderAnimation />}
                 </div>
               </NavbarMenuLi>
 
               <NavbarMenuLi value='2' onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseLeave}>
                 <div>
-                  <NavbarMenuText>Service</NavbarMenuText>
-                  <NavbarMenuUnderLine className='aa'/>
+                  <Link to="/product" onClick={() => this.handleClick(2)}><NavbarMenuText>제품</NavbarMenuText></Link>
+                  <NavbarMenuUnderLine className='active' />
                   {this.state.isHovering[2]
-                  &&<MenuUnderAnimation />}
+                    && <MenuUnderAnimation />}
                 </div>
+                {this.state.isHovering[2]
+                  && <MenuAnimation />}
               </NavbarMenuLi>
 
               <NavbarMenuLi id="menu3" value='3' onMouseEnter={this.handleMouseHover} >
                 <div>
-                  <NavbarMenuText>Reperence</NavbarMenuText>
-                  <NavbarMenuUnderLine className='aa'/>
+                  <Link to="/contact" onClick={() => this.handleClick(3)}><NavbarMenuText>문의</NavbarMenuText></Link>
+                  <NavbarMenuUnderLine className='active' />
                   {this.state.isHovering[3]
-                  &&<MenuUnderAnimation />}
+                    && <MenuUnderAnimation />}
                 </div>
-                {this.state.isHovering[3]
-                  && <MenuAnimation/>}
               </NavbarMenuLi>
 
             </NavbarMenuUl>

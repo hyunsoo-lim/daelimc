@@ -5,7 +5,7 @@ import MenuAnimation from './daelimMainPage/menuani'
 
 
 const NavbarMenu = styled.div
-  `
+`
 width: auto;
 background :#38cbae;
 height: 100px;
