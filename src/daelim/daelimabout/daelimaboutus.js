@@ -1,4 +1,5 @@
 import React from 'react';
+import AboutMenu from './aboutmenu';
 
 
 class DaelimcAboutUs extends React.Component {
@@ -18,7 +19,7 @@ class DaelimcAboutUs extends React.Component {
 
     return (
       <div>
-       DaelimcAboutUs
+         <AboutMenu/>
       </div>
     )
   }

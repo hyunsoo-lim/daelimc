@@ -1,24 +1,29 @@
-import React from 'react';
+import React ,  { useState } from 'react';
 import { useSpring, animated } from 'react-spring'
 import styled, { css } from "styled-components"
 
 
+const NavbarNavbarMenuLi2Back =styled.ul
+`
+width :100%;
+
+margin : 0;
+padding : 5;
+`
 const NavbarMenuLi2 = styled.li
     `
 background :#38cbae;
 display:inline-block;
-margin : 0;
-padding : 0;
 text-align : center;
 border solid 1px;
-width :100%;
-height:65px;
+width :80%;
+height:55px;
 font-size:16px;
 line-height: 65px;
 `
 
-function MenuAnimation() {
-    const props = useSpring(
+function MenuAnimation(props) {
+    const prop = useSpring(
         {
             opacity: 1,
             from: { opacity: 0 },
@@ -28,12 +33,21 @@ function MenuAnimation() {
           
             transition: '0.1s'
         })
+        
+       const handelr=(e)=>{
+            console.log("aaaaaaaa");
+        }
+
 return (
-    <animated.ul style={props}>
-        <NavbarMenuLi2><span>유압장비</span></NavbarMenuLi2>
-        <NavbarMenuLi2><span>발전기</span></NavbarMenuLi2>
+    <animated.div style={prop}   >
+        <NavbarNavbarMenuLi2Back onMouseEnter={props.handelr} onMouseLeave={props.handelr}>
+        <NavbarMenuLi2  onMouseEnter={handelr} onMouseLeave={handelr}><span>유압장비</span></NavbarMenuLi2>
+       
+        <NavbarMenuLi2 onMouseEnter={props.handelr}><span>발전기</span></NavbarMenuLi2>
+       
         <NavbarMenuLi2><span>기타장비</span></NavbarMenuLi2>
-    </animated.ul>
+        </NavbarNavbarMenuLi2Back>
+    </animated.div>
 )
 }
 

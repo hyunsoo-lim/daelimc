@@ -37,8 +37,6 @@ export default function SimpleSlider() {
         // arrows: true,
         autoplay: true,
         autoplaySpeed: 10000,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />
     };
     return (
         <Slider {...settings}>

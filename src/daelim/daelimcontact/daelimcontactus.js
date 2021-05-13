@@ -1,4 +1,5 @@
 import React from 'react';
+import FromEmail from './contactform';
 
 
 class DaelimcContactUs extends React.Component {
@@ -18,7 +19,7 @@ class DaelimcContactUs extends React.Component {
 
     return (
       <div>
-       DaelimcContactUs
+        <FromEmail/>
       </div>
     )
   }

@@ -9,6 +9,7 @@ const NavbarMenu = styled.div
 width: auto;
 background :#38cbae;
 height: 100px;
+z-index: 0;
 `
 
 const NavbarMenuSide = styled.div
@@ -120,7 +121,7 @@ class MenuMain extends React.Component {
                 <div>
                   <NavbarMenuText>About us</NavbarMenuText>
                   <NavbarMenuUnder/>
-                </div>
+                </div>gf.,
               </NavbarMenuLi>
 
               <NavbarMenuLi value='2' onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>
@@ -136,7 +137,7 @@ class MenuMain extends React.Component {
                   <NavbarMenuUnder />
                 </div>
                 {this.state.isHovering[3]
-                  && <MenuAnimation/>}
+                  && <MenuAnimation handler= {this.handleMouseHoverBottom}/>}
               </NavbarMenuLi>
 
             </NavbarMenuUl>
