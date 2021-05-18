@@ -5,8 +5,8 @@ import { useSpring, animated } from 'react-spring'
 const NavbarMenuUnder = styled.div
   `
 width : 100%;
-height : 10px;
-background :#ffffff;
+height : 6px;
+background :#489CFF;
 position : absolute;
 left : 0;
 bottom : 0;

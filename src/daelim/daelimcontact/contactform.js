@@ -7,13 +7,20 @@ init("user_HAgUXtKyQHr630h7a4gCQ");
 
 
 const ContectBody = styled.div
-`
+    `
+margin-top : 20px;
 width: 1080px;
 margin-left:auto;
 margin-right:auto;
 z-index: 0;
-padding:300px;
-border : 1px solid;
+`
+
+const FormBody = styled.div
+    `
+margin-top : 2px;
+width: 500px;
+margin-left:auto;
+margin-right:auto;
 `
 
 
@@ -48,23 +55,28 @@ class FromEmail extends React.Component {
     render() {
 
         return (
-            <ContectBody ref={this.wrapper}>
-                <Form>
-                    <Form.Group>
-                        <Form.Input label='성함' placeholder='성함' width={6} />
-                    </Form.Group>
+            <ContectBody>
+                <FormBody ref={this.wrapper}>
+                    <Form>
+                        <Form.Group>
+                            <Form.Input label='이름' placeholder='이름' width={16} />
+                        </Form.Group>
 
-                    <Form.Group>
-                       
-                       <Form.Input label='전화번호' placeholder='전화번호' width={6} />
-                   </Form.Group>
-                    <Form.Group>
-                        <Form.TextArea label='문의 내용' placeholder='문의 내용' width={8} />
-                    </Form.Group>
-                   
-                    <Button onClick={this.sendEmail}>문의하기</Button>
-                </Form>
+                        <Form.Group>
+                            <Form.Input label='전화번호' placeholder='전화번호' width={16} />
+                        </Form.Group>
 
+                        <Form.Group>
+                            <Form.Input label='이메일주소' placeholder='이메일주소' width={16} />
+                        </Form.Group>
+
+                        <Form.Group>
+                            <Form.TextArea label='문의 내용' placeholder='문의 내용' width={16} style={{ minHeight: 200 }} />
+                        </Form.Group>
+
+                        <Button onClick={this.sendEmail}>문의하기</Button>
+                    </Form>
+                </FormBody>
 
 
             </ContectBody>

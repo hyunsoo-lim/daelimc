@@ -15,7 +15,6 @@ const LogoSide =styled.div
 `
 width: 440px;
 height:120px;
-background :#38cbae;
 float:left;
 margin:0;
 padding:0;
@@ -25,7 +24,6 @@ const NavbarMenuSide = styled.div
 width: 640px;
 height:120px;
 float:left;
-background :#38cbae;
 margin:0;
 padding:0;
 `
@@ -44,7 +42,7 @@ position : relative;
 float: left;
 font-size: 20px;
 font-weight: 550;
-color:#ffffff;
+color:#5A5A5A;
 text-transform: uppercase;
 text-align : center;
 `
@@ -88,8 +86,8 @@ line-height: 120px;
 const NavbarMenuUnderLine = styled.div
   `
 width : 100%;
-height : 10px;
-background :#ffffff;
+height : 6px;
+background :#489CFF;
 position : absolute;
 left : 0;
 bottom : 0;
@@ -100,7 +98,8 @@ const NavbarBottom = styled.div
 `
 clear: both;
 width : 100%;
-height : 10px;
+height : 1px;
+background: #A2A2A2;
 `
 
 
@@ -140,7 +139,7 @@ class Menu extends React.Component {
       nextState[2] = false
       nextState[3] = false
       nextState[e.currentTarget.value] = true
-      e.currentTarget.style.background = '#39B4CC'
+      e.currentTarget.style.color = '#489CFF'
     
     // if (e.currentTarget.value === 3) { }
     // else {
@@ -152,7 +151,7 @@ class Menu extends React.Component {
 
   handleMouseLeave = (e) => {
  
-       e.currentTarget.style.background = '#38cbae';
+       e.currentTarget.style.color = '#5A5A5A';
       console.log(e.currentTarget.value);
     
     // document.getElementsByClassName("active").item(1).style.display = 'block'
