@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import DaelimcProduct from './daelimproduct/product';
 import DaelimcContactUs from './daelimcontact/daelimcontactus';
 import DaelimcAboutUs from './daelimabout/daelimaboutus';
+import DaelimcMainFooter from './daelimmainpage/footer';
 
 
 const TopHeader = styled.div
@@ -16,6 +17,7 @@ height:40px
 const Body=styled.div
 `
 width:1080px;
+min-height:100%;
 margin: 0 auto;
 zIndex: '-1';
 `
@@ -50,6 +52,7 @@ class DaelimcMainPage extends React.Component {
             </Switch>
          
         </Body>
+        <DaelimcMainFooter/>
       </div>
       </Router>
     )

@@ -20,7 +20,7 @@ function SampleNextArrow(props) {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", background: "green" }}
+        style={{ ...style, display: "block", background: "green"}}
         onClick={onClick}
       />
     );
@@ -33,6 +33,7 @@ export default function SimpleSlider() {
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
+        adaptiveHeight:true,
         // fade:true,
         // arrows: true,
         autoplay: true,
@@ -41,13 +42,13 @@ export default function SimpleSlider() {
     return (
         <Slider {...settings}>
             <div>
-               <img src ='images1111.jpg'/>
+               <img src ='engine01.jpg'/>
             </div>
             <div>
-                <img src ='images1111.jpg'/>
+                <img src ='engine01.jpg'/>
             </div>
             <div>
-                <img src ='images1111.jpg'/>
+                <img src ='engine01.jpg'/>
             </div>
         </Slider>
     );

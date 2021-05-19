@@ -4,6 +4,14 @@ import MenuAnimation from './menuani'
 import MenuUnderAnimation from './menuunderani';
 import { BrowserRouter as BrowserRouter, Link } from 'react-router-dom';
 
+
+const Logo =styled.img
+`
+width: 120px;
+height: 120px;
+object-fit: cover;
+`
+
 const NavbarMenu = styled.div
   `
 width: 1080px;
@@ -92,6 +100,15 @@ position : absolute;
 left : 0;
 bottom : 0;
 margin-top : 10px;
+`
+
+
+const NavbarBottom2 = styled.div
+`
+clear: both;
+width : 100%;
+height : 10px;
+background: #ffffff;
 `
 
 const NavbarBottom = styled.div
@@ -214,8 +231,10 @@ class Menu extends React.Component {
     return (
       <div>
         <NavbarMenu>
-          <LogoSide/>
-          {/* <!-- menu start --> */}
+          <LogoSide>
+          <Logo src="/logo192.png"/>
+          </LogoSide>
+         
           <NavbarMenuSide>
             <NavbarMenuUl>
               <NavbarMenuLi value='0' onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseLeave}>
@@ -260,7 +279,8 @@ class Menu extends React.Component {
           </NavbarMenuSide>
         </NavbarMenu>
 
-        <NavbarBottom  onMouseEnter={this.handleMouseHoverBottom}/>
+        <NavbarBottom  />
+        <NavbarBottom2 onMouseEnter={this.handleMouseHoverBottom}/>
         {/* <!-- menu end --> */}
       </div>
     )

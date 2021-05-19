@@ -4,8 +4,8 @@ import SimpleSlider from './reactSlider'
 
 const BodyMainDiv = styled.div
 `
-background : #38cbae;
-height : 100px;
+border: 1px solid ;
+min-height : 500px;
 margin-top : 30px;
 margin-right : 2px;
 margin-left :  2px;
