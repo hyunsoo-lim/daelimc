@@ -37,18 +37,18 @@ export default function SimpleSlider() {
         // fade:true,
         // arrows: true,
         autoplay: true,
-        autoplaySpeed: 10000,
+        autoplaySpeed: 4000,
     };
     return (
         <Slider {...settings}>
             <div>
-               <img src ='engine01.jpg'/>
+               <img src ='vimg.jpg'/>
             </div>
             <div>
-                <img src ='engine01.jpg'/>
+                <img src ='vimg.jpg'/>
             </div>
             <div>
-                <img src ='engine01.jpg'/>
+                <img src ='vimg.jpg'/>
             </div>
         </Slider>
     );

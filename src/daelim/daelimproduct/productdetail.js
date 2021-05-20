@@ -5,7 +5,7 @@ import axios from 'axios';
 
 
 
-class DaelimPlanDetail extends React.Component{
+class DaelimProductDetail extends React.Component{
 
     constructor(props){
         super(props)
@@ -62,4 +62,4 @@ class DaelimPlanDetail extends React.Component{
     }
 }
 
-export default DaelimPlanDetail;
+export default DaelimProductDetail;

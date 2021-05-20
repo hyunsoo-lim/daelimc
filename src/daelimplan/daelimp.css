@@ -167,7 +167,7 @@ body,html{
 }
 
 .pagination-ul li.currentpage{
-	background-color: #38cbae;
+	/* background-color: #38cbae; */
 	color:#38cbae;
 }
 

@@ -1,14 +1,9 @@
 import  React from "react";
 import pannel from "../../images/pannel.jpeg"
-import {BrowserRouter as BrowserRouter,Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class ProductDTO extends React.Component{
-
-    constructor(props){
-            super(props);
-    }
-
-     
+ 
    
 
     render(){
@@ -21,7 +16,7 @@ class ProductDTO extends React.Component{
             <figure class="white">
                
                 <Link to ={{
-                    pathname :'/plan/detail/$}',
+                    pathname :'/detail',
                     state: {product: product}        
                 }}>
                    

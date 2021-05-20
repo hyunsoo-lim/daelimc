@@ -7,6 +7,8 @@ import DaelimcProduct from './daelimproduct/product';
 import DaelimcContactUs from './daelimcontact/daelimcontactus';
 import DaelimcAboutUs from './daelimabout/daelimaboutus';
 import DaelimcMainFooter from './daelimmainpage/footer';
+import DaelimProductDetail from './daelimproduct/productdetail';
+
 
 
 const TopHeader = styled.div
@@ -16,10 +18,7 @@ height:40px
 
 const Body=styled.div
 `
-width:1080px;
-min-height:100%;
-margin: 0 auto;
-zIndex: '-1';
+width:1920px;
 `
 
 class DaelimcMainPage extends React.Component {
@@ -49,6 +48,7 @@ class DaelimcMainPage extends React.Component {
               <Route path="/product" component={DaelimcProduct} />
               <Route path="/about" component={DaelimcAboutUs} />
               <Route path="/contact" component={DaelimcContactUs} />
+              <Route path="/detail" component={DaelimProductDetail}/>
             </Switch>
          
         </Body>

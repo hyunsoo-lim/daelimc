@@ -1,5 +1,5 @@
 import React from 'react';
-import './daelimp.css';
+// import './daelimp.css';
 import DaelimProductDTO from './daelim_product_dto';
 import ReactPaginate from "react-paginate";
 

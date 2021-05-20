@@ -16,8 +16,8 @@ function App() {
 
         <body>
 
-          {/* <Route exact path="/home" component={DaelimcMainPage} />
-          <Route path="/plan" component={DaelimPlan} /> */}
+          {/* <Route exact path="/" component={DaelimcMainPage} /> */}
+          {/* <Route path="/plan" component={DaelimPlan} /> */}
 
 
           <DaelimcMainPage />
