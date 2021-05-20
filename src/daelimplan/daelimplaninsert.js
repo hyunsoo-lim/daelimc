@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import './daelimp.css';
+
 import MyEditor from './daelim_editor';
 import { withRouter } from 'react-router-dom';
 
