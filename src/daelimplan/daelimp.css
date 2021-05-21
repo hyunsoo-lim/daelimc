@@ -297,4 +297,9 @@ body,html{
 .work{
 	overflow:hidden;
 		height:auto;
+		opacity: 0;
+		transition: 'opacity 1s';
+		opacity: 1;
 }
+		
+		

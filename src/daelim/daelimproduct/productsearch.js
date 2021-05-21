@@ -3,7 +3,7 @@ import styled from "styled-components"
 import axios from 'axios';
 import ReactPaginate from "react-paginate";
 import ProductDTO from './productdto';
-
+import Fade from 'react-reveal/Fade';
 
 const AboutMenuLayout = styled.div
     `
@@ -14,7 +14,7 @@ postion:fixed;
 `
 
 const AboutMenuLayout2 = styled.div
-`
+    `
 width: 1080px;
 height : 40px; 
 background :#489CFF;
@@ -60,7 +60,7 @@ text-align: center;
 line-height:40px;
 `
 const InputDiv = styled.div
-`
+    `
 clear:both;
 margin: 0 auto;
 margin-top:40px;
@@ -70,7 +70,7 @@ height : 100px;
 `
 
 const FormEl = styled.form
-`
+    `
 width: 400px;
 height : 40px; 
 margin:0;
@@ -80,7 +80,7 @@ text-align:center;
 float:left;
 `
 const InputEl = styled.input
-`
+    `
 width: 340px;
 height : 40px; 
 line-height : 100px;
@@ -88,15 +88,15 @@ border: 1px solid #8f8f8f;
 
 `
 const ButtonEl = styled.button
-`
+    `
 width: 60px;
 height : 40px; 
 line-height : 100px;
 float:left;
 `
 
-const Body =styled.div
-`
+const Body = styled.div
+    `
 width:1080px;
 `
 
@@ -199,36 +199,37 @@ class ProductSearch extends React.Component {
 
                 <AboutMenuLayout id='submenu'>
                     <AboutMenuLayout2>
-                    <AboutMenu3>
-                        <AboutMenuText2>기타</AboutMenuText2>
-                    </AboutMenu3>
-                    <AboutMenu2>
-                        <AboutMenuText2>발전기</AboutMenuText2>
-                    </AboutMenu2>
-                    <AboutMenu1>
-                        <AboutMenuText1>유압</AboutMenuText1>
-                    </AboutMenu1>
+                        <AboutMenu3>
+                            <AboutMenuText2>기타</AboutMenuText2>
+                        </AboutMenu3>
+                        <AboutMenu2>
+                            <AboutMenuText2>발전기</AboutMenuText2>
+                        </AboutMenu2>
+                        <AboutMenu1>
+                            <AboutMenuText1>유압</AboutMenuText1>
+                        </AboutMenu1>
                     </AboutMenuLayout2>
                     {/* 검색 */}
                     <InputDiv>
                         <FormEl>
                             <InputEl type="text" onChange={this.searchHandler} />
                         </FormEl>
-                        <button style={{width:'60px' ,height:'40px'}} onClick={this.getData}>검색</button>
+                        <button style={{ width: '60px', height: '40px' }} onClick={this.getData}>검색</button>
                     </InputDiv>
                 </AboutMenuLayout>
 
+                <Fade>
+                    <Body>
+                        <section class="work">
 
-                <Body>
-                <section class="work">
+                            {product.map(product => {
+                                var a = <ProductDTO data={product} />
+                                return a;
+                            })}
 
-                    {product.map(product => {
-                        var a = <ProductDTO data={product} />
-                        return a;
-                    })}
-
-                </section>
-                </Body>
+                        </section>
+                    </Body>
+                </Fade>
                 <div>
                     <ReactPaginate
                         pageCount={this.state.count / 10}

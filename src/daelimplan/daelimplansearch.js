@@ -4,31 +4,31 @@ import DaelimProductDTO from './daelim_product_dto';
 import ReactPaginate from "react-paginate";
 
 
-class DaelimPlanSearch extends React.Component{
+class DaelimPlanSearch extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
     }
 
 
-    componentDidMount(){
+    componentDidMount() {
         console.log("search didmount");
         console.log(this.props.count);
-       
+
     }
 
 
-    
-    
 
-    render(){
+
+
+    render() {
         const product = this.props.searchdata;
-        
 
-        return(
+
+        return (
             <div>
                 {/* 검색 */}
-                <div id="main_tip_search"> 
+                <div id="main_tip_search">
                     <form>
                         <input type="text" name="search" id="tip_search_input" list="search" onChange={this.props.searchHandler} />
                     </form>
@@ -36,17 +36,19 @@ class DaelimPlanSearch extends React.Component{
                 </div>
 
                 <h2>data</h2>
-                <section class="work">
-                
-                {product.map(product =>{
-                    var a= <DaelimProductDTO  data={product} checkhandler={this.props.checkhandler}/>
-                    return a;
+               
+                    <section class="work" >
+
+                        {product.map(product => {
+                            var a = <DaelimProductDTO data={product} checkhandler={this.props.checkhandler} />
+                            return a;
                         })}
-                    
-                </section>
+
+                    </section>
+               
                 <div>
-                    <ReactPaginate 
-                        pageCount={this.props.count/10}
+                    <ReactPaginate
+                        pageCount={this.props.count / 10}
                         pageRangeDisplayed={10}
                         marginPagesDisplayed={0}
                         breakLabel={""}
@@ -57,11 +59,11 @@ class DaelimPlanSearch extends React.Component{
                         activeClassName={"currentpage"}
                         previousClassName={"pageLabel-btn"}
                         nextClassName={"pageLabel-btn"}
-                       />  
+                    />
                 </div>
             </div>
-            
-         )
+
+        )
     }
 }
 

@@ -2,6 +2,9 @@ import  React from "react";
 import pannel from "../images/pannel.jpeg"
 import {BrowserRouter as BrowserRouter,Link} from 'react-router-dom';
 
+
+
+
 class DaelimProductDTO extends React.Component{
 
     constructor(props){
