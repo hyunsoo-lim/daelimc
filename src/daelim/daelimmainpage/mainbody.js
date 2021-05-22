@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from "styled-components"
 import SimpleSlider from './reactSlider'
-
+import Fade from 'react-reveal/Fade';
 
 
 const BodyTopDiv = styled.div
@@ -37,13 +37,13 @@ class DaelimcMainBody extends React.Component {
   render() {
 
     return (
-      <div>
+      <Fade>
         <BodyTopDiv />
         <SimpleSlider />
         <Body>
           <BodyMainDiv />
         </Body>
-      </div>
+      </Fade>
     )
   }
 }

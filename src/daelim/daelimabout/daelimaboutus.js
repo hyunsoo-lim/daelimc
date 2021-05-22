@@ -1,7 +1,7 @@
 import React from 'react';
 import AboutMenu from './aboutmenu';
 import styled, { css } from "styled-components"
-
+import Fade from 'react-reveal/Fade';
 const Body = styled.div
   `
 width:1080px;
@@ -25,9 +25,11 @@ class DaelimcAboutUs extends React.Component {
   render() {
 
     return (
+      <Fade>
         <Body>
           <AboutMenu />
         </Body>
+      </Fade>
     )
   }
 }

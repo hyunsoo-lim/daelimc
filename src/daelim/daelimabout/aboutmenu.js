@@ -2,10 +2,10 @@ import React from 'react';
 import styled from "styled-components"
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import KakaoMap from './kakaomap'
-
+import Fade from 'react-reveal/Fade';
 
 const AboutMenuLayout = styled.div
-`
+  `
 margin-top:-1px;
 width: 1080px;
 height : 40px; 
@@ -14,7 +14,7 @@ postion:fixed;
 `
 
 const AboutMenu1 = styled.div
-`
+  `
 width: 120px;
 height : 40px; 
 float:right;
@@ -72,12 +72,15 @@ class AboutMenu extends React.Component {
 
   constructor(props) {
     super(props)
+    this.state = { show: true };
     this.scrollToTop = this.scrollToTop.bind(this);
+  
   }
 
 
+
   componentDidMount() {
-  window.addEventListener('scroll', this.onScroll);
+    window.addEventListener('scroll', this.onScroll);
     Events.scrollEvent.register('begin', function () {
       console.log("begin", arguments);
     });
@@ -134,13 +137,15 @@ class AboutMenu extends React.Component {
     const scrollTop = ('scroll', e.srcElement.scrollingElement.scrollTop);
     // this.setState({ scrollTop });
     console.log(scrollTop);
-    if(scrollTop>195){
-      document.getElementById("submenu").style.top =0;
+    if (scrollTop > 195) {
+      
+      document.getElementById("submenu").style.top = 0;
       document.getElementById("submenu").style.position = "fixed";
-      document.getElementById("submenu").style.opacity=1;
-    
-    }else{
+      // document.getElementById("submenu").style.opacity = 1;
+     
+    } else {
       document.getElementById("submenu").style.position = "relative";
+     
     }
   };
 
@@ -149,19 +154,20 @@ class AboutMenu extends React.Component {
 
     return (
       <div>
-        <AboutMenuLayout id='submenu'>
-          <AboutMenu2>
-            <Link activeClass="active" className="test2" to="test2" spy={true} smooth={true} duration={500} width='200px'>
-              <AboutMenuText2>오시는길</AboutMenuText2>
-            </Link>
-          </AboutMenu2>
-          <AboutMenu1>
-            <Link activeClass="active" className="test1" to="test1" spy={true} smooth={true} duration={500} style={{ height: '100px' }}>
-              <AboutMenuText1>회사소개</AboutMenuText1>
-            </Link>
-          </AboutMenu1>
-
-        </AboutMenuLayout>
+        <Fade opposite when={this.state.show}>
+          <AboutMenuLayout id='submenu'>
+            <AboutMenu2>
+              <Link activeClass="active" className="test2" to="test2" spy={true} smooth={true} duration={500} width='200px'>
+                <AboutMenuText2>오시는길</AboutMenuText2>
+              </Link>
+            </AboutMenu2>
+            <AboutMenu1>
+              <Link activeClass="active" className="test1" to="test1" spy={true} smooth={true} duration={500} style={{ height: '100px' }}>
+                <AboutMenuText1>회사소개</AboutMenuText1>
+              </Link>
+            </AboutMenu1>
+          </AboutMenuLayout>
+        </Fade>
 
         <AboutDiv1 name="test1" className="element" >
           test 1

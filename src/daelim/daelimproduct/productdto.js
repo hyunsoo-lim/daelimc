@@ -4,6 +4,20 @@ import {Link} from 'react-router-dom';
 
 class ProductDTO extends React.Component{
  
+    constructor(props) {
+        super(props)
+        this.handleHover=this.handleHover.bind(this);
+        this.handleLeave=this.handleLeave.bind(this);
+    }
+
+    handleHover=(e)=>{
+        document.getElementsByClassName("white").item(this.props.count).style.background = '#489CFF';
+        console.log(this.props.count);
+    }
+
+    handleLeave=(e)=>{
+        document.getElementsByClassName("white").item(this.props.count).style.background = '#ffffff';
+    }
    
 
     render(){
@@ -13,7 +27,7 @@ class ProductDTO extends React.Component{
         const json =JSON.parse(product.download);
         return(
           
-            <figure class="white">
+            <figure class="white" onMouseEnter={this.handleHover} onMouseLeave={this.handleLeave}>
                
                 <Link to ={{
                     pathname :'/detail',

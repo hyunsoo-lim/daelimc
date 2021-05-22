@@ -98,6 +98,7 @@ float:left;
 const Body = styled.div
     `
 width:1080px;
+min-height:600px;
 `
 
 class ProductSearch extends React.Component {
@@ -192,10 +193,9 @@ class ProductSearch extends React.Component {
 
     render() {
         const product = this.state.product
-
-
+        let c = 0;
         return (
-            <div>
+            <Fade>
 
                 <AboutMenuLayout id='submenu'>
                     <AboutMenuLayout2>
@@ -223,7 +223,9 @@ class ProductSearch extends React.Component {
                         <section class="work">
 
                             {product.map(product => {
-                                var a = <ProductDTO data={product} />
+
+                                var a = <ProductDTO data={product} count={c} />
+                                c = c + 1;
                                 return a;
                             })}
 
@@ -245,7 +247,7 @@ class ProductSearch extends React.Component {
                         nextClassName={"pageLabel-btn"}
                     />
                 </div>
-            </div>
+            </Fade>
 
         )
     }

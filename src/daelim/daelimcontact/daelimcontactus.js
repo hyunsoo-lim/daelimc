@@ -1,6 +1,7 @@
 import React from 'react';
 import FromEmail from './contactform';
 import styled, { css } from "styled-components"
+import Fade from 'react-reveal/Fade';
 
 const ContactTopDiv = styled.div
 `
@@ -38,11 +39,12 @@ class DaelimcContactUs extends React.Component {
   render() {
 
     return (
-      <div>
+      <Fade>
+        
         <ContactTopDiv> 문의를 남겨주시면 최대한 빠르게 답변 드리겠습니다 </ContactTopDiv>
         <FromEmail/>
         <ContactEndDiv/>
-      </div>
+      </Fade>
     )
   }
 }

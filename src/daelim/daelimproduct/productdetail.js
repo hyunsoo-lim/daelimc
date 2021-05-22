@@ -1,37 +1,78 @@
 import React from 'react';
-// import './daelimp.css';
+import styled from "styled-components"
 import DraftViewer from './daelim_editor_viewer';
 import axios from 'axios';
+import Fade from 'react-reveal/Fade';
 
+const Body = styled.div
+    `
+width:1080px;
+min-height:600px;
+margin: 0 auto;
+`
 
+const Topdiv = styled.div
+    `
+width:1080px;
+height:20px;
+`
 
-class DaelimProductDetail extends React.Component{
+const SubjectDiv = styled.div
+    `
+width:100px;
+heght:100px;
+margin-left:20px;
+`
 
-    constructor(props){
+const Subject = styled.p
+    `
+width:100px;
+heght:100px;
+font-size:50px;
+font-weight:500;
+color: #38cbae;
+`
+
+const DownloadDiv = styled.div
+    `
+width:1080px;
+height:40px;
+`
+
+const DownloadA = styled.a
+    `
+height:40px;
+float:right;
+margin-right:30px;
+`
+
+class DaelimProductDetail extends React.Component {
+
+    constructor(props) {
         super(props)
-        const pro= this.props.location;
+        const pro = this.props.location;
         console.log("detail const");
         console.log(pro.state.product);
-        this.downloadHandle=this.downloadHandle.bind(this);
+        this.downloadHandle = this.downloadHandle.bind(this);
     }
 
 
-    componentDidMount(){
+    componentDidMount() {
         console.log("detail mount");
-    
-       
+
+
     }
 
-    componentDidUpdate(){
+    componentDidUpdate() {
         console.log("detail update");
-      
+
     }
 
-    downloadHandle(){
-        const downloadId= 'aaa.png'
-        const responsedownload=axios.get('../../download/'+downloadId);
+    downloadHandle() {
+        const downloadId = 'aaa.png'
+        const responsedownload = axios.get('../../download/' + downloadId);
         console.log("download");
-        const blob = new Blob([responsedownload], {type: 'image/png'})
+        const blob = new Blob([responsedownload], { type: 'image/png' })
         const url = window.URL.createObjectURL(blob)
 
         const a = document.createElement("a")
@@ -42,23 +83,28 @@ class DaelimProductDetail extends React.Component{
 
         window.URL.revokeObjectURL(url);
     }
-    
 
-    render(){
-      
-     
+
+    render() {
+
+
         // const product = this.props.searchdata;
-        
 
-        return(
-            <div>
-               <h2>{this.props.location.state.product.num}</h2>
-               <div id="download_div">
-                   <a href={"http://localhost:3000/download/aaa.png"}>down</a>
-               </div>
-               <DraftViewer text={this.props.location.state.product.text1}/>
-            </div>
-         )
+
+        return (
+            <Body>
+                <Fade>
+                    <Topdiv />
+                    <SubjectDiv>
+                        <Subject>{this.props.location.state.product.num}</Subject>
+                    </SubjectDiv>
+                    <DownloadDiv>
+                        <DownloadA href={"http://localhost:3000/download/aaa.png"}>down</DownloadA>
+                    </DownloadDiv>
+                    <DraftViewer text={this.props.location.state.product.text1} />
+                </Fade>
+            </Body>
+        )
     }
 }
 
