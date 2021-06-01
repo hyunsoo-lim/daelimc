@@ -192,16 +192,16 @@ class Menu extends React.Component {
     document.getElementsByClassName("active").item(3).style.display = 'none'
 
     switch (url) {
-      case 'http://localhost:3000/':
+      case 'http://localhost:3002/':
         url_value = 0;
         break;
-      case 'http://localhost:3000/about':
+      case 'http://localhost:3002/about':
         url_value = 1;
         break;
-      case 'http://localhost:3000/product':
+      case 'http://localhost:3002/product':
         url_value = 2;
         break;
-      case 'http://localhost:3000/contact':
+      case 'http://localhost:3002/contact':
         url_value = 3;
         break;
       default:

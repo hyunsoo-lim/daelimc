@@ -12,6 +12,7 @@ function App() {
       <div className="header_main">
         <head>
           <title>DAELIM CONTROL</title>
+          <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b5a927e117bc1ecc5ba1cba8e9131ad9"></script>
         </head>
 
         <body>
