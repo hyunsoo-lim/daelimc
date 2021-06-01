@@ -39,8 +39,8 @@ class KakaoMap extends React.Component {
         // 마커가 지도 위에 표시되도록 설정합니다
         marker.setMap(map);
 
-        var iwContent = '<div style="padding:5px;">서울시 영등포구 버드나루로12가길 12 205호</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-          iwPosition = new kakao.maps.LatLng(37.52459077221122, 126.9106528039900), //인포윈도우 표시 위치입니다
+        var iwContent = '<div style="padding:5px;">서울시 영등포구 버드나루로12가길 12 205호 대림컨트롤 ..... </div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+          iwPosition = new kakao.maps.LatLng(37.5247077221122, 126.9106528039900), //인포윈도우 표시 위치입니다
           iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
 
         // 인포윈도우를 생성하고 지도에 표시합니다

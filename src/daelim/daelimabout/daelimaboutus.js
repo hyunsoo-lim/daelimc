@@ -25,11 +25,13 @@ class DaelimcAboutUs extends React.Component {
   render() {
 
     return (
-      <Fade>
+      
         <Body>
+          <Fade>
           <AboutMenu />
+          </Fade>
         </Body>
-      </Fade>
+    
     )
   }
 }

@@ -1,48 +1,54 @@
-import  React from "react";
+import React from "react";
 import pannel from "../../images/pannel.jpeg"
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-class ProductDTO extends React.Component{
- 
+class ProductDTO extends React.Component {
+
     constructor(props) {
         super(props)
-        this.handleHover=this.handleHover.bind(this);
-        this.handleLeave=this.handleLeave.bind(this);
+        this.state = { bounce: true };
+        this.handleHover = this.handleHover.bind(this);
+        this.handleLeave = this.handleLeave.bind(this);
     }
 
-    handleHover=(e)=>{
-        document.getElementsByClassName("white").item(this.props.count).style.background = '#489CFF';
+    handleHover = (e) => {
+        document.getElementsByClassName("white").item(this.props.count).style.background = '#EEEEEE';
+        // this.setState({ bounce: false });
         console.log(this.props.count);
+     
     }
 
-    handleLeave=(e)=>{
+    handleLeave = (e) => {
         document.getElementsByClassName("white").item(this.props.count).style.background = '#ffffff';
+        // this.setState({ bounce: false });
     }
-   
 
-    render(){
+
+    render() {
         // const data= this.state.data
-        const product=this.props.data;
+        const product = this.props.data;
         // const product_one=this.props.data.num;
-        const json =JSON.parse(product.download);
-        return(
-          
+        const json = JSON.parse(product.download);
+        return (
+
             <figure class="white" onMouseEnter={this.handleHover} onMouseLeave={this.handleLeave}>
                
-                <Link to ={{
-                    pathname :'/detail',
-                    state: {product: product}        
-                }}>
-                   
-                { 
-                    product.download===null
-                    ? <img src= {pannel}/>
-                    : <img src= {"/uploads/"+product.name+"/"+json.data[0]}/>}
+                    <Link to={{
+                        pathname: '/detail',
+                        state: { product: product }
+                    }}>
+
+                        {
+                            product.download === null
+                                ? <img src={pannel} />
+                                : <img src={"/uploads/" + product.name + "/" + json.data[0]} />}
+
+                        <div id="part-info">{product.name}</div>
+
+                    </Link>
                
-                    <div id="part-info">{product.name}</div>
-                   
-                </Link>
             </figure>
+
         )
     }
 

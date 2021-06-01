@@ -18,14 +18,18 @@ height:40px
 
 const Body=styled.div
 `
-width:1920px;
+min-width:1080px;
+margin:0 auto;
 `
 
 class DaelimcMainPage extends React.Component {
 
   constructor(props) {
     super(props)
-
+    const meta = document.createElement('meta');
+    meta.name = "viewport";
+    meta.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover";
+    document.getElementsByTagName('head')[0].appendChild(meta);
   }
 
 

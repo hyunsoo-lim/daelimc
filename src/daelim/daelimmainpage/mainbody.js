@@ -3,13 +3,16 @@ import styled, { css } from "styled-components"
 import SimpleSlider from './reactSlider'
 import Fade from 'react-reveal/Fade';
 
-
+const BodyDiv = styled.div
+`
+overflow:visible;
+`
 const BodyTopDiv = styled.div
 `
 height : 20px;
 `
 const Body = styled.div
-`
+  `
 width:1080px;
 min-height:100%;
 margin: 0 auto;
@@ -37,13 +40,15 @@ class DaelimcMainBody extends React.Component {
   render() {
 
     return (
-      <Fade>
-        <BodyTopDiv />
-        <SimpleSlider />
-        <Body>
-          <BodyMainDiv />
-        </Body>
-      </Fade>
+      <BodyDiv>
+        <Fade>
+          <BodyTopDiv />
+          <SimpleSlider />
+          <Body>
+            <BodyMainDiv />
+          </Body>
+        </Fade>
+      </BodyDiv>
     )
   }
 }

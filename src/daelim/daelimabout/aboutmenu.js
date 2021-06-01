@@ -9,7 +9,7 @@ const AboutMenuLayout = styled.div
 margin-top:-1px;
 width: 1080px;
 height : 40px; 
-background :#489CFF;
+background :#6CC0FF;
 postion:fixed;
 `
 
@@ -50,9 +50,27 @@ line-height:40px;
 const AboutDiv1 = styled.div
   `
 width: 1080px;
-height : 500px; 
-border : 1px solid ;
-text-align: center;
+height : 300px; 
+text-align: left;
+margin-top:50px;
+`
+const AboutDiv1Top = styled.div
+  `
+width: 1080px;
+height : 50px; 
+`
+const AboutDiv1TopText = styled.p
+`
+font-size:20px;
+font-weight:600;
+color:#5a5a5a;
+`
+const AboutDiv1TextDiv = styled.div
+`
+margin-top:60px;
+width: 1080px;
+height : 400px; 
+text-align:center
 `
 
 const AboutDiv2 = styled.div
@@ -60,19 +78,27 @@ const AboutDiv2 = styled.div
 width: 1080px;
 height : 800px; 
 margin-top:4px;
-
 text-align: left;
 `
-const AboutDiv2Top =styled.div
-`
+const AboutDiv2Top = styled.div
+  `
 width: 1080px;
 height : 150px; 
 display: table-cell;
 vertical-align: bottom;
 `
-const AboutDiv2TopText =styled.p
-`
+const AboutDiv2TopText = styled.p
+  `
 font-size:20px;
+font-weight:600;
+color:#5a5a5a;
+`
+
+const AboutText1P = styled.p
+  `
+font-size:15px;
+font-weight:400;
+color:#5a5a5a;
 `
 
 
@@ -82,7 +108,7 @@ class AboutMenu extends React.Component {
     super(props)
     this.state = { show: true };
     this.scrollToTop = this.scrollToTop.bind(this);
-  
+
   }
 
 
@@ -146,14 +172,14 @@ class AboutMenu extends React.Component {
     // this.setState({ scrollTop });
     console.log(scrollTop);
     if (scrollTop > 195) {
-      
+
       document.getElementById("submenu").style.top = 0;
       document.getElementById("submenu").style.position = "fixed";
       // document.getElementById("submenu").style.opacity = 1;
-     
+
     } else {
       document.getElementById("submenu").style.position = "relative";
-     
+
     }
   };
 
@@ -178,12 +204,20 @@ class AboutMenu extends React.Component {
         </Fade>
 
         <AboutDiv1 name="test1" className="element" >
-          test 1
+          <AboutDiv1Top />
+          <AboutDiv1TopText>회사소개</AboutDiv1TopText>
+          <AboutDiv1TextDiv>
+            <AboutText1P>저희 대림컨트롤은 유압장비 엔진 시스템, 발전기 엔진 시스템 및 다양한 장비의 시스템을 제작 판매하고있습니다</AboutText1P>
+            <AboutText1P>저희 대림컨트롤은 유압장비 엔진 시스템, 발전기 엔진 시스템 및 다양한 장비의 시스템을 제작 판매하고있습니다</AboutText1P>
+            <AboutText1P>저희 대림컨트롤은 유압장비 엔진 시스템, 발전기 엔진 시스템 및 다양한 장비의 시스템을 제작 판매하고있습니다</AboutText1P>
+            <AboutText1P>저희 대림컨트롤은 유압장비 엔진 시스템, 발전기 엔진 시스템 및 다양한 장비의 시스템을 제작 판매하고있습니다</AboutText1P>
+          </AboutDiv1TextDiv>
+
         </AboutDiv1>
         <AboutDiv2 name="test2" className="element" >
-          <AboutDiv2Top>
+          <AboutDiv2Top/>
             <AboutDiv2TopText>오시는길</AboutDiv2TopText>
-          </AboutDiv2Top>
+        
           <KakaoMap />
         </AboutDiv2>
 
