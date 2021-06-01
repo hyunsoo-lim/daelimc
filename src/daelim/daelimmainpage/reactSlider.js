@@ -2,7 +2,12 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import styled from "styled-components"
 
+const SliderImg= styled.img
+`
+overflow:visible;
+`
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -42,13 +47,13 @@ export default function SimpleSlider() {
     return (
         <Slider {...settings}>
             <div>
-               <img src ='vimg.jpg'/>
+               <SliderImg src ='vimg.jpg'/>
             </div>
             <div>
-                <img src ='vimg.jpg'/>
+                <SliderImg src ='vimg.jpg'/>
             </div>
             <div>
-                <img src ='vimg.jpg'/>
+                <SliderImg src ='vimg.jpg'/>
             </div>
         </Slider>
     );

@@ -17,7 +17,7 @@ const AboutMenuLayout2 = styled.div
     `
 width: 1080px;
 height : 40px; 
-background :#489CFF;
+background :#6CC0FF;
 `
 
 const AboutMenu1 = styled.div
