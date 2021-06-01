@@ -1,5 +1,8 @@
 const express = require('express');
+const vhost = require("vhost");
 const app = express();
+const app1 = express();
+const app2 = express();
 var fs = require('fs');
 var path = require('path');
 var mime = require('mime');
@@ -15,7 +18,8 @@ const multer = require('multer');
 // const upload = multer({ dest: 'uploads/', limits: { fileSize: 5 * 1024 * 1024 } });
 
 
-
+app.use(vhost("www.daelimc.co.kr", app1));
+app.use(vhost("daelimc.iptime.org", app2));
 
 
 app.listen(port, ()=>{
