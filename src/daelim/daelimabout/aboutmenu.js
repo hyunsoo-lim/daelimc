@@ -58,14 +58,22 @@ text-align: center;
 const AboutDiv2 = styled.div
   `
 width: 1080px;
-height : 500px; 
-border : 1px solid ;
+height : 800px; 
 margin-top:4px;
 
-text-align: center;
+text-align: left;
 `
-
-
+const AboutDiv2Top =styled.div
+`
+width: 1080px;
+height : 150px; 
+display: table-cell;
+vertical-align: bottom;
+`
+const AboutDiv2TopText =styled.p
+`
+font-size:20px;
+`
 
 
 class AboutMenu extends React.Component {
@@ -173,6 +181,9 @@ class AboutMenu extends React.Component {
           test 1
         </AboutDiv1>
         <AboutDiv2 name="test2" className="element" >
+          <AboutDiv2Top>
+            <AboutDiv2TopText>오시는길</AboutDiv2TopText>
+          </AboutDiv2Top>
           <KakaoMap />
         </AboutDiv2>
 
