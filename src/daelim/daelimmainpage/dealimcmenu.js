@@ -192,16 +192,44 @@ class Menu extends React.Component {
     document.getElementsByClassName("active").item(3).style.display = 'none'
     console.log(url);
     switch (url) {
-      case 'http://daelimc.iptime.org:3000/':
+
+      case 'http://daelimc.co.kr:3000/':
         url_value = 0;
         break;
-      case 'http://daelimc.iptime.org:3000/about':
+      case 'http://www.daelimc.co.kr:3000/':
+        url_value = 0;
+        break;
+      case 'http://localhost:3000/':
+        url_value = 0;
+        break;
+
+      case 'http://daelimc.co.kr:3000/about':
         url_value = 1;
         break;
-      case 'http://daelimc.iptime.org:3000/product':
+      case 'http://www.daelimc.co.kr:3000/about':
+        url_value = 1;
+        break;
+      case 'http://localhost:3000/about':
+        url_value = 1;
+        break;
+
+      case 'http://daelimc.co.kr:3000/product':
         url_value = 2;
         break;
-      case 'http://daelimc.iptime.org:3000/contact':
+      case 'http://www.daelimc.co.kr:3000/product':
+        url_value = 2;
+        break;
+      case 'http://localhost:3000/product':
+        url_value = 2;
+        break;
+
+      case 'http://daelimc.co.kr:3000/contact':
+        url_value = 3;
+        break;
+      case 'http://www.daelimc.co.kr:3000/contact':
+        url_value = 3;
+        break;
+      case 'http://localhost:3000/contact':
         url_value = 3;
         break;
       default:
