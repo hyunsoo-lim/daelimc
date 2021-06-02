@@ -7,63 +7,39 @@ import DaelimcMainPage from './daelim/daelimcmainpage';
 
 
 
-class App extends React.Component {
-
-  constructor(props) {
-    super(props)
-    this.state = { herf: null };
-    this.handleLiActive = this.handleLiActive.bind(this);
-  }
+function App() {
 
 
-  handleLiActive() {
-    console.log('handleLiActive')
-    const url = window.location.href;
-
-    switch (url) {
-
-      case 'http://daelimc.co.kr/':
-        this.setState({herf:0});
-        break;
-
-      default:
-        this.setState({herf:1});
-        break;
-    }
-  }
-  render() {
-    return (
-      <Router>
-        <div className="header_main">
-          <head>
-            <title>DAELIM CONTROL</title>
-            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b5a927e117bc1ecc5ba1cba8e9131ad9"></script>
-          </head>
-
-          <body>
+  console.log('herf')
+  const url = window.location.href;
 
 
-            {this.state.herf===0 
-            ? ( <Route exact path="/" component={DaelimcMainPage} /> ) 
-            : ( 
-              // this.state.herf===1
-                // ?
-                <Route exact path="/plan" component={DaelimPlan} />
-                // :<Route exact path="/"component={DaelimPlan}/>
-              )
-            }
+
+  return (
+    <Router>
+      <div className="header_main">
+        <head>
+          <title>DAELIM CONTROL</title>
+          <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b5a927e117bc1ecc5ba1cba8e9131ad9&autoload=false"></script>
+        </head>
+
+        <body>
 
 
-            {/* <Route exact path="/" component={DaelimcMainPage} /> */}
-            {/* <Route path="/plan" component={DaelimPlan} /> */}
+          {url === 'http://daelimc.co.kr/'
+            ? (<Route exact path="/" component={DaelimcMainPage} />)
 
-
-            <DaelimcMainPage />
-          </body>
-        </div>
-      </Router>
-    );
-  }
+            : (url === 'http://sub.daelimc.co.kr/'
+              ? <Route path="/" component={DaelimPlan} />
+              // ? url
+              : <Route path="/" component={DaelimcMainPage} />)
+            // : url)
+          }
+        </body>
+      </div>
+    </Router>
+  );
 }
+
 
 export default App;
