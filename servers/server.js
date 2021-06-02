@@ -19,7 +19,7 @@ const multer = require('multer');
 
 
 app.use(vhost("www.daelimc.co.kr", app1));
-app.use(vhost("daelimc.iptime.org", app2));
+app.use(vhost("daelimc.co.kr", app2));
 
 
 app.listen(port, ()=>{
