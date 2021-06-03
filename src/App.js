@@ -27,12 +27,12 @@ function App() {
 
 
           {url === 'http://daelimc.co.kr/'
-            ? (<Route exact path="/" component={DaelimcMainPage} />)
+            ? <DaelimcMainPage/>
 
             : (url === 'http://sub.daelimc.co.kr/'
-              ? <Route path="/" component={DaelimPlan} />
+              ? <DaelimPlan/>
               // ? url
-              : <Route path="/" component={DaelimcMainPage} />)
+              : <DaelimcMainPage/>)
             // : url)
           }
         </body>
