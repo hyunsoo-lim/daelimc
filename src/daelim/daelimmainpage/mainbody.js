@@ -4,12 +4,16 @@ import SimpleSlider from './reactSlider'
 import Fade from 'react-reveal/Fade';
 
 const BodyDiv = styled.div
-`
+  `
 overflow:visible;
 `
-const BodyTopDiv = styled.div
+
+const BackgroundBody = styled.div
 `
-height : 20px;
+position:absolute;
+width:1920px;
+height:540px;
+background:#F6F6F6;
 `
 const Body = styled.div
   `
@@ -22,29 +26,19 @@ const BodyMainDiv = styled.div
 border: 1px solid ;
 min-height : 500px;
 margin-top : 30px;
-margin-right : 2px;
-margin-left :  2px;
 `
 
 class DaelimcMainBody extends React.Component {
 
-  constructor(props) {
-    super(props)
-
-  }
-
-
-  componentDidMount() {
-  }
 
   render() {
 
     return (
       <BodyDiv>
+         <BackgroundBody />
         <Fade>
-          <BodyTopDiv />
-          <SimpleSlider />
           <Body>
+            <SimpleSlider />
             <BodyMainDiv />
           </Body>
         </Fade>

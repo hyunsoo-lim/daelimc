@@ -6,11 +6,6 @@ import DaelimPlanSearch from './daelimplansearch';
 import DaelimPlanDetail from './daelimplandetail';
 import DaelimPlanInsert from './daelimplaninsert';
 
-// import DbcInsert from './dbcInsert';
-// import DaelimEditor from './daelim_editor';
-// import MyEditor from './daelim_editor';
-
-
 
 class DaelimPlan extends React.Component{
 
@@ -134,18 +129,8 @@ class DaelimPlan extends React.Component{
                     <div class="navbar object">
                         <div id="wrapper-sorting">
                             <div id="wrapper-title-1">
-                            <Link to ="/plan/search"><div class="top-rated object">발전기</div></Link>
+                            <Link to ="/plan/search"><div class="top-rated object">검색</div></Link>
                                 <div id="fleche-nav-1"></div>
-                            </div>
-                            
-                            <div id="wrapper-title-2">
-                            <Link to ="/plan/search"><div class="recent object">유압</div></Link>
-                                <div id="fleche-nav-2"></div>
-                            </div>
-                            
-                            <div id="wrapper-title-3">
-                            <Link to ="/plan/search"><div class="oldies object">기타</div></Link>
-                                <div id="fleche-nav-3"></div>
                             </div>
 
                             <div id="wrapper-title-4">
@@ -153,11 +138,6 @@ class DaelimPlan extends React.Component{
                                     <div class="oldies object">입력</div>
                                 </Link>
                                 <div id="fleche-nav-4"></div>
-                            </div>
-
-                            <div id="wrapper-title-3">
-                            <div class="oldies object">편집</div>
-                                <div id="fleche-nav-3"></div>
                             </div>
 
                             <div id="wrapper-title-3">

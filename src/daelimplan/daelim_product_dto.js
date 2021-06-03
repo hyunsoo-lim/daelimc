@@ -1,7 +1,12 @@
 import  React from "react";
 import pannel from "../images/pannel.jpeg"
 import {BrowserRouter as BrowserRouter,Link} from 'react-router-dom';
+import styled from "styled-components"
 
+const Dcheckbox = styled.input
+`
+position:absolute;
+`
 
 
 
@@ -22,7 +27,7 @@ class DaelimProductDTO extends React.Component{
         return(
           
             <figure class="white">
-                <input type="checkbox" checked={product.checked} value={product.num} onChange={this.props.checkhandler}/>
+                <Dcheckbox type="checkbox" checked={product.checked} value={product.num} onChange={this.props.checkhandler}/>
                 <Link to ={{
                     pathname :'/plan/detail/$}',
                     state: {product: product}        

@@ -26,15 +26,20 @@ function App() {
         <body>
 
 
-          {url === 'http://daelimc.co.kr/'
-            ? (<Route exact path="/" component={DaelimcMainPage} />)
+          {/* {url === 'http://daelimc.co.kr/'
+            ? <DaelimcMainPage/>
 
             : (url === 'http://sub.daelimc.co.kr/'
-              ? <Route path="/" component={DaelimPlan} />
-              // ? url
-              : <Route path="/" component={DaelimcMainPage} />)
-            // : url)
-          }
+              ? <DaelimPlan/>
+
+              : 
+              <DaelimcMainPage/>
+              )
+          } */}
+
+
+<DaelimPlan/>
+
         </body>
       </div>
     </Router>

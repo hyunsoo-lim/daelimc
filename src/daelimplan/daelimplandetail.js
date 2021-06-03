@@ -2,7 +2,13 @@ import React from 'react';
 // import './daelimp.css';
 import DraftViewer from './daelim_editor_viewer';
 import axios from 'axios';
+import styled, { css } from "styled-components"
 
+const Body=styled.div
+`
+width:1080px;
+margin:0 auto;
+`
 
 
 class DaelimPlanDetail extends React.Component{
@@ -48,16 +54,28 @@ class DaelimPlanDetail extends React.Component{
       
      
         // const product = this.props.searchdata;
-        
+        console.log(this.props.location.state.product.text1);
+        const jsonDetail= JSON.parse(this.props.location.state.product.text1);
+        const jsonDownload =JSON.parse(this.props.location.state.product.download);
+        const imgDir= "/uploads/"+this.props.location.state.product.name+"/"+jsonDownload.data[0];
 
         return(
-            <div>
-               <h2>{this.props.location.state.product.num}</h2>
+            <Body>
+               <h2>{this.props.location.state.product.name}</h2>
                <div id="download_div">
                    <a href={"http://localhost:3000/download/aaa.png"}>down</a>
                </div>
-               <DraftViewer text={this.props.location.state.product.text1}/>
-            </div>
+
+               <img src={imgDir}/>
+               {/* <DraftViewer text={this.props.location.state.product.text1}/> */}
+               <p>{jsonDetail.ctype}</p>
+               <p>{jsonDetail.ccolor}</p>
+               <p>{jsonDetail.csize}</p>
+               <p>{jsonDetail.ccomponent}</p>
+               <p>{jsonDetail.cetc}</p>
+               <p>{jsonDetail.cdetail}</p>
+               
+            </Body>
          )
     }
 }

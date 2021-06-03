@@ -4,57 +4,72 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components"
 
-const SliderImg= styled.img
+const SliderImg = styled.img
 `
-overflow:visible;
+display: block; 
+margin:0 auto;
+width:1080px;
+hegiht:600px;
 `
 
-function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "red" }}
-        onClick={onClick}
-      />
-    );
-  }
-  
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "green"}}
-        onClick={onClick}
-      />
-    );
-  }
+
+
+const SliderDiv2 = styled.div
+`
+width:1080px;
+hegiht:600px;
+text-align:center;
+background:#EAEAEA;
+`
+
+// function SampleNextArrow(props) {
+//   const { className, style, onClick } = props;
+//   return (
+//     <div
+//       className={className}
+//       style={{ ...style, display: "block", background: "red" }}
+//       onClick={onClick}
+//     />
+//   );
+// }
+
+// function SamplePrevArrow(props) {
+//   const { className, style, onClick } = props;
+//   return (
+//     <div
+//       className={className}
+//       style={{ ...style, display: "block", background: "green" }}
+//       onClick={onClick}
+//     />
+//   );
+// }
 
 
 export default function SimpleSlider() {
-    var settings = {
-        dots: true,
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        adaptiveHeight:true,
-        // fade:true,
-        // arrows: true,
-        autoplay: true,
-        autoplaySpeed: 4000,
-    };
-    return (
-        <Slider {...settings}>
-            <div>
-               <SliderImg src ='vimg.jpg'/>
-            </div>
-            <div>
-                <SliderImg src ='vimg.jpg'/>
-            </div>
-            <div>
-                <SliderImg src ='vimg.jpg'/>
-            </div>
-        </Slider>
-    );
+  var settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+    // fade:true,
+    // arrows: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+  };
+  return (
+   
+      <Slider {...settings}>
+        <SliderDiv2>
+          <SliderImg src='bannerimg1.png' />
+        </SliderDiv2>
+        <SliderDiv2>
+          <SliderImg src='bannerimg1.png' />
+        </SliderDiv2>
+        <SliderDiv2>
+          <SliderImg src='bannerimg1.png' />
+        </SliderDiv2>
+      </Slider>
+   
+  );
 }

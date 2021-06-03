@@ -2,7 +2,13 @@ import React from 'react';
 // import './daelimp.css';
 import DaelimProductDTO from './daelim_product_dto';
 import ReactPaginate from "react-paginate";
+import styled from "styled-components"
 
+const Body = styled.div
+`
+width:1080px;
+margin:0 auto;
+`
 
 class DaelimPlanSearch extends React.Component {
 
@@ -26,7 +32,7 @@ class DaelimPlanSearch extends React.Component {
 
 
         return (
-            <div>
+            <Body>
                 {/* 검색 */}
                 <div id="main_tip_search">
                     <form>
@@ -35,17 +41,17 @@ class DaelimPlanSearch extends React.Component {
                     <button id="tip_search_btn" onClick={this.props.getData}> 검색</button>
                 </div>
 
-                <h2>data</h2>
-               
-                    <section class="work" >
 
-                        {product.map(product => {
-                            var a = <DaelimProductDTO data={product} checkhandler={this.props.checkhandler} />
-                            return a;
-                        })}
 
-                    </section>
-               
+                <section class="work" >
+
+                    {product.map(product => {
+                        var a = <DaelimProductDTO data={product} checkhandler={this.props.checkhandler} />
+                        return a;
+                    })}
+
+                </section>
+
                 <div>
                     <ReactPaginate
                         pageCount={this.props.count / 10}
@@ -61,7 +67,7 @@ class DaelimPlanSearch extends React.Component {
                         nextClassName={"pageLabel-btn"}
                     />
                 </div>
-            </div>
+            </Body>
 
         )
     }

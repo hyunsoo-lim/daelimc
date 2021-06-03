@@ -210,10 +210,16 @@ body,html{
 
 
 .daelim_ins_wrapper{
-	width: 100px;
+	width: 125px;
 	float: left;
 	margin-top: 20px;
 	margin-left: 20px;
+}
+.daelim_ins_wrapper11{
+	width: 125px;
+	float: left;
+	margin-top: 20px;
+	margin-left: 40px;
 }
 
 .daelim_plan_container_left{
@@ -237,7 +243,7 @@ body,html{
 }
 
 .daelim_ins_from{
-	width: 100px;
+	width: 130px;
 	position: relative;
 	border: 1px solid #e6e6e6;
 	border-radius: 6px;
@@ -245,7 +251,7 @@ body,html{
 	margin-bottom: 30px;
 }
 .daelim_ins_from2{
-	width: 200px;
+	width: 300px;
 	height: 30px;
 	position: relative;
 	border: 1px solid #e6e6e6;
@@ -273,7 +279,7 @@ body,html{
 
 .daelim_plan_wrapper{
 	margin: 0 auto;
-	width: 80%;
+	width: 100%;
 }
 
 #daelim_ins_fileupload_wrapper{

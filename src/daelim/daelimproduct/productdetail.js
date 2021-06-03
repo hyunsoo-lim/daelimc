@@ -87,9 +87,10 @@ class DaelimProductDetail extends React.Component {
 
     render() {
 
-
+        console.log(this.props.location.state.product.text1);
+        const json =JSON.parse(this.props.location.state.product.download);
         // const product = this.props.searchdata;
-
+        const imgDir= "/uploads/"+this.props.location.state.product.name+"/"+json.data[0]
 
         return (
             <Body>
@@ -101,7 +102,8 @@ class DaelimProductDetail extends React.Component {
                     <DownloadDiv>
                         <DownloadA href={"http://localhost:3000/download/aaa.png"}>down</DownloadA>
                     </DownloadDiv>
-                    <DraftViewer text={this.props.location.state.product.text1} />
+                    <img src={imgDir}/>
+                    {/* <DraftViewer text={this.props.location.state.product.text1} /> */}
                 </Fade>
             </Body>
         )
