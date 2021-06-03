@@ -26,11 +26,16 @@ function App() {
         <body>
 
 
+<<<<<<< HEAD
           {/* {url === 'http://daelimc.co.kr/'
+=======
+          {url === 'http://daelimc.co.kr/'
+>>>>>>> 6b22837d10935bf0aaa7c882502defe8b5681edc
             ? <DaelimcMainPage/>
 
             : (url === 'http://sub.daelimc.co.kr/'
               ? <DaelimPlan/>
+<<<<<<< HEAD
 
               : 
               <DaelimcMainPage/>
@@ -40,6 +45,12 @@ function App() {
 
 <DaelimPlan/>
 
+=======
+              // ? url
+              : <DaelimcMainPage/>)
+            // : url)
+          }
+>>>>>>> 6b22837d10935bf0aaa7c882502defe8b5681edc
         </body>
       </div>
     </Router>
