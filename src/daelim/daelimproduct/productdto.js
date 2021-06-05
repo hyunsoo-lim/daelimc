@@ -1,6 +1,7 @@
 import React from "react";
 import pannel from "../../images/pannel.jpeg"
 import { Link } from 'react-router-dom';
+import ImgResize from "../../util/ImgResize";
 
 class ProductDTO extends React.Component {
 
@@ -28,7 +29,10 @@ class ProductDTO extends React.Component {
         // const data= this.state.data
         const product = this.props.data;
         // const product_one=this.props.data.num;
+        console.log("dto render");
         const json = JSON.parse(product.download);
+        const imgsrc="/uploads/"+product.name+"/"+json.data[0];
+        
         return (
 
             <figure class="white" onMouseEnter={this.handleHover} onMouseLeave={this.handleLeave}>
@@ -41,8 +45,11 @@ class ProductDTO extends React.Component {
                         {
                             product.download === null
                                 ? <img src={pannel} />
-                                : <img src={"/uploads/" + product.name + "/" + json.data[0]} />}
-
+                               // : <img src= {"/uploads/"+product.name+"/"+json.data[0]}/>}
+                                 : <ImgResize imgsrc={imgsrc}/>
+                                 
+                                 }
+                                
                         <div id="part-info">{product.name}</div>
 
                     </Link>

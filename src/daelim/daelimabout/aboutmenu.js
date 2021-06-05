@@ -8,7 +8,7 @@ const AboutMenuLayout = styled.div
   `
 margin-top:-1px;
 width: 1080px;
-height : 40px; 
+height : 60px; 
 background :#6CC0FF;
 postion:fixed;
 `
@@ -16,35 +16,35 @@ postion:fixed;
 const AboutMenu1 = styled.div
   `
 width: 120px;
-height : 40px; 
+height : 60px; 
 float:right;
 `
 
 const AboutMenu2 = styled.div
   `
 width: 120px;
-height : 40px; 
+height : 60px; 
 float:right;
-margin-right:235px;
+margin-right:220px;
 `
 
 const AboutMenuText1 = styled.div
   `
-font-size: 14px;
+font-size: 16px;
 font-weight: 400;
 color:#ffffff;
 text-align:center;
-line-height:40px;
+line-height:60px;
 `
 
 
 const AboutMenuText2 = styled.p
   `
-font-size: 14px;
+font-size: 16px;
 font-weight: 400;
 color:#ffffff;
 text-align: center;
-line-height:40px;
+line-height:60px;
 `
 
 const AboutDiv1 = styled.div

@@ -50,7 +50,7 @@ app.post('/api/productssearch',urlencodedParser,(req,res) => {
     console.log("productssearch");
     var params=json;
     console.log(params);
-    var sql = "select * from daelim_product where name LIKE " +db.escape('%'+params.search+'%')  +"LIMIT " +(params.currentpage*10)+ ",10";
+    var sql = "select * from daelim_product where text2 LIKE " +db.escape('%'+params.search+'%')  +"LIMIT " +(params.currentpage*10)+ ",10";
 
    
     db.query(sql,[params],function(err,rows,fields) {

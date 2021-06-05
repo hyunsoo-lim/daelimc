@@ -46,6 +46,7 @@ class DaelimPlanSearch extends React.Component {
                 <section class="work" >
 
                     {product.map(product => {
+                        
                         var a = <DaelimProductDTO data={product} checkhandler={this.props.checkhandler} />
                         return a;
                     })}

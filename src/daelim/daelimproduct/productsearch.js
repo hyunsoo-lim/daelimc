@@ -16,48 +16,48 @@ postion:fixed;
 const AboutMenuLayout2 = styled.div
     `
 width: 1080px;
-height : 40px; 
+height : 60px; 
 background :#6CC0FF;
 `
 
 const AboutMenu1 = styled.div
     `
 width: 120px;
-height : 40px; 
+height : 60px; 
 float:right;
 `
 
 const AboutMenu2 = styled.div
     `
 width: 120px;
-height : 40px; 
+height : 60px; 
 float:right;
 `
 const AboutMenu3 = styled.div
     `
 width: 120px;
-height : 40px; 
+height : 60px; 
 float:right;
-margin-right:72px;
+margin-right:65px;
 `
 
 const AboutMenuText1 = styled.div
     `
-font-size: 14px;
+font-size: 16px;
 font-weight: 400;
 color:#ffffff;
 text-align:center;
-line-height:40px;
+line-height:60px;
 `
 
 
 const AboutMenuText2 = styled.p
     `
-font-size: 14px;
+font-size: 16px;
 font-weight: 400;
 color:#ffffff;
 text-align: center;
-line-height:40px;
+line-height:60px;
 `
 const InputDiv = styled.div
     `
@@ -144,7 +144,7 @@ class ProductSearch extends React.Component {
     };
 
     getData() {
-
+       
         setTimeout(async () => {
             // const response = await axios.get('../api/products');
             // const data= this.state.search;
@@ -165,6 +165,8 @@ class ProductSearch extends React.Component {
             this.setState({ product: response.data.products });
             // const logdata= this.state.product;
             // console.log(logdata)
+            
+           
         }, 100);
     }
 
@@ -226,9 +228,10 @@ class ProductSearch extends React.Component {
 
                                 var a = <ProductDTO data={product} count={c} />
                                 c = c + 1;
+                                console.log("product");
+                                console.log(product);
                                 return a;
                             })}
-
                         </section>
                     </Body>
                 </Fade>

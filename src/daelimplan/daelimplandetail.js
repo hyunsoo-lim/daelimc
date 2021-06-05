@@ -1,6 +1,4 @@
 import React from 'react';
-// import './daelimp.css';
-import DraftViewer from './daelim_editor_viewer';
 import axios from 'axios';
 import styled, { css } from "styled-components"
 

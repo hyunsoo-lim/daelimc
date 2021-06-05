@@ -2,6 +2,7 @@ import  React from "react";
 import pannel from "../images/pannel.jpeg"
 import {BrowserRouter as BrowserRouter,Link} from 'react-router-dom';
 import styled from "styled-components"
+import ImgResize from "../util/ImgResize";
 
 const Dcheckbox = styled.input
 `
@@ -24,6 +25,7 @@ class DaelimProductDTO extends React.Component{
         const product=this.props.data;
         // const product_one=this.props.data.num;
         const json =JSON.parse(product.download);
+        const imgsrc="/uploads/"+product.name+"/"+json.data[0];
         return(
           
             <figure class="white">
@@ -36,8 +38,9 @@ class DaelimProductDTO extends React.Component{
                 { 
                     product.download===null
                     ? <img src= {pannel}/>
-                    : <img src= {"/uploads/"+product.name+"/"+json.data[0]}/>}
-               
+                    // : <img src= {"/uploads/"+product.name+"/"+json.data[0]}/>}
+                    : <ImgResize imgsrc={imgsrc}/>}
+
                     <div id="part-info">{product.name}</div>
                    
                 </Link>
