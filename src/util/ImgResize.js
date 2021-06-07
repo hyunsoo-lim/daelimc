@@ -1,6 +1,6 @@
 import React, { useRef,useEffect } from 'react';
 import styled from "styled-components"
-
+import Fade from 'react-reveal/Fade';
 
 const Ccanvas = styled.canvas
 `
@@ -48,9 +48,9 @@ const ImgResize = (props) => {
     },[])
 
     return (
-        <>
+        <Fade>
             <Ccanvas ref={canvasRef}></Ccanvas>
-        </>
+        </Fade>
     )
 }
 export default ImgResize;

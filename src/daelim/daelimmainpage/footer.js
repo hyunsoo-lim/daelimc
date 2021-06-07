@@ -32,11 +32,26 @@ padding:0;
 
 `
 
-const Logo =styled.img
+// const Logo =styled.img
+// `
+// width: 120px;
+// height: 120px;
+// object-fit: cover;
+// `
+
+const LogoTop = styled.div
 `
 width: 120px;
-height: 120px;
+height: 8px;
+`
+const Logo = styled.p
+`
+width: 120px;
+height: 50px;
 object-fit: cover;
+font-size: 35px;
+line-height: 35px;
+color:#a0a0a0;
 `
 
 const ContentSide = styled.div
@@ -108,7 +123,8 @@ class DaelimcMainFooter extends React.Component {
         <FooterLine />
         <FooterContent>
           <LogoSide>
-            <Logo src="/logo192.png"/>
+            <LogoTop/>
+            <Logo>DAELIM CONTROL</Logo>
           </LogoSide>
           <ContentSide>
             <FooterP0/>

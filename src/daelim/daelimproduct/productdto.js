@@ -10,7 +10,12 @@ class ProductDTO extends React.Component {
         this.state = { bounce: true };
         this.handleHover = this.handleHover.bind(this);
         this.handleLeave = this.handleLeave.bind(this);
+        console.log("dto ProductDTO");
+        // console.log(this.state.src);
+        // this.setState({src:this.props.data})
     }
+
+    
 
     handleHover = (e) => {
         document.getElementsByClassName("white").item(this.props.count).style.background = '#EEEEEE';
@@ -27,7 +32,9 @@ class ProductDTO extends React.Component {
 
     render() {
         // const data= this.state.data
+
         const product = this.props.data;
+       
         // const product_one=this.props.data.num;
         console.log("dto render");
         const json = JSON.parse(product.download);

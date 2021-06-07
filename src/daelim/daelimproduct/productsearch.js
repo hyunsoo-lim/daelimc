@@ -148,6 +148,7 @@ class ProductSearch extends React.Component {
         setTimeout(async () => {
             // const response = await axios.get('../api/products');
             // const data= this.state.search;
+            this.setState({ product: [] });
             const data = { search: this.state.search, currentpage: this.state.currentPage }
             console.log("getData");
             console.log(data);

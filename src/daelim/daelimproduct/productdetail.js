@@ -68,8 +68,57 @@ display:block;
 width:465px;
 height:315px;
 margin-left:20px;
+margin-top:26px;
+float:left;
 `
 
+const SideDiv = styled.div
+`
+display:block;
+width:525px;
+height:400px;
+margin-left:50px;
+float:left;
+`
+
+const SideProductDiv = styled.div
+`
+width:525px;
+height:61px;
+`
+const SideProductDivSide = styled.div
+`
+height:1px;
+border:1px solid #E1E1E1;
+`
+
+const SideProductSubject = styled.div
+`
+width:90px;
+height:61px;
+margin-left:20px;
+line-height:61px;
+font-size:16px;
+font-weight:300;
+float:left;
+`
+const SideProductText= styled.div
+`
+width:200px;
+height:61px;
+margin-left:80px;
+line-height:61px;
+font-size:16px;
+float:left;
+`
+
+const DetailDiv =styled.div
+`
+width:1080px;
+min-height:300px;
+margin-top :100px;
+text-align:center;
+`
 
 class DaelimProductDetail extends React.Component {
 
@@ -128,18 +177,49 @@ class DaelimProductDetail extends React.Component {
                     </DetailMenuLayout>
                     <Topdiv />
 
-                   
+
                     <ImgDiv>
                         <Img src={imgDir} />
+                        <SideDiv>
+                            <SideProductDivSide />
+                            <SideProductDiv>
+                                <SideProductSubject>제품명</SideProductSubject>
+                                <SideProductText>{this.props.location.state.product.name}</SideProductText>
+                            </SideProductDiv>
+                            <SideProductDivSide />
+                            <SideProductDiv>
+                                <SideProductSubject>제품 종류</SideProductSubject>
+                                <SideProductText>{jsonDetail.ctype}</SideProductText>
+                            </SideProductDiv>
+                            <SideProductDivSide />
+                            <SideProductDiv>
+                                <SideProductSubject>제품 색상</SideProductSubject>
+                                <SideProductText>{jsonDetail.ccolor}</SideProductText>
+                            </SideProductDiv>
+                            <SideProductDivSide />
+                            <SideProductDiv>
+                                <SideProductSubject>제품 사이즈</SideProductSubject>
+                                <SideProductText>{jsonDetail.csize}</SideProductText>
+                            </SideProductDiv>
+                            <SideProductDivSide />
+                            <SideProductDiv>
+                                <SideProductSubject>제품 구성</SideProductSubject>
+                                <SideProductText>{jsonDetail.ccomponent}</SideProductText>
+                            </SideProductDiv>
+                            <SideProductDivSide />
+                            <SideProductDiv>
+                                <SideProductSubject>기타</SideProductSubject>
+                                <SideProductText>{jsonDetail.cetc}</SideProductText>
+                            </SideProductDiv>
+                            <SideProductDivSide />
+
+                        </SideDiv>
                     </ImgDiv>
                     {/* <DraftViewer text={this.props.location.state.product.text1} /> */}
 
-                    <p>{jsonDetail.ctype}</p>
-                    <p>{jsonDetail.ccolor}</p>
-                    <p>{jsonDetail.csize}</p>
-                    <p>{jsonDetail.ccomponent}</p>
-                    <p>{jsonDetail.cetc}</p>
-                    <p>{jsonDetail.cdetail}</p>
+                    
+                    <DetailDiv>{jsonDetail.cdetail}</DetailDiv>
+                    
 
                 </Fade>
             </Body>

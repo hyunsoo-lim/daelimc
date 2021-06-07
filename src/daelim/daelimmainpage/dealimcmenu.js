@@ -5,11 +5,21 @@ import MenuUnderAnimation from './menuunderani';
 import { BrowserRouter as BrowserRouter, Link } from 'react-router-dom';
 
 
-const Logo = styled.img
-  `
+const Logo = styled.p
+`
 width: 120px;
-height: 120px;
+height: 50px;
 object-fit: cover;
+font-size: 35px;
+line-height: 35px;
+margin-left:20px;
+color:#6CC0FF;
+font-weight:500;
+`
+const LogoTop = styled.div
+`
+width: 120px;
+height: 30px;
 `
 
 const NavbarMenu = styled.div
@@ -20,7 +30,7 @@ margin: 0 auto;
 `
 
 const LogoSide = styled.div
-  `
+`
 width: 440px;
 height:120px;
 float:left;
@@ -254,7 +264,8 @@ class Menu extends React.Component {
       <div>
         <NavbarMenu>
           <LogoSide>
-            <Logo src="/logo192.png" />
+            <LogoTop/>
+               <Link style={{ color: 'inherit' }} to="/" onClick={() => this.handleClick(0)}><Logo>DAELIM CONTROL</Logo></Link>
           </LogoSide>
 
           <NavbarMenuSide>
