@@ -18,24 +18,28 @@ height:40px
 
 const Body=styled.div
 `
-min-width:1080px;
 margin:0 auto;
 `
 
 class DaelimcMainPage extends React.Component {
 
   constructor(props) {
-    super(props)
-    const meta = document.createElement('meta');
-    meta.name = "viewport";
-    meta.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover";
-    document.getElementsByTagName('head')[0].appendChild(meta);
+    super(props);
+    this.state = { width: 0, height: 0 };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
-
-
-
-
+  
   componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+  
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+  
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
   render() {

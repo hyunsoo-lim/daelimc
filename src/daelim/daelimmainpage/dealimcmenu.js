@@ -5,6 +5,10 @@ import MenuUnderAnimation from './menuunderani';
 import { BrowserRouter as BrowserRouter, Link } from 'react-router-dom';
 
 
+const BREAK_POINT_MOBILE = 768;
+const BREAK_POINT_TABLET = 992;
+const BREAK_POINT_PC = 1200;
+
 const Logo = styled.p
 `
 width: 120px;
@@ -12,9 +16,23 @@ height: 50px;
 object-fit: cover;
 font-size: 35px;
 line-height: 35px;
-margin-left:20px;
+
 color:#6CC0FF;
 font-weight:500;
+text-align:center;
+
+@media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
+  margin:0 auto;
+}
+@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
+  margin:0 auto;
+}
+@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+  margin:0 auto;
+}
+@media only screen and (min-width: ${BREAK_POINT_PC}px) {
+  margin-left:20px;
+}
 `
 const LogoTop = styled.div
 `
@@ -22,28 +40,77 @@ width: 120px;
 height: 30px;
 `
 
+// const calcWidthPercent = div => {
+//   if (!div) return;
+
+//   const width = (div / 12) * 100;
+//   return width;
+// };
+
 const NavbarMenu = styled.div
   `
-width: 1080px;
-height: 120px;
-margin: 0 auto;
+
+
+  height: 120px;
+  margin: 0 auto;
+
+  @media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
+    width: 768px;
+  }
+  @media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
+    width: 768px;
+  }
+  @media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+    width: 992px;
+  }
+  @media only screen and (min-width: ${BREAK_POINT_PC}px) {
+    width: 1080px;
+  }
 `
 
 const LogoSide = styled.div
 `
 width: 440px;
 height:120px;
-float:left;
-margin:0;
 padding:0;
+
+@media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
+  margin:0 auto;
+}
+@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
+  margin:0 auto;
+}
+@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+  margin:0 auto;
+}
+@media only screen and (min-width: ${BREAK_POINT_PC}px) {
+  margin:0;
+  float:left;
+}
 `
+
 const NavbarMenuSide = styled.div
   `
 width: 640px;
 height:120px;
-float:left;
-margin:0;
+
+
 padding:0;
+
+@media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
+  margin:0 auto;
+}
+@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
+  margin:0 auto;
+}
+@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+  margin:0 auto;
+ 
+}
+@media only screen and (min-width: ${BREAK_POINT_PC}px) {
+  margin:0;
+  float:left;
+}
 `
 
 const NavbarMenuUl = styled.ul

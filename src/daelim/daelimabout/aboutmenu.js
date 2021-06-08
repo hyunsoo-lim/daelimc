@@ -4,6 +4,11 @@ import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, 
 import KakaoMap from './kakaomap'
 import Fade from 'react-reveal/Fade';
 
+
+const BREAK_POINT_MOBILE = 768;
+const BREAK_POINT_TABLET = 992;
+const BREAK_POINT_PC = 1200;
+
 const AboutMenuLayout = styled.div
   `
 margin-top:-1px;
@@ -49,10 +54,28 @@ line-height:60px;
 
 const AboutDiv1 = styled.div
   `
-width: 1080px;
 height : 300px; 
 text-align: left;
 margin-top:50px;
+
+
+@media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
+  width: 768px;
+  margin: 0 auto;
+}
+@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
+  width: 992px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+  width: 1080px;
+  margin: 0 auto;
+}
+}
+@media only screen and (min-width: ${BREAK_POINT_PC}px) {
+  width: 1080px;
+}
 `
 const AboutDiv1Top = styled.div
   `
@@ -64,21 +87,62 @@ const AboutDiv1TopText = styled.p
 font-size:20px;
 font-weight:600;
 color:#5a5a5a;
+margin-left:30px;
 `
 const AboutDiv1TextDiv = styled.div
 `
 margin-top:60px;
-width: 1080px;
 height : 400px; 
 text-align:center
+
+
+@media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
+  width: 768px;
+  margin: 0 auto;
+  text-align:center
+}
+@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
+  width: 992px;
+  margin: 0 auto;
+  text-align:center
+}
+
+@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+  width: 1080px;
+  margin: 0 auto;
+  text-align:center
+}
+}
+@media only screen and (min-width: ${BREAK_POINT_PC}px) {
+  width: 1080px;
+  text-align:center
+}
 `
 
 const AboutDiv2 = styled.div
   `
-width: 1080px;
+
 height : 800px; 
 margin-top:4px;
 text-align: left;
+
+@media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
+  width: 768px;
+  margin: 0 auto;
+}
+@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
+  width: 992px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+  width: 1080px;
+  margin: 0 auto;
+}
+}
+@media only screen and (min-width: ${BREAK_POINT_PC}px) {
+  width: 1080px;
+}
 `
 const AboutDiv2Top = styled.div
   `
@@ -92,6 +156,7 @@ const AboutDiv2TopText = styled.p
 font-size:20px;
 font-weight:600;
 color:#5a5a5a;
+margin-left:30px;
 `
 
 const AboutText1P = styled.p
@@ -187,7 +252,7 @@ class AboutMenu extends React.Component {
   render() {
 
     return (
-      <div>
+     
         <Fade opposite when={this.state.show}>
           <AboutMenuLayout id='submenu'>
             <AboutMenu2>
@@ -201,7 +266,7 @@ class AboutMenu extends React.Component {
               </Link>
             </AboutMenu1>
           </AboutMenuLayout>
-        </Fade>
+       
 
         <AboutDiv1 name="test1" className="element" >
           <AboutDiv1Top />
@@ -221,7 +286,7 @@ class AboutMenu extends React.Component {
           <KakaoMap />
         </AboutDiv2>
 
-      </div>
+        </Fade>
     )
   }
 }
