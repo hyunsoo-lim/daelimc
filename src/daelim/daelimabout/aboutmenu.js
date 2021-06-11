@@ -12,10 +12,35 @@ const BREAK_POINT_PC = 1200;
 const AboutMenuLayout = styled.div
   `
 margin-top:-1px;
-width: 1080px;
+
 height : 60px; 
 background :#6CC0FF;
 postion:fixed;
+
+
+@media only screen and (max-width: 600px) {
+  width: 408px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 600px) {
+  width: 768px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  width: 768px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 992px) {
+  width: 1080px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 1200px) {
+  width: 1080px;
+}
 `
 
 const AboutMenu1 = styled.div
@@ -29,7 +54,7 @@ const AboutMenu2 = styled.div
   `
 width: 120px;
 height : 60px; 
-float:right;
+
 margin-right:220px;
 `
 
@@ -58,28 +83,34 @@ height : 300px;
 text-align: left;
 margin-top:50px;
 
+@media only screen and (max-width: 600px) {
+  width: 468px;
+  margin: 0 auto;
+}
 
-@media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
+@media only screen and (min-width: 600px) {
   width: 768px;
   margin: 0 auto;
 }
-@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
-  width: 992px;
+
+@media only screen and (min-width: 768px) {
+  width: 768px;
   margin: 0 auto;
 }
 
-@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+@media only screen and (min-width: 992px) {
   width: 1080px;
   margin: 0 auto;
 }
-}
-@media only screen and (min-width: ${BREAK_POINT_PC}px) {
+
+@media only screen and (min-width: 1200px) {
   width: 1080px;
 }
 `
+
+
 const AboutDiv1Top = styled.div
-  `
-width: 1080px;
+`
 height : 50px; 
 `
 const AboutDiv1TopText = styled.p

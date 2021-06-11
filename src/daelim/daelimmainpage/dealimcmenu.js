@@ -5,13 +5,14 @@ import MenuUnderAnimation from './menuunderani';
 import { BrowserRouter as BrowserRouter, Link } from 'react-router-dom';
 
 
+const BREAK_POINT_MOBILE2 = 600;
 const BREAK_POINT_MOBILE = 768;
 const BREAK_POINT_TABLET = 992;
 const BREAK_POINT_PC = 1200;
 
 const Logo = styled.p
 `
-width: 120px;
+
 height: 50px;
 object-fit: cover;
 font-size: 35px;
@@ -22,15 +23,19 @@ font-weight:500;
 text-align:center;
 
 @media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
+  width: 200px;
   margin:0 auto;
 }
 @media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
+  width: 200px;
   margin:0 auto;
 }
 @media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+  width: 200px;
   margin:0 auto;
 }
 @media only screen and (min-width: ${BREAK_POINT_PC}px) {
+  width: 200px;
   margin-left:20px;
 }
 `
@@ -54,60 +59,84 @@ const NavbarMenu = styled.div
   height: 120px;
   margin: 0 auto;
 
-  @media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
-    width: 768px;
-  }
-  @media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
-    width: 768px;
-  }
-  @media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
-    width: 992px;
-  }
-  @media only screen and (min-width: ${BREAK_POINT_PC}px) {
-    width: 1080px;
-  }
+@media only screen and (max-width: 600px) {
+  width: 300px;
+}
+
+@media only screen and (min-width: 600px) {
+  width: 600px;
+}
+
+@media only screen and (min-width: 768px) {
+  width: 768px;
+}
+
+@media only screen and (min-width: 992px) {
+  width: 992px;
+}
+
+@media only screen and (min-width: 1200px) {
+  width: 1080px;
+}
 `
 
 const LogoSide = styled.div
 `
-width: 440px;
+
 height:120px;
 padding:0;
 
-@media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
+
+@media only screen and (max-width: 600px) {
+  width: 240px;
   margin:0 auto;
 }
-@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
+
+@media only screen and (min-width: 600px) {
+  width: 240px;
   margin:0 auto;
 }
-@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+
+@media only screen and (min-width: 768px) {
+  width: 240px;
   margin:0 auto;
 }
-@media only screen and (min-width: ${BREAK_POINT_PC}px) {
+@media only screen and (min-width: 992px) {
+  width: 240px;
+  margin:0 auto;
+}
+
+@media only screen and (min-width: 1200px) {
+  width: 440px;
   margin:0;
   float:left;
-}
+
 `
 
 const NavbarMenuSide = styled.div
   `
-width: 640px;
 height:120px;
 
-
 padding:0;
-
-@media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
+@media only screen and (max-width: 600px) {
+  width: 480px;
   margin:0 auto;
 }
-@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
+@media only screen and (min-width: 600px) {
+  width: 480px;
   margin:0 auto;
 }
-@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+@media only screen and (min-width: 768px) {
+  width: 480px;
+  margin:0 auto;
+}
+@media only screen and (min-width: 992px) {
+  width: 480px;
   margin:0 auto;
  
 }
-@media only screen and (min-width: ${BREAK_POINT_PC}px) {
+@media only screen and (min-width: 1200px) {
+  width: 640px;
   margin:0;
   float:left;
 }
@@ -120,7 +149,7 @@ padding:0;
 `
 const NavbarMenuLi = styled.li
   `
-width: 160px;
+
 height:120px;
 display: block;
 position : relative;
@@ -130,6 +159,24 @@ font-weight: 550;
 color:#5A5A5A;
 text-transform: uppercase;
 text-align : center;
+
+
+@media only screen and (max-width: ${BREAK_POINT_MOBILE2}px) {
+  width: 80px;
+}
+@media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
+  width: 80px;
+}
+@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
+  width: 80px;
+}
+@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+  width: 80px;
+ 
+}
+@media only screen and (min-width: ${BREAK_POINT_PC}px) {
+  width: 160px;
+}
 `
 
 // const NavbarMenuUl2 = styled.ul

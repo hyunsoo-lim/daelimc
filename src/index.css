@@ -7,6 +7,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-y: scroll;
   height: 100%;
+
+  
+}
+
+
+@media screen and(min-width: 800px) {
+  body {
+    overflow: hidden;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
 }
 
 code {

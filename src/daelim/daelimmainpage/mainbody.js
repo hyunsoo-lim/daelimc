@@ -53,7 +53,7 @@ class DaelimcMainBody extends React.Component {
 
     return (
       <BodyDiv>
-        <BackgroundBody />
+        {/* <BackgroundBody /> */}
         <Fade>
           <SimpleSlider />
           <Body>

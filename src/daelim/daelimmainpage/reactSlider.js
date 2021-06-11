@@ -14,16 +14,16 @@ const SliderImg = styled.img
 `
 display: block; 
 margin:0 auto;
-hegiht:600px;
-width: 1080px;
+
+
 
 @media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
   width: 768px;
-  hegiht:444px;
+  hegiht:100px;
 }
 @media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
   width: 768px;
-  hegiht:444px;
+  hegiht:100px;
 }
 @media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
   width: 1080px;
@@ -40,21 +40,21 @@ width: 1080px;
 
 const SliderDiv2 = styled.div
 `
-hegiht:600px;
+
 text-align:center;
 background:#EAEAEA;
 
 @media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
   width: 768px;
-  hegiht:444px;
+  hegiht:100px;
 }
 @media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
   width: 768px;
-  hegiht:444px;
+  hegiht:100px;
 }
 @media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
   width: 1080px;
-  hegiht:600px;
+  hegiht:300px;
 }
 @media only screen and (min-width: ${BREAK_POINT_PC}px) {
   width: 1080px;
