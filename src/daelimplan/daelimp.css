@@ -115,9 +115,9 @@ body,html{
 }
 
 
-.work figure {
+/* .work figure {
     float:left;
-	width:calc(100% / 3 - 30px);
+	
     height:250px;
     line-height:auto;
     position: relative;
@@ -132,6 +132,109 @@ body,html{
 	-moz-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
 	box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
 	background-color:#FFF;
+} */
+
+@media (max-width: 600px) {
+	.work figure {
+		width:calc(100% / 1 - 30px);
+		float:left;
+		height:250px;
+		line-height:auto;
+		position: relative;
+		padding: 0 !important;
+		margin: 15px;
+		transition: all 0.3s ease-in-out;
+		-webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		-ms-transition: all 0.3s ease-in-out;
+		-webkit-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+		-moz-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+		box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+		background-color:#FFF;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.work figure {
+		width:calc(100% / 2 - 30px);
+		float:left;
+		height:250px;
+		line-height:auto;
+		position: relative;
+		padding: 0 !important;
+		margin: 15px;
+		transition: all 0.3s ease-in-out;
+		-webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		-ms-transition: all 0.3s ease-in-out;
+		-webkit-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+		-moz-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+		box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+		background-color:#FFF;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.work figure {
+		width:calc(100% / 2 - 30px);
+		/* float:left; */
+		height:250px;
+		line-height:auto;
+		position: relative;
+		padding: 0 !important;
+		margin: 15px;
+		transition: all 0.3s ease-in-out;
+		-webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		-ms-transition: all 0.3s ease-in-out;
+		-webkit-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+		-moz-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+		box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+		background-color:#FFF;
+	}
+}
+@media screen and (min-width: 992px) {
+	.work figure {
+		width:calc(100% / 3 - 20px);
+		
+		height:250px;
+		line-height:auto;
+		position: relative;
+		padding: 0 !important;
+		margin: 15px;
+		transition: all 0.3s ease-in-out;
+		-webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		-ms-transition: all 0.3s ease-in-out;
+		-webkit-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+		-moz-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+		box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+		background-color:#FFF;
+	}
+}
+@media screen and (min-width: 1200px) {
+	.work figure {
+		width:calc(100% / 3 - 30px);
+		
+		height:250px;
+		line-height:auto;
+		position: relative;
+		padding: 0 !important;
+		margin: 15px;
+		transition: all 0.3s ease-in-out;
+		-webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		-ms-transition: all 0.3s ease-in-out;
+		-webkit-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+		-moz-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+		box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+		background-color:#FFF;
+	}
 }
 
 .work figure.white dl{

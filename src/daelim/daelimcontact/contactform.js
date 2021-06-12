@@ -9,18 +9,68 @@ init("user_HAgUXtKyQHr630h7a4gCQ");
 const ContectBody = styled.div
     `
 margin-top : 60px;
-width: 1080px;
+
 margin-left:auto;
 margin-right:auto;
 z-index: 0;
+
+@media only screen and (max-width: 600px) {
+    width: 100%;
+  
+  }
+  
+  @media only screen and (min-width: 600px) {
+    width:  100%;
+   
+  }
+  
+  @media only screen and (min-width: 768px) {
+    width:  100%;
+    
+  }
+  
+  @media only screen and (min-width: 992px) {
+    width:100%;
+   
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    width: 1080px;
+    
+  }
 `
 
 const FormBody = styled.div
     `
 margin-top : 2px;
-width: 500px;
+
 margin-left:auto;
 margin-right:auto;
+
+@media only screen and (max-width: 600px) {
+    width: 50%;
+  
+  }
+  
+  @media only screen and (min-width: 600px) {
+    width:  50%;
+   
+  }
+  
+  @media only screen and (min-width: 768px) {
+    width:  50%;
+    
+  }
+  
+  @media only screen and (min-width: 992px) {
+    width: 50%;
+   
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    width: 50%;
+    
+  }
 `
 
 

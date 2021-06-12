@@ -9,6 +9,33 @@ const BREAK_POINT_MOBILE = 768;
 const BREAK_POINT_TABLET = 992;
 const BREAK_POINT_PC = 1200;
 
+const AboutMenuLayoutMain = styled.div
+  `
+@media only screen and (max-width: 600px) {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 600px) {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 992px) {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 1200px) {
+  width: 1080px;
+}
+`
+
 const AboutMenuLayout = styled.div
   `
 margin-top:-1px;
@@ -19,22 +46,22 @@ postion:fixed;
 
 
 @media only screen and (max-width: 600px) {
-  width: 408px;
+  width: 100%;
   margin: 0 auto;
 }
 
 @media only screen and (min-width: 600px) {
-  width: 768px;
+  width: 100%;
   margin: 0 auto;
 }
 
 @media only screen and (min-width: 768px) {
-  width: 768px;
+  width: 100%;
   margin: 0 auto;
 }
 
 @media only screen and (min-width: 992px) {
-  width: 1080px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -84,69 +111,69 @@ text-align: left;
 margin-top:50px;
 
 @media only screen and (max-width: 600px) {
-  width: 468px;
+  width: 100%;
   margin: 0 auto;
 }
 
 @media only screen and (min-width: 600px) {
-  width: 768px;
+  width: 100%;
   margin: 0 auto;
 }
 
 @media only screen and (min-width: 768px) {
-  width: 768px;
+  width: 100%;
   margin: 0 auto;
 }
 
 @media only screen and (min-width: 992px) {
-  width: 1080px;
+  width: 100%;
   margin: 0 auto;
 }
 
 @media only screen and (min-width: 1200px) {
   width: 1080px;
+  margin: 0 auto;
 }
 `
 
 
 const AboutDiv1Top = styled.div
-`
+  `
 height : 50px; 
 `
 const AboutDiv1TopText = styled.p
-`
+  `
 font-size:20px;
 font-weight:600;
 color:#5a5a5a;
 margin-left:30px;
+
+
 `
 const AboutDiv1TextDiv = styled.div
-`
+  `
 margin-top:60px;
 height : 400px; 
-text-align:center
+margin : 0 auto;
 
-
-@media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
-  width: 768px;
-  margin: 0 auto;
-  text-align:center
-}
-@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
-  width: 992px;
-  margin: 0 auto;
-  text-align:center
+@media only screen and (max-width: 600px) {
+  width: 80%;
 }
 
-@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
-  width: 1080px;
-  margin: 0 auto;
-  text-align:center
+@media only screen and (min-width: 600px) {
+  width: 80%;
 }
+
+@media only screen and (min-width: 768px) {
+  width: 80%;
 }
-@media only screen and (min-width: ${BREAK_POINT_PC}px) {
-  width: 1080px;
-  text-align:center
+
+@media only screen and (min-width: 992px) {
+  width: 80%;
+}
+
+@media only screen and (min-width: 1200px) {
+  width: 80%;
 }
 `
 
@@ -157,27 +184,34 @@ height : 800px;
 margin-top:4px;
 text-align: left;
 
-@media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
-  width: 768px;
-  margin: 0 auto;
-}
-@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
-  width: 992px;
+@media only screen and (max-width: 600px) {
+  width: 100%;
   margin: 0 auto;
 }
 
-@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
-  width: 1080px;
+@media only screen and (min-width: 600px) {
+  width: 100%;
   margin: 0 auto;
 }
+
+@media only screen and (min-width: 768px) {
+  width: 100%;
+  margin: 0 auto;
 }
-@media only screen and (min-width: ${BREAK_POINT_PC}px) {
-  width: 1080px;
+
+@media only screen and (min-width: 992px) {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 1200px) {
+  width: 100%;
+  margin: 0 auto;
 }
 `
 const AboutDiv2Top = styled.div
   `
-width: 1080px;
+width: 100%;
 height : 150px; 
 display: table-cell;
 vertical-align: bottom;
@@ -195,6 +229,26 @@ const AboutText1P = styled.p
 font-size:15px;
 font-weight:400;
 color:#5a5a5a;
+@media only screen and (max-width: 600px) {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  width: 100%;
+}
+
+@media only screen and (min-width: 992px) {
+  width: 100%;
+}
+
+@media only screen and (min-width: 1200px) {
+  width: 100%;
+  text-align:center;
+}
 `
 
 
@@ -283,7 +337,7 @@ class AboutMenu extends React.Component {
   render() {
 
     return (
-     
+      <AboutMenuLayoutMain id='aboutmain'>
         <Fade opposite when={this.state.show}>
           <AboutMenuLayout id='submenu'>
             <AboutMenu2>
@@ -297,27 +351,31 @@ class AboutMenu extends React.Component {
               </Link>
             </AboutMenu1>
           </AboutMenuLayout>
-       
 
-        <AboutDiv1 name="test1" className="element" >
-          <AboutDiv1Top />
-          <AboutDiv1TopText>회사소개</AboutDiv1TopText>
-          <AboutDiv1TextDiv>
-            <AboutText1P>저희 대림컨트롤은 유압장비 엔진 시스템, 발전기 엔진 시스템 및 다양한 장비의 시스템을 제작 판매하고있습니다</AboutText1P>
-            <AboutText1P>저희 대림컨트롤은 유압장비 엔진 시스템, 발전기 엔진 시스템 및 다양한 장비의 시스템을 제작 판매하고있습니다</AboutText1P>
-            <AboutText1P>저희 대림컨트롤은 유압장비 엔진 시스템, 발전기 엔진 시스템 및 다양한 장비의 시스템을 제작 판매하고있습니다</AboutText1P>
-            <AboutText1P>저희 대림컨트롤은 유압장비 엔진 시스템, 발전기 엔진 시스템 및 다양한 장비의 시스템을 제작 판매하고있습니다</AboutText1P>
-          </AboutDiv1TextDiv>
 
-        </AboutDiv1>
-        <AboutDiv2 name="test2" className="element" >
-          <AboutDiv2Top/>
+          <AboutDiv1 name="test1" className="element" >
+            <AboutDiv1Top />
+            <AboutDiv1TopText>회사소개</AboutDiv1TopText>
+            <AboutDiv1TextDiv>
+              <AboutText1P>저희 대림컨트롤은 유압장비 엔진 시스템, 발전기 엔진 시스템 및 다양한 장비의 시스템을 제작 판매하고있습니다 <br/>
+              저희 대림컨트롤은 유압장비 엔진 시스템, 발전기 엔진 시스템 및 다양한 장비의 시스템을 제작 판매하고있습니다 <br/>
+              저희 대림컨트롤은 유압장비 엔진 시스템, 발전기 엔진 시스템 및 다양한 장비의 시스템을 제작 판매하고있습니다 <br/>
+              저희 대림컨트롤은 유압장비 엔진 시스템, 발전기 엔진 시스템 및 다양한 장비의 시스템을 제작 판매하고있습니다 <br/>
+              </AboutText1P>
+              
+            
+            </AboutDiv1TextDiv>
+
+          </AboutDiv1>
+          <AboutDiv2 name="test2" className="element" >
+            <AboutDiv2Top />
             <AboutDiv2TopText>오시는길</AboutDiv2TopText>
-        
-          <KakaoMap />
-        </AboutDiv2>
+
+            <KakaoMap />
+          </AboutDiv2>
 
         </Fade>
+      </AboutMenuLayoutMain>
     )
   }
 }

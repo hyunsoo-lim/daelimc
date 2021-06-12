@@ -12,38 +12,48 @@ const BREAK_POINT_PC = 1200;
 
 const Logo = styled.p
 `
-
 height: 50px;
 object-fit: cover;
 font-size: 35px;
-line-height: 35px;
-
 color:#6CC0FF;
 font-weight:500;
 text-align:center;
 
 @media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
-  width: 200px;
+  width: 80%;
   margin:0 auto;
+  line-height: 50px;
 }
 @media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
-  width: 200px;
+  width: 80%;
   margin:0 auto;
+  line-height: 50px;
 }
 @media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
-  width: 200px;
+  width: 80%;
   margin:0 auto;
+  line-height: 50px;
 }
 @media only screen and (min-width: ${BREAK_POINT_PC}px) {
-  width: 200px;
+  width: 80%;
   margin-left:20px;
+  line-height: 50px;
 }
 `
 const LogoTop = styled.div
 `
 width: 120px;
-height: 30px;
+
+
+@media only screen and (max-width: 600px) {
+  height: 0px;
+}
+
+@media only screen and (min-width: 600px) {
+  height: 0px;
+}
 `
+
 
 // const calcWidthPercent = div => {
 //   if (!div) return;
@@ -56,58 +66,68 @@ const NavbarMenu = styled.div
   `
 
 
-  height: 120px;
+ 
   margin: 0 auto;
 
 @media only screen and (max-width: 600px) {
-  width: 300px;
+  width: 100%;
+  height: 20%;
 }
 
 @media only screen and (min-width: 600px) {
-  width: 600px;
+  width:  100%;
+  height: 20%;
 }
 
 @media only screen and (min-width: 768px) {
-  width: 768px;
+  width:  100%;
+  height: 120px;
 }
 
 @media only screen and (min-width: 992px) {
   width: 992px;
+  height: 120px;
 }
 
 @media only screen and (min-width: 1200px) {
   width: 1080px;
+  height: 120px;
 }
 `
 
 const LogoSide = styled.div
 `
 
-height:120px;
+
 padding:0;
 
 
 @media only screen and (max-width: 600px) {
-  width: 240px;
+  width: 100%;
+  height:50px;
   margin:0 auto;
 }
 
 @media only screen and (min-width: 600px) {
-  width: 240px;
+  width: 100%;
+  height:60px;
   margin:0 auto;
 }
 
 @media only screen and (min-width: 768px) {
-  width: 240px;
+  width:100%;
+  height:80px;
   margin:0 auto;
 }
 @media only screen and (min-width: 992px) {
-  width: 240px;
+  width: 100%;
+  height:80px;
   margin:0 auto;
 }
 
 @media only screen and (min-width: 1200px) {
   width: 440px;
+  height:120px;
   margin:0;
   float:left;
 
@@ -115,30 +135,33 @@ padding:0;
 
 const NavbarMenuSide = styled.div
   `
-height:120px;
 
 padding:0;
 @media only screen and (max-width: 600px) {
-  width: 480px;
+  width: 100%;
   margin:0 auto;
+  height:50px;
 }
 @media only screen and (min-width: 600px) {
-  width: 480px;
+  width: 100%;
   margin:0 auto;
+  height:50px;
 }
 @media only screen and (min-width: 768px) {
-  width: 480px;
+  width: 100%;
   margin:0 auto;
+  height:50px;
 }
 @media only screen and (min-width: 992px) {
-  width: 480px;
+  width: 100%;
   margin:0 auto;
- 
+  height:50px;
 }
 @media only screen and (min-width: 1200px) {
   width: 640px;
   margin:0;
   float:left;
+  height:120px;
 }
 `
 
@@ -150,7 +173,7 @@ padding:0;
 const NavbarMenuLi = styled.li
   `
 
-height:120px;
+
 display: block;
 position : relative;
 float: left;
@@ -162,16 +185,20 @@ text-align : center;
 
 
 @media only screen and (max-width: ${BREAK_POINT_MOBILE2}px) {
-  width: 80px;
+  width: 25%;
+  height:50px;
 }
 @media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
-  width: 80px;
+  width: 25%;
+  height:20%;
 }
 @media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
-  width: 80px;
+  width: 25%;
+  height:20%;
 }
 @media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
-  width: 80px;
+  width: 25%;
+  height:20%;
  
 }
 @media only screen and (min-width: ${BREAK_POINT_PC}px) {
@@ -212,8 +239,29 @@ text-align : center;
 
 const NavbarMenuText = styled.span
   `
-height:120px;
-line-height: 120px;
+
+
+@media only screen and (max-width: ${BREAK_POINT_MOBILE2}px) {
+  height:80px;
+  line-height: 80px;
+}
+@media only screen and (max-width: ${BREAK_POINT_MOBILE}px) {
+  height:80px;
+  line-height: 80px;
+}
+@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
+  height:80px;
+  line-height: 80px;
+}
+@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+  height:80px;
+  line-height: 80px;
+ 
+}
+@media only screen and (min-width: ${BREAK_POINT_PC}px) {
+  height:120px;
+  line-height: 120px;
+}
 `
 const NavbarMenuUnderLine = styled.div
   `
@@ -378,7 +426,7 @@ class Menu extends React.Component {
       <div>
         <NavbarMenu>
           <LogoSide>
-            <LogoTop/>
+            <LogoTop id='logotop'/>
                <Link style={{ color: 'inherit' }} to="/" onClick={() => this.handleClick(0)}><Logo>DAELIM CONTROL</Logo></Link>
           </LogoSide>
 

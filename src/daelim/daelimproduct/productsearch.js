@@ -8,16 +8,65 @@ import Fade from 'react-reveal/Fade';
 const AboutMenuLayout = styled.div
     `
 margin-top:-1px;
-width: 1080px;
+
 height : 180px; 
 postion:fixed;
+@media only screen and (max-width: 600px) {
+    width: 100%;
+  
+  }
+  
+  @media only screen and (min-width: 600px) {
+    width:  100%;
+  
+  }
+  
+  @media only screen and (min-width: 768px) {
+    width:  100%;
+  
+  }
+  
+  @media only screen and (min-width: 992px) {
+    width: 992px;
+  
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    width: 1080px;
+  
+  }
 `
 
 const AboutMenuLayout2 = styled.div
     `
-width: 1080px;
+
 height : 60px; 
 background :#6CC0FF;
+
+@media only screen and (max-width: 600px) {
+    width: 100%;
+  
+  }
+  
+  @media only screen and (min-width: 600px) {
+    width:  100%;
+  
+  }
+  
+  @media only screen and (min-width: 768px) {
+    width:  100%;
+  
+  }
+  
+  @media only screen and (min-width: 992px) {
+    width: 992px;
+  
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    width: 1080px;
+  
+  }
 `
 
 const AboutMenu1 = styled.div
@@ -64,41 +113,130 @@ const InputDiv = styled.div
 clear:both;
 margin: 0 auto;
 margin-top:40px;
-width: 520px;
 height : 100px; 
+
+@media only screen and (max-width: 600px) {
+    width: 80%;
+  
+  }
+  
+  @media only screen and (min-width: 600px) {
+    width: 80%;
+  
+  }
+  
+  @media only screen and (min-width: 768px) {
+    width: 80%;
+  
+  }
+  
+  @media only screen and (min-width: 992px) {
+    width: 80%;
+  
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    width: 520px;
+  
+  }
 
 `
 
 const FormEl = styled.form
     `
-width: 400px;
 height : 40px; 
-margin:0;
-margin-left:60px;
-padding:0;
+margin : 0 auto;
 text-align:center;
-float:left;
+@media only screen and (max-width: 600px) {
+    width: 100%;
+  
+  }
+  
+  @media only screen and (min-width: 600px) {
+    width: 100%;
+  
+  }
+  
+  @media only screen and (min-width: 768px) {
+    width: 100%;
+  
+  }
+  
+  @media only screen and (min-width: 992px) {
+    width: 100%;
+  
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    width: 100%;
+  
+  }
 `
 const InputEl = styled.input
     `
-width: 340px;
+
 height : 40px; 
 line-height : 100px;
 border: 1px solid #8f8f8f;
-
+margin : 0 auto;
+@media only screen and (max-width: 600px) {
+    width: 50%;
+  
+  }
+  
+  @media only screen and (min-width: 600px) {
+    width: 50%;
+  
+  }
+  
+  @media only screen and (min-width: 768px) {
+    width: 50%;
+  
+  }
+  
+  @media only screen and (min-width: 992px) {
+    width: 50%;
+  
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    width: 340px;
+  
+  }
 `
 const ButtonEl = styled.button
-    `
-width: 60px;
+`
+width: 15%;
 height : 40px; 
-line-height : 100px;
-float:left;
 `
 
 const Body = styled.div
-    `
-width:1080px;
+ `
 min-height:600px;
+@media only screen and (max-width: 600px) {
+    width: 100%;
+  
+  }
+  
+  @media only screen and (min-width: 600px) {
+    width: 100%;
+  
+  }
+  
+  @media only screen and (min-width: 768px) {
+    width: 100%;
+  
+  }
+  
+  @media only screen and (min-width: 992px) {
+    width: 100%;
+  
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    width: 100%;
+  
+  }
 `
 
 class ProductSearch extends React.Component {
@@ -144,7 +282,7 @@ class ProductSearch extends React.Component {
     };
 
     getData() {
-       
+
         setTimeout(async () => {
             // const response = await axios.get('../api/products');
             // const data= this.state.search;
@@ -166,8 +304,8 @@ class ProductSearch extends React.Component {
             this.setState({ product: response.data.products });
             // const logdata= this.state.product;
             // console.log(logdata)
-            
-           
+
+
         }, 100);
     }
 
@@ -214,15 +352,17 @@ class ProductSearch extends React.Component {
                     </AboutMenuLayout2>
                     {/* 검색 */}
                     <InputDiv>
+                        
                         <FormEl>
                             <InputEl type="text" onChange={this.searchHandler} />
                         </FormEl>
-                        <button style={{ width: '60px', height: '40px' }} onClick={this.getData}>검색</button>
+                        <ButtonEl onClick={this.getData}>검색</ButtonEl>
+
                     </InputDiv>
                 </AboutMenuLayout>
 
                 <Fade>
-                    <Body>
+                    <Body id='search body'>
                         <section class="work">
 
                             {product.map(product => {

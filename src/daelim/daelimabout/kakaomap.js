@@ -3,10 +3,40 @@ import styled from "styled-components";
 
 const Kmap = styled.div
   `
-width:1080px;
-height:600px;
+
 margin-top:10px;
+
+@media only screen and (max-width: 600px) {
+  width: 100%;
+  margin: 0 auto;
+  height:400px;
+}
+
+@media only screen and (min-width: 600px) {
+  width: 100%;
+  margin: 0 auto;
+  height:400px;
+}
+
+@media only screen and (min-width: 768px) {
+  width: 100%;
+  margin: 0 auto;
+  height:400px;
+}
+
+@media only screen and (min-width: 992px) {
+  width: 100%;
+  margin: 0 auto;
+  height:600px;
+}
+
+@media only screen and (min-width: 1200px) {
+  width: 1080px;
+  height:600px;
+}
 `
+
+
 /*global kakao*/
 
 class KakaoMap extends React.Component {
