@@ -104,7 +104,7 @@ padding:0;
 
 @media only screen and (max-width: 600px) {
   width: 100%;
-  height:50px;
+  height:100px;
   margin:0 auto;
 }
 

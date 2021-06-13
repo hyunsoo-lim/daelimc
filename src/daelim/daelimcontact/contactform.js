@@ -48,22 +48,22 @@ margin-left:auto;
 margin-right:auto;
 
 @media only screen and (max-width: 600px) {
-    width: 50%;
+    width: 80%;
   
   }
   
   @media only screen and (min-width: 600px) {
-    width:  50%;
+    width:  80%;
    
   }
   
   @media only screen and (min-width: 768px) {
-    width:  50%;
+    width:  60%;
     
   }
   
   @media only screen and (min-width: 992px) {
-    width: 50%;
+    width: 60%;
    
   }
   

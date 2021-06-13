@@ -116,27 +116,27 @@ margin-top:40px;
 height : 100px; 
 
 @media only screen and (max-width: 600px) {
-    width: 80%;
+    width: 70%;
   
   }
   
   @media only screen and (min-width: 600px) {
-    width: 80%;
+    width: 70%;
   
   }
   
   @media only screen and (min-width: 768px) {
-    width: 80%;
+    width: 50%;
   
   }
   
   @media only screen and (min-width: 992px) {
-    width: 80%;
+    width: 50%;
   
   }
   
   @media only screen and (min-width: 1200px) {
-    width: 520px;
+    width: 50%;
   
   }
 
@@ -168,7 +168,7 @@ text-align:center;
   }
   
   @media only screen and (min-width: 1200px) {
-    width: 100%;
+    width: 80%;
   
   }
 `
@@ -178,36 +178,62 @@ const InputEl = styled.input
 height : 40px; 
 line-height : 100px;
 border: 1px solid #8f8f8f;
-margin : 0 auto;
+float:left;
+
 @media only screen and (max-width: 600px) {
-    width: 50%;
+   margin-left:10%;
+    width: 70%;
   
   }
   
   @media only screen and (min-width: 600px) {
-    width: 50%;
+    margin-left:10%;
+    width: 70%;
   
   }
   
   @media only screen and (min-width: 768px) {
-    width: 50%;
+    margin-left:10%;
+    width: 70%;
   
   }
   
   @media only screen and (min-width: 992px) {
-    width: 50%;
+    margin-left:15%;
+    width: 70%;
   
   }
   
   @media only screen and (min-width: 1200px) {
-    width: 340px;
+    margin-left:15%;
+    width: 70%;
   
   }
 `
 const ButtonEl = styled.button
 `
-width: 15%;
+
 height : 40px; 
+float:left;
+@media only screen and (max-width: 600px) {
+  width: 20%;
+}
+
+@media only screen and (min-width: 600px) {
+  width: 20%;
+}
+
+@media only screen and (min-width: 768px) {
+  width: 20%;
+}
+
+@media only screen and (min-width: 992px) {
+  width: 15%;
+}
+
+@media only screen and (min-width: 1200px) {
+  width: 15%;
+}
 `
 
 const Body = styled.div
@@ -355,9 +381,9 @@ class ProductSearch extends React.Component {
                         
                         <FormEl>
                             <InputEl type="text" onChange={this.searchHandler} />
+                            <ButtonEl onClick={this.getData}>검색</ButtonEl>
                         </FormEl>
-                        <ButtonEl onClick={this.getData}>검색</ButtonEl>
-
+                       
                     </InputDiv>
                 </AboutMenuLayout>
 

@@ -32,22 +32,68 @@ line-height:60px;
 
 const Body = styled.div
 `
-width:1080px;
 min-height:600px;
 margin: 0 auto;
+
+@media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 768px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 992px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 1200px) {
+    width:1080px;
+  }
 `
 
 const Topdiv = styled.div
 `
-width:1080px;
 height:30px;
+
+@media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 768px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 992px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 1200px) {
+    width:1080px;
+  }
 `
 
 
 const DownloadDiv = styled.div
 `
-width:1080px;
+
 height:40px;
+
+@media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 768px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 992px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 1200px) {
+    width:1080px;
+  }
 `
 
 const DownloadA = styled.a
@@ -58,33 +104,116 @@ margin-right:30px;
 `
 const ImgDiv = styled.div
 `
-width:1080px;
-height:400px;
+
+
+
+@media only screen and (max-width: 600px) {
+    width: 100%;
+    height:45%;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 100%;
+    height:45%;
+  }
+  @media only screen and (min-width: 768px) {
+    width: 100%;
+    height:45%;
+  }
+  @media only screen and (min-width: 992px) {
+    width: 100%;
+    height:45%;
+  }
+  @media only screen and (min-width: 1200px) {
+    width:1080px;
+    height:400px;
+  }
 `
 
 const Img = styled.img
 `
 display:block;
-width:465px;
-height:315px;
-margin-left:20px;
+
 margin-top:26px;
-float:left;
+
+@media only screen and (max-width: 600px) {
+    width: 80%;
+    margin : 0 auto;
+    height:45%;
+  }
+  @media only screen and (min-width: 600px) {
+    margin : 0 auto;
+    width: 80%;
+    height:45%;
+  }
+  @media only screen and (min-width: 768px) {
+    margin : 0 auto;
+    width: 80%;
+    height:45%;
+  }
+  @media only screen and (min-width: 992px) {
+    margin : 0 auto;
+    width: 60%;
+    height:45%;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-left:20px;
+    float:left;
+    width:465px;
+    height:315px;
+  }
 `
 
 const SideDiv = styled.div
 `
 display:block;
-width:525px;
 height:400px;
-margin-left:50px;
-float:left;
+
+
+@media only screen and (max-width: 600px) {
+    margin : 0 auto;
+    margin-top:10%;
+    width: 80%;
+  }
+  @media only screen and (min-width: 600px) {
+    margin : 0 auto;
+    margin-top:10%;
+    width: 80%;
+  }
+  @media only screen and (min-width: 768px) {
+    margin : 0 auto;
+    margin-top:10%;
+    width: 80%;
+  }
+  @media only screen and (min-width: 992px) {
+    margin : 0 auto;
+    width: 80%;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-left:50px;
+    float:left;
+    width:525px;
+  }
 `
 
 const SideProductDiv = styled.div
 `
-width:525px;
 height:61px;
+
+@media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 768px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 992px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 1200px) {
+    width:525px;
+  }
 `
 const SideProductDivSide = styled.div
 `
@@ -94,30 +223,120 @@ border:1px solid #E1E1E1;
 
 const SideProductSubject = styled.div
 `
-width:90px;
 height:61px;
 margin-left:20px;
 line-height:61px;
-font-size:16px;
+
 font-weight:300;
 float:left;
+
+@media only screen and (max-width: 600px) {
+    width: 30%;
+    font-size:14px;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 30%;
+    font-size:14px;
+  }
+  @media only screen and (min-width: 768px) {
+    width: 30%;
+    font-size:14px;
+  }
+  @media only screen and (min-width: 992px) {
+    width: 30%;
+    font-size:14px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width:90px;
+    font-size:16px;
+  }
 `
 const SideProductText= styled.div
 `
-width:200px;
+
 height:61px;
-margin-left:80px;
 line-height:61px;
 font-size:16px;
 float:left;
+
+@media only screen and (max-width: 600px) {
+    width: 50%;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 50%;
+  }
+  @media only screen and (min-width: 768px) {
+    width: 50%;
+  }
+  @media only screen and (min-width: 992px) {
+    width: 50%;
+  }
+  @media only screen and (min-width: 1200px) {
+    margin-left:80px;
+    width:200px;
+  }
+`
+
+//제품구성이 길어서 추가
+const SideProductText2= styled.div 
+`
+
+margin : 0 auto;
+font-size:16px;
+float:left;
+
+@media only screen and (max-width: 600px) {
+    width: 50%;
+    padding-top: 4%;
+    padding-bottom:4%;
+
+  }
+  @media only screen and (min-width: 600px) {
+    width: 50%;
+    padding-top: 4%;
+    padding-bottom:4%;
+  }
+  @media only screen and (min-width: 768px) {
+    width: 50%;
+    padding-top: 3%;
+    padding-bottom:3%;
+  }
+  @media only screen and (min-width: 992px) {
+    width: 50%;
+    padding-top: 2%;
+    padding-bottom:2%;
+  }
+  @media only screen and (min-width: 1200px) {
+    padding-top: 2%;
+    padding-bottom:2%;
+    margin-left:80px;
+    width:320px;
+  }
 `
 
 const DetailDiv =styled.div
 `
-width:1080px;
+clear:both;
 min-height:300px;
 margin-top :100px;
 text-align:center;
+
+
+@media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 768px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 992px) {
+    width: 100%;
+  }
+  @media only screen and (min-width: 1200px) {
+    width:1080px;
+  }
 `
 
 class DaelimProductDetail extends React.Component {
@@ -204,7 +423,7 @@ class DaelimProductDetail extends React.Component {
                             <SideProductDivSide />
                             <SideProductDiv>
                                 <SideProductSubject>제품 구성</SideProductSubject>
-                                <SideProductText>{jsonDetail.ccomponent}</SideProductText>
+                                <SideProductText2>{jsonDetail.ccomponent}</SideProductText2>
                             </SideProductDiv>
                             <SideProductDivSide />
                             <SideProductDiv>
