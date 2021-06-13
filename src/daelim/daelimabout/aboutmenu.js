@@ -81,7 +81,7 @@ const AboutMenu2 = styled.div
   `
 width: 120px;
 height : 60px; 
-
+float:right;
 margin-right:220px;
 `
 
