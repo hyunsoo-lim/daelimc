@@ -367,13 +367,13 @@ class ProductSearch extends React.Component {
                 <AboutMenuLayout id='submenu'>
                     <AboutMenuLayout2>
                         <AboutMenu3>
-                            <AboutMenuText2>기타</AboutMenuText2>
+                            {/* <AboutMenuText2>기타</AboutMenuText2> */}
                         </AboutMenu3>
                         <AboutMenu2>
-                            <AboutMenuText2>발전기</AboutMenuText2>
+                            {/* <AboutMenuText2>발전기</AboutMenuText2> */}
                         </AboutMenu2>
                         <AboutMenu1>
-                            <AboutMenuText1>유압</AboutMenuText1>
+                            {/* <AboutMenuText1>유압</AboutMenuText1> */}
                         </AboutMenu1>
                     </AboutMenuLayout2>
                     {/* 검색 */}

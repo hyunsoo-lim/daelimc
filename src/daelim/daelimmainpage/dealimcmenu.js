@@ -427,7 +427,7 @@ class Menu extends React.Component {
         <NavbarMenu>
           <LogoSide>
             <LogoTop id='logotop'/>
-               <Link style={{ color: 'inherit' }} to="/" onClick={() => this.handleClick(0)}><Logo>DAELIM CONTROL</Logo></Link>
+               <Link style={{ color: 'inherit' }} to="/" onClick={() => this.handleClick(0)}><Logo>Daelim Control</Logo></Link>
           </LogoSide>
 
           <NavbarMenuSide>
