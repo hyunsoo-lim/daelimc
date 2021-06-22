@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from "styled-components"
-import MenuAnimation from './menuani'
+// import MenuAnimation from './menuani'
 import MenuUnderAnimation from './menuunderani';
-import { BrowserRouter as BrowserRouter, Link } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 
 
 const BREAK_POINT_MOBILE2 = 600;
@@ -427,14 +427,14 @@ class Menu extends React.Component {
         <NavbarMenu>
           <LogoSide>
             <LogoTop id='logotop'/>
-               <Link style={{ color: 'inherit' }} to="/" onClick={() => this.handleClick(0)}><Logo>Daelim Control</Logo></Link>
+               <Link class='alink' style={{ color: 'inherit' }} to="/" onClick={() => this.handleClick(0)}><Logo>Daelim Control</Logo></Link>
           </LogoSide>
 
           <NavbarMenuSide>
             <NavbarMenuUl>
               <NavbarMenuLi value='0' onMouseEnter={this.handleMouseHover} onMouseLeave={(e) => this.handleMouseLeave(e, 0)}>
                 <div>
-                  <Link style={{ color: 'inherit' }} to="/" onClick={() => this.handleClick(0)}><NavbarMenuText>홈</NavbarMenuText></Link>
+                  <Link class='alink' style={{ color: 'inherit' }} to="/" onClick={() => this.handleClick(0)}><NavbarMenuText>홈</NavbarMenuText></Link>
                   <NavbarMenuUnderLine className='active' />
                   {this.state.isHovering[0]
                     && <MenuUnderAnimation />}
@@ -443,7 +443,7 @@ class Menu extends React.Component {
 
               <NavbarMenuLi value='1' onMouseEnter={this.handleMouseHover} onMouseLeave={(e) => this.handleMouseLeave(e, 1)}>
                 <div>
-                  <Link style={{ color: 'inherit' }} to="/about" onClick={() => this.handleClick(1)}><NavbarMenuText>회사소개</NavbarMenuText></Link>
+                  <Link class='alink' style={{ color: 'inherit' }} to="/about" onClick={() => this.handleClick(1)}><NavbarMenuText>회사소개</NavbarMenuText></Link>
                   <NavbarMenuUnderLine className='active' />
                   {this.state.isHovering[1]
                     && <MenuUnderAnimation />}
@@ -452,7 +452,7 @@ class Menu extends React.Component {
 
               <NavbarMenuLi value='2' onMouseEnter={this.handleMouseHover} onMouseLeave={(e) => this.handleMouseLeave(e, 2)}>
                 <div>
-                  <Link style={{ color: 'inherit' }} to="/product" onClick={() => this.handleClick(2)}><NavbarMenuText>제품</NavbarMenuText></Link>
+                  <Link class='alink' style={{ color: 'inherit' }} to="/product" onClick={() => this.handleClick(2)}><NavbarMenuText>제품</NavbarMenuText></Link>
                   <NavbarMenuUnderLine className='active' />
                   {this.state.isHovering[2]
                     && <MenuUnderAnimation />}
@@ -463,7 +463,7 @@ class Menu extends React.Component {
 
               <NavbarMenuLi value='3' onMouseEnter={this.handleMouseHover} onMouseLeave={(e) => this.handleMouseLeave(e, 3)} >
                 <div>
-                  <Link style={{ color: 'inherit' }} to="/contact" onClick={() => this.handleClick(3)}><NavbarMenuText>문의</NavbarMenuText></Link>
+                  <Link class='alink' style={{ color: 'inherit' }} to="/contact" onClick={() => this.handleClick(3)}><NavbarMenuText>문의</NavbarMenuText></Link>
                   <NavbarMenuUnderLine className='active' />
                   {this.state.isHovering[3]
                     && <MenuUnderAnimation />}

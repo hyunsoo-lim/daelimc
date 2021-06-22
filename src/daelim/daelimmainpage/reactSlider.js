@@ -101,13 +101,13 @@ export default function SimpleSlider() {
    
       <Slider {...settings}>
         <SliderDiv2>
-          <SliderImg src='bannerimg1.png' />
+          <SliderImg src='bannerimg1.jpg' />
         </SliderDiv2>
         <SliderDiv2>
-          <SliderImg src='bannerimg1.png' />
+          <SliderImg src='bannerimg2.jpg' />
         </SliderDiv2>
         <SliderDiv2>
-          <SliderImg src='bannerimg1.png' />
+          <SliderImg src='bannerimg3.jpg' />
         </SliderDiv2>
       </Slider>
    

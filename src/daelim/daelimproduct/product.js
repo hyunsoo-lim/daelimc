@@ -1,6 +1,6 @@
 import React from 'react';
 import DaelimSearch from './productsearch';
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
 const Body = styled.div
   `
@@ -37,16 +37,6 @@ margin: 0 auto;
 
 class DaelimcProduct extends React.Component {
 
-  constructor(props) {
-    super(props)
-
-  }
-
-
-
-
-  componentDidMount() {
-  }
 
   render() {
 

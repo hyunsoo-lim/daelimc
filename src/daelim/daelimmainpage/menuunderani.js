@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import { useSpring, animated } from 'react-spring'
 
 const NavbarMenuUnder = styled.div

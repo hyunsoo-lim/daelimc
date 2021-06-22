@@ -1,6 +1,6 @@
 import React from 'react'
 import { Editor } from 'react-draft-wysiwyg';
-import { convertFromRaw, ContentState, EditorState} from 'draft-js'
+import { convertFromRaw, EditorState} from 'draft-js'
 // import Type from 'typeHelpers'
 
 // function isDraftable(content) {
@@ -9,14 +9,14 @@ import { convertFromRaw, ContentState, EditorState} from 'draft-js'
 
 export default class DraftViewer extends React.Component {
 
-    constructor(props) {
-        super(props)
-        // const contentState =   ContentState.createFromBlockArray(convertFromRaw(JSON.parse(this.props.text)));
-        // this.state= {editorState :EditorState.createWithContent(contentState)}
-        // console.log(this.props.text);
-        // console.log(this.state.editorState);
-        // this.setState({editorState: EditorState.createWithContent(contentState)});
-    }
+    // constructor(props) {
+    //     super(props)
+    //     // const contentState =   ContentState.createFromBlockArray(convertFromRaw(JSON.parse(this.props.text)));
+    //     // this.state= {editorState :EditorState.createWithContent(contentState)}
+    //     // console.log(this.props.text);
+    //     // console.log(this.state.editorState);
+    //     // this.setState({editorState: EditorState.createWithContent(contentState)});
+    // }
 
     render() {
             let content = this.props.text

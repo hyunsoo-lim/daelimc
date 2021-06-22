@@ -2,7 +2,7 @@ import React from 'react'
 import { Form, Button } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 import { init, send } from 'emailjs-com';
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 init("user_HAgUXtKyQHr630h7a4gCQ");
 
 

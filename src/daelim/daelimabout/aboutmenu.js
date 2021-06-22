@@ -1,13 +1,11 @@
 import React from 'react';
 import styled from "styled-components"
-import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { Link, Events, animateScroll as scroll, scroller } from 'react-scroll'
 import KakaoMap from './kakaomap'
 import Fade from 'react-reveal/Fade';
 
 
-const BREAK_POINT_MOBILE = 768;
-const BREAK_POINT_TABLET = 992;
-const BREAK_POINT_PC = 1200;
+
 
 const AboutMenuLayoutMain = styled.div
   `
@@ -72,17 +70,65 @@ postion:fixed;
 
 const AboutMenu1 = styled.div
   `
-width: 120px;
+
 height : 60px; 
 float:right;
+@media only screen and (max-width: 600px) {
+  width: 25%;
+ 
+}
+
+@media only screen and (min-width: 600px) {
+  width: 25%;
+
+}
+
+@media only screen and (min-width: 768px) {
+  width: 25%;
+  
+}
+
+@media only screen and (min-width: 992px) {
+  width: 25%;
+  
+}
+
+@media only screen and (min-width: 1200px) {
+  width: 120px;
+  
+}
 `
 
 const AboutMenu2 = styled.div
   `
-width: 120px;
+
 height : 60px; 
 float:right;
-margin-right:220px;
+
+@media only screen and (max-width: 600px) {
+  width: 25%;
+  margin-right:50%;
+}
+
+@media only screen and (min-width: 600px) {
+  width: 25%;
+  margin-right:50%;
+}
+
+@media only screen and (min-width: 768px) {
+  width: 25%;
+  margin-right:50%;
+}
+
+@media only screen and (min-width: 992px) {
+  width: 25%;
+  margin-right:50%;
+}
+
+@media only screen and (min-width: 1200px) {
+  width: 120px;
+  margin-right:220px;
+}
 `
 
 const AboutMenuText1 = styled.div

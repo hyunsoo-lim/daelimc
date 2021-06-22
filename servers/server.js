@@ -3,6 +3,7 @@ const vhost = require("vhost");
 const app = express();
 const app1 = express();
 const app2 = express();
+const app3 = express();
 var fs = require('fs');
 var path = require('path');
 var mime = require('mime');
@@ -18,8 +19,8 @@ const multer = require('multer');
 // const upload = multer({ dest: 'uploads/', limits: { fileSize: 5 * 1024 * 1024 } });
 
 
-app.use(vhost("www.daelimc.co.kr", app1));
 app.use(vhost("daelimc.co.kr", app2));
+app.use(vhost("sub.daelimc.co.kr", app3));
 
 
 app.listen(port, ()=>{
@@ -44,6 +45,13 @@ app.get('/api/productscount',async (req, res) => {
     })
 });
 
+app.get('/api/plancount',async (req, res) => {
+  db.query("SELECT COUNT(*) as cnt FROM daelim_plan", (err, data) => {
+      if(!err) res.send(data);
+      else res.send(err);
+  })
+});
+
 //search
 app.post('/api/productssearch',urlencodedParser,(req,res) => {
     var json=req.body;
@@ -59,6 +67,37 @@ app.post('/api/productssearch',urlencodedParser,(req,res) => {
       }else{
         res.send({ products : rows });
       }})
+});
+
+
+app.post('/api/plansearch',urlencodedParser,(req,res) => {
+  var json=req.body;
+  console.log("plansearch");
+  var params=json;
+  console.log(params);
+  var sql = "select * from daelim_plan where name LIKE " +db.escape('%'+params.search+'%')  +"LIMIT " +(params.currentpage*10)+ ",10";
+
+ 
+  db.query(sql,[params],function(err,rows,fields) {
+    if(err){
+      console.log(err);
+    }else{
+      res.send({ products : rows });
+    }})
+});
+
+
+//search 메인에 노출 2개
+app.get('/api/productmainpage',urlencodedParser,(req,res) => {
+  console.log("productssearch2");
+  var sql = "select * from daelim_product where no=17 or no=18 or no=26";
+
+  db.query(sql,[],function(err,rows,fields) {
+    if(err){
+      console.log(err);
+    }else{
+      res.send({ products : rows });
+    }})
 });
 
 
@@ -86,11 +125,40 @@ app.post('/api/productsins',urlencodedParser,(req,res) => {
               });
             }
           }
-          res.send("ok");
-          console.log("ok");
+          res.send("productsinsok");
+          console.log("productsins");
         }})
 });
 
+
+//insert plan
+app.post('/api/planins',urlencodedParser,(req,res) => {
+  var json=req.body;
+  var params=[json.name,json.download,json.etc]
+  db.query("insert into daelim_plan values(0,?,?,?)",params,function(err,rows,fields) {
+      if(err){
+        console.log(err);
+      }else{
+
+        if(!fs.existsSync("public/uploads/plan/"+json.name)){
+          fs.mkdirSync("public/uploads/plan/"+json.name)
+        }
+        var jsonparse=JSON.parse(json.download);
+        if(jsonparse!=null){
+        for(var i=0; i<jsonparse.data.length; i++){
+            console.log(i);
+            fs.rename(`public/uploads/${jsonparse.data[i]}`,`public/uploads/plan/${json.name}/${jsonparse.data[i]}`,()=>{ 
+       
+            //파일 이름 바꾸기 fs.writeFile('./data/'+title,'파일수정할내용','utf8',function(err){ 
+            // 파일 내용 수정 if (err ===undefined || err == null){ response.writeHead(302, {Location: `/?id=${title}`}); 
+            //요청한 주소로 리다이렉션 response.end(); } }); 
+            });
+          }
+        }
+        res.send("planinsok");
+        console.log("planinsok");
+      }})
+});
 
 //delete
 app.post('/api/productsdel',urlencodedParser,(req,res) => {
@@ -108,6 +176,21 @@ app.post('/api/productsdel',urlencodedParser,(req,res) => {
       }})
 });
 
+
+app.post('/api/plandel',urlencodedParser,(req,res) => {
+    
+  var params=req.body;
+  
+  console.log(params);
+  db.query("delete from daelim_plan where no in(?)",[params],function(err,rows,fields) {
+      if(err){
+        console.log(err);
+      }else{
+        res.send("ok");
+          console.log("ok");
+        
+      }})
+});
 
 const upload = multer({
   storage: multer.diskStorage({
@@ -141,7 +224,7 @@ app.post('/api/imageupload', upload.single('img'), (req, res) => {
 app.post('/api/imageuploadmulti', upload.array('files'), (req, res) => {
   console.log(req.files);
   console.log(req.body);
-  res.send(req.files); 
+  res.json("{}");
 });
 
 // app.use('/img',express.static('public'));

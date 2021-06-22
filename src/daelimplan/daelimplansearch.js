@@ -4,19 +4,37 @@ import DaelimProductDTO from './daelim_product_dto';
 import ReactPaginate from "react-paginate";
 import styled from "styled-components"
 
+
 const Body = styled.div
-`
-width:1080px;
-margin:0 auto;
+    `
+@media only screen and (max-width: 600px) {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 600px) {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 992px) {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 1200px) {
+  width: 1080px;
+}
 `
 
 class DaelimPlanSearch extends React.Component {
 
-    constructor(props) {
-        super(props)
-    }
-
-
+   
     componentDidMount() {
         console.log("search didmount");
         console.log(this.props.count);
@@ -43,7 +61,7 @@ class DaelimPlanSearch extends React.Component {
 
 
 
-                <section class="work" >
+                <section className="work" >
 
                     {product.map(product => {
                         

@@ -1,6 +1,6 @@
 import React from 'react';
 import Menu from './daelimmainpage/dealimcmenu';
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import DaelimcMainBody from './daelimmainpage/mainbody';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import DaelimcProduct from './daelimproduct/product';

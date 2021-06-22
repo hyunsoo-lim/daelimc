@@ -1,6 +1,6 @@
 var mysql = require('mysql');
 const db = mysql.createPool({
-    host : 'daelimc.iptime.org',
+    host : 'daelimc.co.kr',
     user : 'daelimc',
     password : 'Austn_9823',
     database : 'daelimc'

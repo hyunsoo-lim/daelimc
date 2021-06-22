@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
 
 const FooterMainDiv = styled.div
@@ -62,6 +62,31 @@ float:left;
 margin:0;
 padding:0;
 
+@media only screen and (max-width: 600px) {
+  width: 50%;
+
+}
+
+@media only screen and (min-width: 600px) {
+  width:  50%;
+
+}
+
+@media only screen and (min-width: 768px) {
+  width:  50%;
+
+}
+
+@media only screen and (min-width: 992px) {
+  width: 50%;
+
+}
+
+@media only screen and (min-width: 1200px) {
+  width: 500px;
+
+}
+
 `
 
 const FooterP0 = styled.p
@@ -84,36 +109,77 @@ const FooterPFloatClear = styled.p
 `
 width:200px;
 clear:both;
-margin-left:20px;
+
 margin-top:8px;
 margin-bottom:0;
 padding:0;
 float:left;
 color:#a0a0a0;
+
+@media only screen and (max-width: 600px) {
+  width: 50%;
+
+}
+
+@media only screen and (min-width: 600px) {
+  width:  50%;
+
+}
+
+@media only screen and (min-width: 768px) {
+  width:  50%;
+
+}
+
+@media only screen and (min-width: 992px) {
+  width: 50%;
+
+}
+
+@media only screen and (min-width: 1200px) {
+  width:200px;
+  margin-left:20px;
+}
 `
 const FooterPFloatClearEnd = styled.p
 `
 width:400px;
 clear:both;
-margin-left:20px;
 margin-top:8px;
 margin-bottom:0;
 padding:0;
 float:left;
 color:#a0a0a0;
+
+@media only screen and (max-width: 600px) {
+  width: 50%;
+
+}
+
+@media only screen and (min-width: 600px) {
+  width:  50%;
+
+}
+
+@media only screen and (min-width: 768px) {
+  width:  50%;
+
+}
+
+@media only screen and (min-width: 992px) {
+  width: 50%;
+
+}
+
+@media only screen and (min-width: 1200px) {
+  width:400px;
+  margin-left:20px;
+}
 `
 
 class DaelimcMainFooter extends React.Component {
 
-  constructor(props) {
-    super(props)
-
-  }
-
-
-  componentDidMount() {
-  }
-
+ 
   render() {
 
     return (

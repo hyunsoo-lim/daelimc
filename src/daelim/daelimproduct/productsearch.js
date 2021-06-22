@@ -90,24 +90,24 @@ float:right;
 margin-right:65px;
 `
 
-const AboutMenuText1 = styled.div
-    `
-font-size: 16px;
-font-weight: 400;
-color:#ffffff;
-text-align:center;
-line-height:60px;
-`
+// const AboutMenuText1 = styled.div
+//     `
+// font-size: 16px;
+// font-weight: 400;
+// color:#ffffff;
+// text-align:center;
+// line-height:60px;
+// `
 
 
-const AboutMenuText2 = styled.p
-    `
-font-size: 16px;
-font-weight: 400;
-color:#ffffff;
-text-align: center;
-line-height:60px;
-`
+// const AboutMenuText2 = styled.p
+//     `
+// font-size: 16px;
+// font-weight: 400;
+// color:#ffffff;
+// text-align: center;
+// line-height:60px;
+// `
 const InputDiv = styled.div
     `
 clear:both;
@@ -294,7 +294,7 @@ class ProductSearch extends React.Component {
     onScroll = (e) => {
         // 스크롤 할때마다 state에 scroll한 만큼 scrollTop 값 증가하므로 이를 업데이트해줌, 
         //따라서 스크롤 시점에 따라 특정액션을 추후에 state를 활용하여 구현 가능
-        const scrollTop = ('scroll', e.srcElement.scrollingElement.scrollTop);
+        // const scrollTop = ('scroll', e.srcElement.scrollingElement.scrollTop);
         // this.setState({ scrollTop });
         // console.log(scrollTop);
         // if (scrollTop > 235) {

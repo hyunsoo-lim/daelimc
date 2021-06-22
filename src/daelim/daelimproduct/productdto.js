@@ -38,7 +38,11 @@ class ProductDTO extends React.Component {
         // const product_one=this.props.data.num;
         console.log("dto render");
         const json = JSON.parse(product.download);
-        const imgsrc="/uploads/"+product.name+"/"+json.data[0];
+        var imgsrc = "";
+        if(json!=null){
+            imgsrc="/uploads/"+product.name+"/"+json.data[0];
+        }
+        
         
         return (
 

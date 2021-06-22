@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components"
-import DraftViewer from './daelim_editor_viewer';
+// import DraftViewer from './daelim_editor_viewer';
 import axios from 'axios';
 import Fade from 'react-reveal/Fade';
 
@@ -74,39 +74,38 @@ height:30px;
 `
 
 
-const DownloadDiv = styled.div
-`
+// const DownloadDiv = styled.div
+// `
 
-height:40px;
+// height:40px;
 
-@media only screen and (max-width: 600px) {
-    width: 100%;
-  }
-  @media only screen and (min-width: 600px) {
-    width: 100%;
-  }
-  @media only screen and (min-width: 768px) {
-    width: 100%;
-  }
-  @media only screen and (min-width: 992px) {
-    width: 100%;
-  }
-  @media only screen and (min-width: 1200px) {
-    width:1080px;
-  }
-`
+// @media only screen and (max-width: 600px) {
+//     width: 100%;
+//   }
+//   @media only screen and (min-width: 600px) {
+//     width: 100%;
+//   }
+//   @media only screen and (min-width: 768px) {
+//     width: 100%;
+//   }
+//   @media only screen and (min-width: 992px) {
+//     width: 100%;
+//   }
+//   @media only screen and (min-width: 1200px) {
+//     width:1080px;
+//   }
+// `
 
-const DownloadA = styled.a
-`
-height:40px;
-float:right;
-margin-right:30px;
-`
+// const DownloadA = styled.a
+// `
+// height:40px;
+// float:right;
+// margin-right:30px;
+// `
+
+
 const ImgDiv = styled.div
 `
-
-
-
 @media only screen and (max-width: 600px) {
     width: 100%;
     height:45%;
@@ -381,7 +380,7 @@ class DaelimProductDetail extends React.Component {
     render() {
 
         console.log(this.props.location.state.product.text1);
-        const json = JSON.parse(this.props.location.state.product.download);
+        // const json = JSON.parse(this.props.location.state.product.download);
         const jsonDetail = JSON.parse(this.props.location.state.product.text1);
         const jsonDownload = JSON.parse(this.props.location.state.product.download);
         const imgDir = "/uploads/" + this.props.location.state.product.name + "/" + jsonDownload.data[0];

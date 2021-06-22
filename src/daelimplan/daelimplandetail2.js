@@ -1,7 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import styled from "styled-components"
-
+import { Document,Page,pdfjs } from "react-pdf";
+import { StyleSheet,View  } from "@react-pdf/renderer";
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const Body = styled.div
     `
@@ -30,8 +32,7 @@ const Body = styled.div
 }
 `
 
-
-class DaelimPlanDetail extends React.Component{
+class DaelimPlanDetail2 extends React.Component{
 
     constructor(props){
         super(props)
@@ -75,9 +76,9 @@ class DaelimPlanDetail extends React.Component{
      
         // const product = this.props.searchdata;
         console.log(this.props.location.state.product.text1);
-        const jsonDetail= JSON.parse(this.props.location.state.product.text1);
+        // const jsonDetail= JSON.parse(this.props.location.state.product.text1);
         const jsonDownload =JSON.parse(this.props.location.state.product.download);
-        const imgDir= "/uploads/"+this.props.location.state.product.name+"/"+jsonDownload.data[0];
+        const imgDir= "/uploads/plan/"+this.props.location.state.product.name+"/"+jsonDownload.data[0];
 
         return(
             <Body>
@@ -86,18 +87,15 @@ class DaelimPlanDetail extends React.Component{
                    <a href={"http://localhost:3000/download/aaa.png"}>down</a>
                </div>
 
-               <img src={imgDir}/>
-               {/* <DraftViewer text={this.props.location.state.product.text1}/> */}
-               <p>{jsonDetail.ctype}</p>
-               <p>{jsonDetail.ccolor}</p>
-               <p>{jsonDetail.csize}</p>
-               <p>{jsonDetail.ccomponent}</p>
-               <p>{jsonDetail.cetc}</p>
-               <p>{jsonDetail.cdetail}</p>
+               <Document size="a1"
+                    file={imgDir}
+                    onLoadSuccess={this.onDocumentLoadSuccess}>
+                    <Page pageNumber={1}  ></Page>
+                  </Document>
                
             </Body>
          )
     }
 }
 
-export default DaelimPlanDetail;
+export default DaelimPlanDetail2;

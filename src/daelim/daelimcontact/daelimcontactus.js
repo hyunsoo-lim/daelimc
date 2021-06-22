@@ -1,6 +1,6 @@
 import React from 'react';
 import FromEmail from './contactform';
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import Fade from 'react-reveal/Fade';
 
 
@@ -60,13 +60,6 @@ height: 60px;
 `
 
 class DaelimcContactUs extends React.Component {
-
-  constructor(props) {
-    super(props)
-
-  }
-
-
 
 
   componentDidMount() {

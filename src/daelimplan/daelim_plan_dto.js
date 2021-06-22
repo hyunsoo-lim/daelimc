@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom';
 import styled from "styled-components"
 import ImgResize from "../util/ImgResize";
 
+
+
 const Dcheckbox = styled.input
 `
 z-index:2;
@@ -11,7 +13,7 @@ z-index:2;
 
 
 
-class DaelimProductDTO extends React.Component{
+class DaelimPlanDTO extends React.Component{
 
    
      
@@ -25,7 +27,7 @@ class DaelimProductDTO extends React.Component{
 
         var imgsrc = "";
         if(json!=null){
-            imgsrc="/uploads/"+product.name+"/"+json.data[0];
+            imgsrc="/uploads/plan/"+product.name+"/"+json.data[0];
         }
       
         return(
@@ -33,15 +35,18 @@ class DaelimProductDTO extends React.Component{
             <figure className="white">
                
                 <Link to ={{
-                    pathname :'/detail/'+product.name,
+                    pathname :'/plandetail/'+product.name,
                     state: {product: product}        
                 }}>
                    
                 { 
                     product.download===null
                     ? <img src= {pannel}/>
+                    : <img src= {pannel}/>
                     // : <img src= {"/uploads/"+product.name+"/"+json.data[0]}/>}
-                    : <ImgResize imgsrc={imgsrc}/>}
+                     
+                  
+                    }
 
                     <div id="part-info">{product.name}</div>
                   
@@ -53,4 +58,4 @@ class DaelimProductDTO extends React.Component{
 
 }
 
-export default DaelimProductDTO;
+export default DaelimPlanDTO;

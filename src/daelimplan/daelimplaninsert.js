@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import MyEditor from './daelim_editor';
+// import MyEditor from './daelim_editor';
 import { withRouter } from 'react-router-dom';
 import styled from "styled-components"
 
@@ -66,7 +66,7 @@ class DaelimPlanInsert extends React.Component {
 
     handleComponent = (e) => {
         const nextState = this.state.detail;
-        nextState[e.target.name] = e.target.value;
+        nextState[e.target.name] = e.target.value;  
         this.setState({ detail: nextState });
         console.log(nextState)
         // console.log(this.state.params.type);
@@ -126,15 +126,15 @@ class DaelimPlanInsert extends React.Component {
     //다운로드 파일 업로드시 추가로 넣을 input 생성하는 function
     addUploadElement = () => {
         const newDIV = document.createElement("input");
-        newDIV.setAttribute("class", "daelim_ins_from3");
+        newDIV.setAttribute("className", "daelim_ins_from3");
         newDIV.setAttribute("type", "file");
         newDIV.setAttribute("name", "src");
         newDIV.onchange = this.handleClickFile;
         document.getElementById("daelim_ins_fileupload_wrapper").appendChild(newDIV);
+        console.log('addUploadElement');
     }
 
-
-
+   
     //db 입력 파일 업로드
     setData = async () => {
         let nextState = this.state.params;
@@ -150,27 +150,48 @@ class DaelimPlanInsert extends React.Component {
         for (let i = 0; i < updata.length; i++) {
             uploadData.append("files", updata[i]);
         }
-        const responseMultiUpload = await axios.post('../api/imageuploadmulti', uploadData);
-
-        //사진 업로드후 db입력에서 파일 이동
         const data = this.state.params;
-        const response = await axios.post('../api/productsins', data);
-        const resposedata = await response.data;
-        console.log(resposedata);
+        const p= this.props
+        axios.post('../api/imageuploadmulti', uploadData)
+            .then(function (response) {
 
-        this.props.getData();
-        this.props.history.push("/plan/search");
+                console.log(response);
+                //사진 업로드후 db입력에서 파일 이동
+                axios.post('../api/productsins', data)
+                    .then(function (response) {
+                        console.log(response.data);
+
+                        p.getData();
+                        p.history.push("/search");
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+
+        // const responseMultiUpload = await axios.post('http://localhost:3001/api/imageuploadmulti', uploadData);
+        // console.log('responseMultiUpload');
+        // console.log(responseMultiUpload);
+
+
+
+
     }
 
 
     render() {
         return (
             <Body>
-                <div class="daelim_plan_wrapper">
-                    <div class="daelim_plan_container_left">
-                        <div class="daelim_ins_wrapper">
-                            <div class="daelim_plan_insert_text">제품 타입</div>
-                            <select class="daelim_ins_from" name="type" onChange={this.handleClick}>
+                <div className="daelim_plan_wrapper">
+                    <div className="daelim_plan_container_left">
+                        <div className="daelim_ins_wrapper">
+                            <div className="daelim_plan_insert_text">제품 타입</div>
+                            <select className="daelim_ins_from" name="type" onChange={this.handleClick}>
                                 <option value=""></option>
                                 <option value="발전기">발전기</option>
                                 <option value="유압">유압</option>
@@ -178,9 +199,9 @@ class DaelimPlanInsert extends React.Component {
                             </select>
                         </div>
 
-                        <div class="daelim_ins_wrapper11">
-                            <div class="daelim_plan_insert_text">엔진 타입</div>
-                            <select class="daelim_ins_from" name="type2" onChange={this.handleClick}>
+                        <div className="daelim_ins_wrapper11">
+                            <div className="daelim_plan_insert_text">엔진 타입</div>
+                            <select className="daelim_ins_from" name="type2" onChange={this.handleClick}>
                                 <option value=""></option>
                                 <option value="scania">스카니아</option>
                                 <option value="commins">커민스</option>
@@ -193,21 +214,21 @@ class DaelimPlanInsert extends React.Component {
                             </select>
                         </div>
 
-                        <div class="daelim_ins_wrapper2">
-                            <div class="daelim_plan_insert_text">모델명</div>
-                            <input class="daelim_ins_from2" type="text" name="name" onChange={this.handleClick} />
+                        <div className="daelim_ins_wrapper2">
+                            <div className="daelim_plan_insert_text">모델명</div>
+                            <input className="daelim_ins_from2" type="text" name="name" onChange={this.handleClick} />
                         </div>
 
-                        <div class="daelim_ins_wrapper2">
-                            <div class="daelim_plan_insert_text">태그</div>
-                            <input class="daelim_ins_from2" type="text" name="text2" onChange={this.handleClick} />
+                        <div className="daelim_ins_wrapper2">
+                            <div className="daelim_plan_insert_text">태그</div>
+                            <input className="daelim_ins_from2" type="text" name="text2" onChange={this.handleClick} />
                         </div>
 
-                        <div class="daelim_ins_wrapper2">
-                            <div class="daelim_plan_insert_text">메인 이미지</div>
-                            {/* <input class="daelim_ins_from2" type="text" name="src" onChange={this.handleClick}/> */}
+                        <div className="daelim_ins_wrapper2">
+                            <div className="daelim_plan_insert_text">메인 이미지</div>
+                            {/* <input className="daelim_ins_from2" type="text" name="src" onChange={this.handleClick}/> */}
                             <div id="daelim_ins_fileupload_wrapper">
-                                <input class="daelim_ins_from3" type="file" name="files" onChange={this.handleClickFile} />
+                                <input className="daelim_ins_from3" type="file" name="files" onChange={this.handleClickFile} />
                             </div>
                         </div>
                     </div>
@@ -216,32 +237,32 @@ class DaelimPlanInsert extends React.Component {
                         <ComponentTopText> 상세 내용</ComponentTopText>
                         <ComponentDiv>
                             <ComponentDiv2>
-                                <div class="daelim_ins_wrapper2">
-                                    <div class="daelim_plan_insert_text">제품종류</div>
-                                    <input class="daelim_ins_from2" type="text" name="ctype" onChange={this.handleComponent} />
+                                <div className="daelim_ins_wrapper2">
+                                    <div className="daelim_plan_insert_text">제품종류</div>
+                                    <input className="daelim_ins_from2" type="text" name="ctype" onChange={this.handleComponent} />
                                 </div>
-                                <div class="daelim_ins_wrapper2">
-                                    <div class="daelim_plan_insert_text">사이즈</div>
-                                    <input class="daelim_ins_from2" type="text" name="csize" onChange={this.handleComponent} />
+                                <div className="daelim_ins_wrapper2">
+                                    <div className="daelim_plan_insert_text">사이즈</div>
+                                    <input className="daelim_ins_from2" type="text" name="csize" onChange={this.handleComponent} />
                                 </div>
-                                <div class="daelim_ins_wrapper2">
-                                    <div class="daelim_plan_insert_text">색상</div>
-                                    <input class="daelim_ins_from2" type="text" name="ccolor" onChange={this.handleComponent} />
-                                </div>
-
-                                <div class="daelim_ins_wrapper2">
-                                    <div class="daelim_plan_insert_text">구성품</div>
-                                    <input class="daelim_ins_from2" type="text" name="ccomponent" onChange={this.handleComponent} />
+                                <div className="daelim_ins_wrapper2">
+                                    <div className="daelim_plan_insert_text">색상</div>
+                                    <input className="daelim_ins_from2" type="text" name="ccolor" onChange={this.handleComponent} />
                                 </div>
 
-                                <div class="daelim_ins_wrapper2">
-                                    <div class="daelim_plan_insert_text">기타</div>
-                                    <input class="daelim_ins_from2" type="text" name="cetc" onChange={this.handleComponent} />
+                                <div className="daelim_ins_wrapper2">
+                                    <div className="daelim_plan_insert_text">구성품</div>
+                                    <input className="daelim_ins_from2" type="text" name="ccomponent" onChange={this.handleComponent} />
                                 </div>
 
-                                <div class="daelim_ins_wrapper2">
-                                    <div class="daelim_plan_insert_text">상세내용</div>
-                                    <ComponentTextarea class="daelim_ins_from2" name="cdetail" onChange={this.handleComponent} />
+                                <div className="daelim_ins_wrapper2">
+                                    <div className="daelim_plan_insert_text">기타</div>
+                                    <input className="daelim_ins_from2" type="text" name="cetc" onChange={this.handleComponent} />
+                                </div>
+
+                                <div className="daelim_ins_wrapper2">
+                                    <div className="daelim_plan_insert_text">상세내용</div>
+                                    <ComponentTextarea className="daelim_ins_from2" name="cdetail" onChange={this.handleComponent} />
                                 </div>
                             </ComponentDiv2>
                         </ComponentDiv>
@@ -249,11 +270,11 @@ class DaelimPlanInsert extends React.Component {
 
 
 
-                    <div class="daelim_ins_wrapper3">
+                    <div className="daelim_ins_wrapper3">
                         <div id="daelim_ins_wrapper3_text">파일 올리기</div>
                         <button id="daelim_ins_wrapper3_btn" onClick={this.addUploadElement}>추가</button>
                         <div id="daelim_ins_fileupload_wrapper">
-                            <input class="daelim_ins_from3" type="file" name="files" onChange={this.handleClickFile} />
+                            <input className="daelim_ins_from3" type="file" name="files" onChange={this.handleClickFile} />
                         </div>
                     </div>
                     <ComponentBottomdiv />
